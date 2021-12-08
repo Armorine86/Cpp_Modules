@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 09:16:44 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 10:27:52 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/08 10:56:11 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main(void)
 		if (cmd == "ADD")
 		{
 			if (phonebook.GetCount() == 8)
-				std::cout << "Phonebook is full. Oldest contact will be replaced" << std::endl;
+				std::cout << "Phonebook is full. Oldest contact will be overwritten" << std::endl;
 			phonebook.add_contact();
 		}
 		else if (cmd == "SEARCH")
