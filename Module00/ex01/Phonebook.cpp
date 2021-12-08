@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:22:51 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 10:45:24 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:26:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,19 @@ Phonebook::Phonebook() {
 int32_t Phonebook::GetCount() 
 {
 	return (count);
+}
+
+bool Phonebook::VerifyInput(std::string const input) 
+{
+	for (int32_t i = 0; input[i]; i++)
+	{
+		if (isdigit(input[i]))
+			continue;
+		return (false);
+	}
+	if (std::stoi(input) > GetCount() - 1 || std::stoi(input) < 0)
+		return (false);
+	return (true);
 }
 
 void Phonebook::add_contact()
@@ -82,22 +95,26 @@ void Phonebook::list_contact()
 		std::getline(std::cin >> std::ws, input);
 		if (input == "RETURN")
 			return;
-		else if (contact[std::stoi(input)].IsActive())
+		else if (VerifyInput(input))
 		{
-			ExpandContact(std::stoi(input));
-			break;
+			if (contact[std::stoi(input)].IsActive())
+			{
+				ExpandContact(std::stoi(input));
+				break;
+			}	
 		}
-		else
+		else 
 			std::cout << "Invalid Index. Please select a valid index\n" << std::endl;
 	}
 }
 
 void Phonebook::ExpandContact(int32_t index) 
 {
-	std::cout << "\n========================\n";
+	std::cout << "\n==============================\n";
 	std::cout << "First Name:   " << contact[index].GetField("first_name") << "\n";
 	std::cout << "Last Name:    " << contact[index].GetField("last_name") << "\n";
 	std::cout << "NickName:     " << contact[index].GetField("nickname") << "\n";
 	std::cout << "Phone Number: " << contact[index].GetField("phone_number") << "\n";
 	std::cout << "Dark Secret:  " << contact[index].GetField("darkest_secret") << "\n";
+	std::cout << "==============================" << std::endl;
 }

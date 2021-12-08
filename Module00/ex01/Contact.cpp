@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 10:41:59 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 10:57:44 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:03:29 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,9 @@ std::string Contact::TruncateStr(std::string field)
 		return (field.substr(0, 9) + ".");
 	else
 		return field;
+}
+
+int32_t Contact::GetContactIndex() 
+{
+	return (contact_index);
 }

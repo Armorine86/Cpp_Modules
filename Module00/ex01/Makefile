@@ -1,5 +1,5 @@
 NAME		=	phonebook
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -std=c++98
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 12:08:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 10:54:11 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:07:37 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Phonebook {
 	public:
 		Phonebook();
 		int32_t	GetCount();
+		bool VerifyInput(std::string input);
 		void ExpandContact(int32_t index);
 		void add_contact();
 		void list_contact();

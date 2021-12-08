@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 09:16:44 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 10:56:11 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:27:26 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int main(void)
 	std::cout << "|WELCOME TO YOUR CRAPPY PHONEBOOK!|\n";
 	std::cout << "|---------------------------------|\n" << std::endl;
 
+	manual();
 	while (std::cin.good())
 	{
-		manual();
 		std::cout << "\nNumber of currently active contact: [" << phonebook.GetCount() << "]\n";
 		std::cout << "\n>";
 		std::getline(std::cin >> std::ws, cmd);
@@ -48,7 +48,7 @@ int main(void)
 		}
 		else if (cmd == "SEARCH")
 			phonebook.list_contact();
-		else if (cmd == "EXIT")
+		else if (cmd == "EXIT" || cmd == "")
 		{
 			std::cout << "Now exiting programm. All contacts will be lost" << std::endl;
 			break;
