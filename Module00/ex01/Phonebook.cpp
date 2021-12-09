@@ -6,13 +6,18 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:22:51 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 11:26:55 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/09 17:02:38 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
+#include <cstdlib>
 
 #include "Phonebook.hpp"
+
+//* Where you have a header file for a Class, you have a cpp file for it.
+//* This is where you implement the class method functions
+//* You can also implement the method inside the class file.
 
 Phonebook::Phonebook() {
 	count = 0;
@@ -23,19 +28,26 @@ int32_t Phonebook::GetCount()
 	return (count);
 }
 
+//* verify that the input is all digits and no bigger than total active contacts
+//* and no lower than 0.
 bool Phonebook::VerifyInput(std::string const input) 
 {
+	int32_t index = atoi(input.c_str());
+	
 	for (int32_t i = 0; input[i]; i++)
 	{
 		if (isdigit(input[i]))
 			continue;
 		return (false);
 	}
-	if (std::stoi(input) > GetCount() - 1 || std::stoi(input) < 0)
+	if (index > GetCount() - 1 || index < 0)
 		return (false);
 	return (true);
 }
 
+//* Adds a contact to the Contact array
+//* Shifts all the existing contacts down the array, setting their new index
+//* Then prompts the user to enter all the required fields
 void Phonebook::add_contact()
 {
 	std::string input;
@@ -65,41 +77,56 @@ void Phonebook::add_contact()
 	std::cout << std::flush;
 	contact[0].SetField(input, "darkest_secret");
 	contact[0].SetContactIndex(0);
-	contact[0].SetActive();
+	contact[0].SetActive(); //* Simple bool to set the "index" or "contact" as active
 	count++;
 	if (count > N_CONTACT)
 		count = N_CONTACT;
 }
 
+//* Lists all the "active" contacts of the array
 void Phonebook::list_contact() 
 {
 	std::string input;
-
+	int32_t index;
+	
 	std::cout << "\nCONTACT LIST\n";
 	std::cout << " ______________________________________________\n";
 	std::cout << "|     Index||First Name|| Last Name||  Nickname|\n";
 	std::cout << "|----------||----------||----------||----------|\n";
-	for (int32_t i = 0; contact[i].IsActive(); i++)
+	for (int32_t i = 0; i < N_CONTACT; i++)
 	{
-		std::cout << "|" << std::setw(10) << contact[i].GetContactIndex() << "|";
-		std::cout << "|" << std::setw(10) << contact[i].TruncateStr(contact[i].GetField("first_name")) << "|";
-		std::cout << "|" << std::setw(10) << contact[i].TruncateStr(contact[i].GetField("last_name")) << "|";
-		std::cout << "|" << std::setw(10) << contact[i].TruncateStr(contact[i].GetField("nickname")) << "|" << std::endl;
-		std::cout << "|----------------------------------------------|" << std::endl;
+		if (contact[i].IsActive())
+		{	
+			//* "setw(10)" formats the width of each column to 10.
+			//* TruncateStr truncates longer than 10 chars strings and replaces the last char with a dot "."
+			std::cout << "|" << std::setw(10) << contact[i].GetContactIndex() << "|";
+			std::cout << "|" << std::setw(10) << contact[i].TruncateStr(contact[i].GetField("first_name")) << "|";
+			std::cout << "|" << std::setw(10) << contact[i].TruncateStr(contact[i].GetField("last_name")) << "|";
+			std::cout << "|" << std::setw(10) << contact[i].TruncateStr(contact[i].GetField("nickname")) << "|" << std::endl;
+			std::cout << "|----------------------------------------------|" << std::endl;
+		}
 	}
 	
+	//* Prompts the user to select a specific valid "active" index to show contacts informations
 	std::cout << "Please, Select an index to expand the contact informations." << std::endl;
 	while (std::cin.good())
 	{
 		std::cout << "> ";
 		std::getline(std::cin >> std::ws, input);
+		
+		//* Cannot use stoi() here to convert string to int because we are limited to c++98.
+		// *Since C doesn't support std:string class we have to use atoi(). 
+		//* But, since atoi only takes (const char *) we can convert our std::string input
+		//* to (const char *) using c_str() method.
+		index = atoi(input.c_str());
+
 		if (input == "RETURN")
 			return;
 		else if (VerifyInput(input))
 		{
-			if (contact[std::stoi(input)].IsActive())
+			if (contact[index].IsActive())
 			{
-				ExpandContact(std::stoi(input));
+				ExpandContact(index);
 				break;
 			}	
 		}

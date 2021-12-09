@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 10:41:59 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 11:03:29 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:06:41 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Contact::Contact() {
 	darkest_secret = "";
 }
 
+//* Setter method to access the Contact class private member
 void Contact::SetContactIndex(int32_t index) 
 {
 	contact_index = index;
@@ -52,6 +53,7 @@ void Contact::SetField(std::string input, std::string field)
 	darkest_secret = input;
 }
 
+//* Getter method to retrieve the value of the Contact class private member
 std::string& Contact::GetField(std::string field) 
 {
 	if (field == "first_name")
@@ -65,6 +67,7 @@ std::string& Contact::GetField(std::string field)
 	return (darkest_secret);
 }
 
+//* Truncates the string to a maximum of 10 characters replacing the last char with a "."
 std::string Contact::TruncateStr(std::string field) 
 {
 	if (field.length() > 10)

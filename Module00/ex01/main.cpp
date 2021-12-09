@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 09:16:44 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 11:27:26 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/09 15:46:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void manual(void)
 
 int main(void)
 {
+	//* Instanciating of phonebook object
 	Phonebook phonebook;
 	std::string cmd;
 
@@ -35,10 +36,14 @@ int main(void)
 	std::cout << "|---------------------------------|\n" << std::endl;
 
 	manual();
+	
+	//* "good()" is used to check if the stream is good or not
 	while (std::cin.good())
 	{
 		std::cout << "\nNumber of currently active contact: [" << phonebook.GetCount() << "]\n";
 		std::cout << "\n>";
+		
+		//* "getline" takes input as first parameter and stores it in the second parameter "cmd" string
 		std::getline(std::cin >> std::ws, cmd);
 		if (cmd == "ADD")
 		{

@@ -6,13 +6,26 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 10:57:39 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/03 09:09:26 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/09 15:39:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include <stdint.h>
 
+//* "std" is a namespace. The "::" operator is the "scope" operator. 
+//* It tells the compiler which class/namespace to look in for an identifier.
+//
+//* "cout" is an object of class ostream. It is defined in iostream header file.
+//* The data needed to be displayed on the screen,
+//* is inserted in the standard output stream (cout) using the insertion operator(<<)
+//
+//* "endl" s a predefined object of ostream class.
+//* It is used to insert a new line characters and flushes the stream.
+//
+//* "int32_t" is the equivalent to the standard int type.
+//* It will tell the compiler to give exactly 32 bits (4 bytes) regardless
+//* of the compiler you are using.
 int main(int argc, char **argv)
 {
 	if (argc > 1)
