@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:04:55 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 14:47:31 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/10 08:16:08 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Zombie {
 		std::string name;
 	
 	public:
-		Zombie(const std::string& new_name);
-		~Zombie();
+		Zombie(const std::string& new_name); //* Constructor have the same name as the Class
+		~Zombie(); //* Destructor have the same name as the Class but with a ~
 		void announce( void );
 };
 

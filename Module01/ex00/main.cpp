@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:15:09 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/09 19:58:33 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/10 08:14:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 	zombie2->announce();
 	randomChump("Jack");
 
-	//* Calls the Deconstructor and output a message.
+	//* Calls the Destructor and output a message.
 	//* Also frees the memory allocated on the heap.
 	delete zombie1;
 	delete zombie2;

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:04:55 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 16:21:22 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/10 08:16:48 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Zombie {
 		std::string name;
 	
 	public:
-		Zombie();
-		Zombie(const std::string& new_name);
+		Zombie(); //* Default Constructor
+		Zombie(const std::string& new_name); //* Overloaded Constructor
 		~Zombie();
 		void randName();
 		void announce( void );
