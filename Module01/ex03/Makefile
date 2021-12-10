@@ -1,12 +1,12 @@
-NAME		=	reference
+NAME		=	weapon
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98
 CC			=	clang++
 RM			=	rm -rf
 
 OBJ			=	obj
 
-INCS		=	
-SRCS		=	main.cpp
+INCS		=	HumanA.hpp HumanB.hpp Weapon.hpp
+SRCS		=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
