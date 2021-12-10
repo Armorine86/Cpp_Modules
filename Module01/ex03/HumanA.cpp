@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:03:40 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/09 21:37:27 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/09 22:04:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(const std::string firstname, Weapon &weapon) 
-{
-	this->name = firstname;
-	this->weapon = &weapon;
+HumanA::HumanA(const std::string firstname, Weapon& club_) {
+
+	name = firstname;
+	weapon = club_; //TODO Why can't I assign this->weapon to pass by ref weapon_
 }
 
-void HumanA::attack() const
-{
-	std::cout << this->name << " attacks with his " << this->weapon->getType() << std::endl;
+
+HumanA::HumanA(const std::string firstname, Weapon& weapon) : name(firstname), weapon(weapon) {}
+
+void HumanA::attack() const {
+	
+	std::cout << this->name << " attacks with his " << weapon.getType() << std::endl;
 }
 
