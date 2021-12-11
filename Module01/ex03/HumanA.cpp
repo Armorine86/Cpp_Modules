@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:03:40 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/10 08:11:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/10 20:37:33 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(const std::string firstname, Weapon& club_) {
-
-	name = firstname;
-	weapon = club_; //TODO Why can't I assign this->weapon to pass by ref weapon_
-}
-
-HumanA::HumanA(const std::string firstname, Weapon& weapon) : name(firstname), weapon(weapon) {}
+//* the ":" initiates the variable directly. this way we can pass
+//* the weapon by reference. That part of the Constructor is called
+//* Constructor Initializer list, and is better performance wise.
+HumanA::HumanA(const std::string& firstname, Weapon& weapon) : name(firstname), weapon(weapon) {}
 
 void HumanA::attack() const {
 	
