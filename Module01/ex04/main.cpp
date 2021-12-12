@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:40:07 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/11 19:06:37 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/11 19:10:13 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void usage(void) {
 	std::cout << "=========================\n";
 	std::cout << "First: the Filename you need to read from\n";
 	std::cout << "Second: string to be replaced\n";
-	std::cout << "Third: second string to replace occurences of first string\n" << std::endl;
+	std::cout << "Third: second string to replace occurences of first string\n";
+	std::cout << "[file] [s1] [s2]\n" << std::endl;
 }
 
 std::string FileToString(const std::string& filename) {
