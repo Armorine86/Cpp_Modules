@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:40:07 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/11 19:10:13 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/13 09:45:53 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ std::string FileToString(const std::string& filename) {
 	
 	//* close the opened file
 	read_file.close();
-	return (file_content.str());  //* str() let's you access the string in the ostringstream
+	return (file_content.str());  //* returns the object as a string;
 }
 
 void replace_content(std::string& file, std::string& s1, std::string& s2)
