@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:16:00 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/12 09:07:20 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/12 20:02:28 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Karen {
 		void info(void);
 		void warning(void);
 		void error(void);
+	 	std::string levels[4];
 	
 	public:
-	 	//* array of pointers to function of class Karen.
-		void (Karen::*fncPtr[4])(void);
+		Karen();
 		void complain(std::string level);
 };

@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 19:16:00 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/12 09:07:20 by mmondell         ###   ########.fr       */
+/*   Created: 2021/12/11 19:16:13 by mmondell          #+#    #+#             */
+/*   Updated: 2021/12/12 20:21:48 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include <string>
+#include <stdint.h>
 
-class Karen {
+#include "Karen.hpp"
+
+int main(int argc, char**argv)
+{
+	Karen karen;
+
+	if (argc != 2)
+	{
+		karen.complain("");
+		return (0);
+	}
+	std::string level;
 	
-	private:
-		void debug(void);
-		void info(void);
-		void warning(void);
-		void error(void);
+	level.assign(argv[1]);
 	
-	public:
-	 	//* array of pointers to function of class Karen.
-		void (Karen::*fncPtr[4])(void);
-		void complain(std::string level);
-};
+	for (int32_t i = 0; level[i]; i++)
+		level[i] = toupper(level[i]);
+	karen.complain(level);
+}
+
+//TODO WORK IN PROGRESS
