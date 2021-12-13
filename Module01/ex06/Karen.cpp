@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:15:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/12 20:23:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/12 20:30:18 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void Karen::complain(std::string level)
 		i++;
 	}
 	
+	//* switch parameter must be an integral
 	switch (i) {
 
 		case 0 :
@@ -76,7 +77,9 @@ void Karen::complain(std::string level)
 
 		case 3 :
 			error();
-			break;
+			break; 	//* break only at last case. 
+					//* We want to print all levels above the passed level
+			
 		default : 
 			std::cout << "\nKaren being Karen complaining about Karen things\n" << std::endl;
 	}
