@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/14 14:42:43 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:12:47 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,39 +70,39 @@ void Fixed::setRawBits(const int32_t raw) {
 	value = raw;
 }
 
-float Fixed::toFloat(void) const
-{
+float Fixed::toFloat(void) const {
+	
 	return ((float)value / (float)(1 << bits));
 }
 
-int32_t Fixed::toInt(void) const
-{
+int32_t Fixed::toInt(void) const {
+	
 	return (value >> bits);
 }
 
-Fixed& Fixed::min(Fixed& f1, Fixed& f2) 
-{
+Fixed& Fixed::min(Fixed& f1, Fixed& f2) {
+	
 	if (f1.value < f2.value)
 		return (f1);
 	return (f2);
 }
 
-const Fixed& Fixed::min(const Fixed& f1, const Fixed& f2) 
-{
+const Fixed& Fixed::min(const Fixed& f1, const Fixed& f2) {
+	
 	if (f1.value < f2.value)
 		return (f1);
 	return (f2);
 }
 
-Fixed& Fixed::max(Fixed& f1, Fixed& f2) 
-{
+Fixed& Fixed::max(Fixed& f1, Fixed& f2) {
+	
 	if (f1.value > f2.value)
 		return (f1);
 	return (f2);
 }
 
-const Fixed& Fixed::max(const Fixed& f1, const Fixed& f2) 
-{
+const Fixed& Fixed::max(const Fixed& f1, const Fixed& f2) {
+	
 	if (f1.value > f2.value)
 		return (f1);
 	return (f2);
@@ -123,32 +123,32 @@ Fixed& Fixed::operator=(const Fixed& rhs) {
 
 //* Comparison Operator Overload
 //===================================================================
-bool Fixed::operator<(const Fixed &rhs) const{
+bool Fixed::operator<(const Fixed &rhs) const {
 
 	return (this->getRawBits() < rhs.getRawBits());
 }
 
-bool Fixed::operator>(const Fixed &rhs) const{
+bool Fixed::operator>(const Fixed &rhs) const {
 
 	return (this->getRawBits() > rhs.getRawBits());
 }
 
-bool Fixed::operator<=(const Fixed &rhs) const{
+bool Fixed::operator<=(const Fixed &rhs) const {
 
 	return (this->getRawBits() <= rhs.getRawBits());
 }
 
-bool Fixed::operator>=(const Fixed &rhs) const{
+bool Fixed::operator>=(const Fixed &rhs) const {
 
 	return (this->getRawBits() >= rhs.getRawBits());
 }
 
-bool Fixed::operator==(const Fixed &rhs) const{
+bool Fixed::operator==(const Fixed &rhs) const {
 
 	return (this->getRawBits() == rhs.getRawBits());
 }
 
-bool Fixed::operator!=(const Fixed &rhs) const{
+bool Fixed::operator!=(const Fixed &rhs) const {
 
 	return (this->getRawBits() != rhs.getRawBits());
 }
@@ -181,8 +181,8 @@ Fixed Fixed::operator*(const Fixed &rhs) const {
 
 //* Incrementor / Decrementor Operator Overload
 //==================================================================
-Fixed Fixed::operator--(int32_t) 
-{
+Fixed Fixed::operator--(int32_t) {
+	
 	Fixed decrement = *this;
 	--*this;
 
@@ -195,8 +195,8 @@ Fixed& Fixed::operator--() {
 	return (*this);
 }
 
-Fixed Fixed::operator++(int32_t) 
-{
+Fixed Fixed::operator++(int32_t) {
+	
 	Fixed increment = *this;
 	++*this;
 	
