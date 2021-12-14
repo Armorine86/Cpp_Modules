@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/14 12:19:24 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:20:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,13 @@ Fixed::~Fixed() {
 
 
 Fixed::Fixed(const int32_t value) : value(value << bits) {
+	
 	std::cout << "Int Constructor Called" << std::endl;
 }
 
 
 Fixed::Fixed(const float value) : value((int)roundf(value * (float)(1 << bits))) {
+	
 	std::cout << "Float Constructor Called" << std::endl;
 }
 
