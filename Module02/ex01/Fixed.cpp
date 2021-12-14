@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/14 12:20:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/14 12:52:51 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 const int32_t Fixed::bits = 8;
 
 
-Fixed::Fixed() : value(0) {
+Fixed::Fixed() {
 	
 	std::cout << "Default Constructor Called" << std::endl;
+	value = 0;
 }
 
 
@@ -40,15 +41,17 @@ Fixed::~Fixed() {
 }
 
 
-Fixed::Fixed(const int32_t value) : value(value << bits) {
+Fixed::Fixed(const int32_t value) {
 	
 	std::cout << "Int Constructor Called" << std::endl;
+	this->value = (value << bits);
 }
 
 
-Fixed::Fixed(const float value) : value((int)roundf(value * (float)(1 << bits))) {
+Fixed::Fixed(const float value) {
 	
 	std::cout << "Float Constructor Called" << std::endl;
+	this->value = roundf(value * (float)(1 << bits));
 }
 
 
