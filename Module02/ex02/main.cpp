@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:46:05 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 08:26:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/15 08:28:12 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int main(void)
     std::cout << "a   = " << a << '\n';
     std::cout << "++a = " << ++a << '\n';
     std::cout << "a   = " << a << '\n';
-    std::cout << "a++ = " << a++ << '\n';
-    std::cout << "a   = " << a << '\n';
     std::cout << "--a = " << --a << '\n';
+    std::cout << "a   = " << a << '\n';
+    std::cout << "a++ = " << a++ << '\n';
     std::cout << "a   = " << a << '\n';
     std::cout << "a-- = " << a-- << '\n';
     std::cout << "a   = " << a << "\n\n";
