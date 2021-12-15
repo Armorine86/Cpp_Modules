@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:46:05 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 08:28:12 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/15 08:31:35 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,16 @@ int main(void)
     std::cout << "Arithemitc Operators\n";
     std::cout << "==============================" << std::endl;
     std::cout << "4.3f + 7.78 = " << 4.3f + 7.78f << '\n';
-    std::cout << "c + 4.5 = " << c + Fixed(4.5f) << "\n\n";
+    std::cout << "c + 7.78f = " << c + Fixed(7.78f) << "\n\n";
 
     std::cout << "4.3f - 7.78f = " << 4.3f - 7.78f << '\n';
-    std::cout << "c - 4.5 = " << c - Fixed(7.78f) << "\n\n";
+    std::cout << "c - 7.78f = " << c - Fixed(7.78f) << "\n\n";
 
     std::cout << "4.3f * 7.78f = " << 4.3f * 7.78f << '\n';
-    std::cout << "c * 4.5 = " << c * Fixed(7.78f) << "\n\n";
+    std::cout << "c * 7.78f = " << c * Fixed(7.78f) << "\n\n";
 
     std::cout << "4.3f / 7.78f = " << 4.3f / 7.78f << '\n';
-    std::cout << "c / 4.5 = " << c / Fixed(4.5f) << "\n\n";
+    std::cout << "c / 7.78f = " << c / Fixed(7.78f) << "\n\n";
 
     std::cout << "Comparison Operators\n";
     std::cout << "==============================" << std::endl;

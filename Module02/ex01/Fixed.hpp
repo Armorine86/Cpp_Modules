@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:56 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/14 13:05:00 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/15 08:44:53 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 
 private:
-	int32_t value;			   //* fixed point value
+	int32_t value;			   //* fixed point number --> A number that can holds fractional bits.
 	static const int32_t bits; //* Number of fractional bits (after the ",")
 
 public:
