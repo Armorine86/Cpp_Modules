@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 10:36:35 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/15 10:39:41 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ Fixed::Fixed() {
 }
 
 //* Copy Constructor
-Fixed::Fixed(const Fixed &def_c) {
+Fixed::Fixed(const Fixed &src) {
 
-	*this = def_c;
+	*this = src;
 }
 
 Fixed::Fixed(const int32_t value) {

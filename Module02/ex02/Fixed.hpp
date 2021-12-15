@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:56 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 10:30:14 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/15 10:40:03 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	~Fixed();
 	Fixed(const int32_t value);
 	Fixed(const float value);
-	Fixed(const Fixed &def_c);
+	Fixed(const Fixed&);
 
 	//* Setter // Getters
 	int32_t getRawBits(void) const;
