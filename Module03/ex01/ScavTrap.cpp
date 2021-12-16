@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:56:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 15:08:27 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:27:27 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ ScavTrap::ScavTrap() : ClapTrap("BasicClapTrap") {
 	this->EnergyPoints = SCAV_ENERGY;
 	this->AttackDamage = SCAV_ATKDMG;
 
-	std::cout << "\nScavTrap <" << this->name_ << "> have entered the fray!\n" << std::endl;
+	std::cout << "ScavTrap <" << this->name_ << "> has arrived!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
 	
 	ScavTrap::name_ = name;
 	Hitpoints = SCAV_HP;
 	EnergyPoints = SCAV_ENERGY;
 	AttackDamage = SCAV_ATKDMG;
 
-	std::cout << "\nScavTrap <" << this->name_ << "> have entered the fray!\n" << std::endl;
+	std::cout << "ScavTrap <" << this->name_ << "> has arrived!" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
@@ -41,7 +41,7 @@ ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
 	this->EnergyPoints = src.EnergyPoints;
 	this->AttackDamage = src.AttackDamage;
 	
-	std::cout << "\nScavTrap <" << this->name_ << "> have entered the fray!\n" << std::endl;
+	std::cout << "ScavTrap <" << this->name_ << "> has arrived!" << std::endl;
 }
 
 
@@ -49,16 +49,28 @@ ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
 ScavTrap::~ScavTrap() {
 	
 	if (this->Hitpoints > 0)
-		std::cout << "\nScavTrap <" << this->name_ << "> leaves the arena.\n" << std::endl;
+		std::cout << "ScavTrap <" << this->name_ << "> is leaving the battlefied" << std::endl;
 	else
-		std::cout << "\nScavTrap <" << this->name_ << "> have been destroyed\n" << std::endl; 
+		std::cout << "ScavTrap <" << this->name_ << "> have been defeated" << std::endl; 
 }
 
 //* ===============================================================================
 
+
+//* METHODS
+//* ===============================================================================
 void ScavTrap::GuardGate() {
 	
-	std::cout << "Look out, everybody, things are about to get awesome!" << std::endl;
+	std::cout << "ScavTrap <" << this->name_
+			  << "> Look out, everybody, things are about to get awesome!"
+			  << " [GATE KEEPER MODE IS ON!]" << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target) 
+{
+	std::cout << "SkavTrap <" << this->name_ << "> attack <" << target
+			  << ">, causing <" << this->AttackDamage << "> points of damage!"
+			  << std::endl;
 }
 
 std::string ScavTrap::getName() {

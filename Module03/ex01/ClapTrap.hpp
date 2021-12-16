@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 20:58:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 15:17:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:23:08 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ class ClapTrap {
 	
 	public:
 		ClapTrap();
-		ClapTrap(std::string name);
+		ClapTrap(const std::string& name);
 		ClapTrap(const ClapTrap& src);
 		virtual ~ClapTrap();
 
-		void attack(std::string const& target);
+		virtual void attack(std::string const& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		

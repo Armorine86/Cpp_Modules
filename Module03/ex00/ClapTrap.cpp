@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 15:29:14 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:07:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 ClapTrap::ClapTrap() : name_("StandardClap"), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE)
 {
-	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
+	std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name_(name), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE) {
+ClapTrap::ClapTrap(const std::string& name) : name_(name), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE) {
 	
-	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
+	std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src) 
@@ -31,12 +31,12 @@ ClapTrap::ClapTrap(const ClapTrap& src)
 	this->EnergyPoints = src.EnergyPoints;
 	this->AttackDamage = src.AttackDamage;
 	
-	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
+	std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
 	
-	std::cout << "\nClapTrap <" << this->name_ << "> have been destroyed\n" << std::endl; 
+	std::cout << "ClapTrap <" << this->name_ << "> have been destroyed" << std::endl; 
 }
 
 void ClapTrap::attack(std::string const& target) {

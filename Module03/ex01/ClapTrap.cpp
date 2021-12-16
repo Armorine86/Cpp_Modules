@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 15:07:55 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:13:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ ClapTrap::ClapTrap() :
 	Hitpoints(CLAP_HP),
 	EnergyPoints(CLAP_ENERGY),
 	AttackDamage(CLAP_ATKDMG)
-	{std::cout << "\nClapTrap <" << this->name_ << "> have entered the fray!\n" << std::endl;}
+	{std::cout << "ClapTrap <" << this->name_ << "> have entered the fray!" << std::endl;}
 
 //* Constructor +1 Overload
-ClapTrap::ClapTrap(std::string name) :
+ClapTrap::ClapTrap(const std::string& name) :
 	name_(name),
 	Hitpoints(CLAP_HP),
 	EnergyPoints(CLAP_ENERGY),
 	AttackDamage(CLAP_ATKDMG)
-	{std::cout << "\nClapTrap <" << this->name_ << "> have entered the fray!\n" << std::endl;}
+	{std::cout << "ClapTrap <" << this->name_ << "> have entered the fray!" << std::endl;}
 
 //* Copy Constructor
 ClapTrap::ClapTrap(const ClapTrap& src) 
@@ -42,16 +42,16 @@ ClapTrap::ClapTrap(const ClapTrap& src)
 	this->EnergyPoints = src.EnergyPoints;
 	this->AttackDamage = src.AttackDamage;
 	
-	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
+	std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl;
 }
 
 //* Destructor
 ClapTrap::~ClapTrap() {
 	
 	if (this->Hitpoints > 0)
-		std::cout << "\nClapTrap <" << this->name_ << "> leaves the arena.\n" << std::endl;
+		std::cout << "ClapTrap <" << this->name_ << "> leaves the arena." << std::endl;
 	else
-		std::cout << "\nClapTrap <" << this->name_ << "> have been destroyed\n" << std::endl; 
+		std::cout << "ClapTrap <" << this->name_ << "> have been destroyed" << std::endl; 
 }
 //* ===============================================================================
 
@@ -61,7 +61,7 @@ ClapTrap::~ClapTrap() {
 void ClapTrap::attack(std::string const& target) {
 
 	std::cout << "ClapTrap <" << this->name_ << "> attack <" << target
-			  << ">, causing <" << this->AttackDamage << "> points of damage!\n"
+			  << ">, causing <" << this->AttackDamage << "> points of damage!"
 			  << std::endl;
 }
 
@@ -73,7 +73,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 			  << "> damage!" << std::endl;
 	
 	std::cout << "ClapTrap <" << this->name_ << "> have <" << this->Hitpoints
-			  << "> Hitpoints left!\n" << std::endl;
+			  << "> Hitpoints left!" << std::endl;
 
 }
 
@@ -86,7 +86,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	this->Hitpoints += amount;
 	
 	std::cout << "ClapTrap <" << this->name_ << "> have <" << this->EnergyPoints
-			  << "> Energy left!\n" << std::endl;
+			  << "> Energy left!" << std::endl;
 	
 	if (this->Hitpoints >= CLAP_HP)
 	{
