@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:04 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 21:47:28 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 15:26:26 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 int main(void) {
 
-	std::string name = "Chappy";
-	std::string target = "Snappy";
+	ClapTrap Chappy("Chappy");
 	
-	ClapTrap Chappy(name);
-	
-	Chappy.attack(target);
+	Chappy.attack("Marauder");
 	Chappy.takeDamage(5);
 	Chappy.beRepaired(3);
 	Chappy.beRepaired(3);

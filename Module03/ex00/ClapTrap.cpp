@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 10:08:36 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 15:29:14 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap() : name_("StandardClap"), Hitpoints(HITPOINTS), EnergyPoints
 	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string& name) : name_(name), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE) {
+ClapTrap::ClapTrap(std::string name) : name_(name), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE) {
 	
 	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
 }

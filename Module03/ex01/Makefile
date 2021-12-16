@@ -5,8 +5,8 @@ RM			=	rm -rf
 
 OBJ			=	obj
 
-INCS		=	ClapTrap.hpp
-SRCS		=	main.cpp ClapTrap.cpp
+INCS		=	ClapTrap.hpp ScavTrap.hpp
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
