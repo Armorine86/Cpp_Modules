@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 10:39:41 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:47:28 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ void Fixed::setRawBits(const int32_t raw) {
 
 float Fixed::toFloat(void) const {
 	
-	return ((float)value / (float)(1 << bits)); //* the first bit of the mantissa (to the left of the binary point) is always "1" and therefore need not be stored. 
+	return ((float)value / (float)(1 << bits)); //* the first bit of the mantissa (to the left of the binary point)
+												//* is always "1" and therefore need not be stored. 
 												//* It is called the implicit leading one.
 }
 
