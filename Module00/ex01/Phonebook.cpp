@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:22:51 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/09 17:02:38 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 08:02:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void Phonebook::list_contact()
 		std::getline(std::cin >> std::ws, input);
 		
 		//* Cannot use stoi() here to convert string to int because we are limited to c++98.
-		// *Since C doesn't support std:string class we have to use atoi(). 
+		//* Since C doesn't support std:string class we have to use atoi(). 
 		//* But, since atoi only takes (const char *) we can convert our std::string input
 		//* to (const char *) using c_str() method.
 		index = atoi(input.c_str());

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 21:48:14 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 10:08:36 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,22 @@
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() : name_("StandardClap"), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE)
+{
+	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string& name) : name_(name), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE) {
+	
+	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& src) 
+{
+	this->name_ = src.name_;
+	this->Hitpoints = src.Hitpoints;
+	this->EnergyPoints = src.EnergyPoints;
+	this->AttackDamage = src.AttackDamage;
 	
 	std::cout << "\nClapTrap <" << this->name_ << "> have been constructed!\n" << std::endl;
 }
@@ -59,4 +74,17 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap <" << this->name_ << "> have <" << this->EnergyPoints
 			  << "> Energy left!\n" << std::endl;
 	
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
+
+	if (this != &rhs)
+	{
+		this->name_ = rhs.name_;
+		this->Hitpoints = rhs.Hitpoints;
+		this->EnergyPoints = rhs.EnergyPoints;
+		this->AttackDamage = rhs.AttackDamage;
+		return (*this);
+	}
+	return (*this);
 }

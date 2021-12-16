@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 10:41:59 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/09 16:06:41 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/16 07:52:44 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void Contact::SetField(std::string input, std::string field)
 }
 
 //* Getter method to retrieve the value of the Contact class private member
-std::string& Contact::GetField(std::string field) 
+std::string& Contact::GetField(std::string const field) 
 {
 	if (field == "first_name")
 		return (first_name);
