@@ -1,12 +1,12 @@
-NAME		=	scavtrap
+NAME		=	fragtrap
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98 -fstandalone-debug
 CC			=	clang++
 RM			=	rm -rf
 
 OBJ			=	obj
 
-INCS		=	ClapTrap.hpp ScavTrap.hpp
-SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp
+INCS		=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
