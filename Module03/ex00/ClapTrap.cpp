@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 16:07:24 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 12:45:48 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name_("StandardClap"), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE)
-{
-	std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl;
-}
+//* Constructors // Destructor
+//* ===============================================================================
+ClapTrap::ClapTrap() :
+	name_("StandardClap"),
+	Hitpoints(HITPOINTS),
+	EnergyPoints(ENERGY),
+	AttackDamage(ATK_DAMAGE)
+{ std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl; }
 
-ClapTrap::ClapTrap(const std::string& name) : name_(name), Hitpoints(HITPOINTS), EnergyPoints(ENERGY), AttackDamage(ATK_DAMAGE) {
-	
-	std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl;
-}
+ClapTrap::ClapTrap(const std::string& name) :
+	name_(name),
+	Hitpoints(HITPOINTS),
+	EnergyPoints(ENERGY),
+	AttackDamage(ATK_DAMAGE)
+	{ std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl; }
 
 ClapTrap::ClapTrap(const ClapTrap& src) 
 {
@@ -38,7 +44,11 @@ ClapTrap::~ClapTrap() {
 	
 	std::cout << "ClapTrap <" << this->name_ << "> have been destroyed" << std::endl; 
 }
+//* ===============================================================================
 
+
+//* Methods
+//* ===============================================================================
 void ClapTrap::attack(std::string const& target) {
 
 	std::cout << "ClapTrap <" << this->name_ << "> attack <" << target
@@ -75,7 +85,11 @@ void ClapTrap::beRepaired(unsigned int amount) {
 			  << "> Energy left!\n" << std::endl;
 	
 }
+//* ===============================================================================
 
+
+//* Operator Overload
+//* ===============================================================================
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 
 	if (this != &rhs)
@@ -88,3 +102,4 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 	}
 	return (*this);
 }
+//* ===============================================================================

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 20:58:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 15:59:02 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 12:47:47 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,17 @@ class ClapTrap {
 		int32_t AttackDamage;
 	
 	public:
+		//* According to Module 2 bonus rule, Every class needs a
+		//* Default Constructor, Overloaded Constructor, Copy constructor
+		//* a Destructor and an Operator Overload functions
 		ClapTrap();
 		ClapTrap(const std::string& name);
 		ClapTrap(const ClapTrap& src);
 		~ClapTrap();
+		ClapTrap& operator=(const ClapTrap& rhs);
+		
+		//* Methods
 		void attack(std::string const& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		ClapTrap& operator=(const ClapTrap& rhs);
 };
