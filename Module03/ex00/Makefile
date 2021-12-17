@@ -1,5 +1,5 @@
 NAME		=	claptrap
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98 -fstandalone-debug
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98 -fstandalone-debug -O2
 CC			=	clang++
 RM			=	rm -rf
 

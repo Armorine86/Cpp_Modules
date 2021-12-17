@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 09:50:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 16:32:51 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 13:50:54 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,18 @@
 #define SCAV_ENERGY 50
 #define SCAV_ATKDMG 20
 
+//* ScavTrap Subclass inherits from ClapTrap
 class ScavTrap : public ClapTrap {
 	
 	public:
 		ScavTrap();
 		ScavTrap(const std::string& name);
 		ScavTrap(const ScavTrap& src);
-		~ScavTrap();
+		virtual ~ScavTrap();
+		ScavTrap& operator=(const ScavTrap& rhs);
+		
+		virtual void attack(const std::string& target);
 		
 		void GuardGate();
-		void attack(const std::string& target);
-		std::string getName();
 		
-		ScavTrap& operator=(const ScavTrap& rhs);
 };

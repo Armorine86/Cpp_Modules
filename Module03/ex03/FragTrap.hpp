@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:37:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 12:27:42 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 14:01:04 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class FragTrap : virtual public ClapTrap {
 		FragTrap();
 		FragTrap(const std::string& name);
 		FragTrap(const FragTrap& src);
-		~FragTrap();
-
+		virtual ~FragTrap();
 		FragTrap& operator=(const FragTrap& rhs);
+
 		virtual void attack(const std::string& target);
 
 		void highFivesGuys();

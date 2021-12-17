@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 12:35:48 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 14:01:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	
 	std::cout << "ClapTrap <" << this->name_ << "> have <" << this->EnergyPoints
 			  << "> Energy left!" << std::endl;
-	
-	if (this->Hitpoints >= CLAP_HP)
-	{
-		this->Hitpoints = CLAP_HP;
-		std::cout << "ClapTrap <" << this->name_ << "> is back at full hp!" << std::endl;
-	}
-	else
-		std::cout << "ClapTrap <" << this->name_ << "> regains <" << amount
+
+	std::cout << "ClapTrap <" << this->name_ << "> regains <" << amount
 			  << "> Hitpoints" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:56:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 16:27:27 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 13:53:12 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap() : ClapTrap("BasicClapTrap") {
 	this->EnergyPoints = SCAV_ENERGY;
 	this->AttackDamage = SCAV_ATKDMG;
 
-	std::cout << "ScavTrap <" << this->name_ << "> has arrived!" << std::endl;
+	std::cout << "ScavTrap <" << this->name_ << "> has arrived! [DEFAULT]" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
@@ -31,7 +31,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
 	EnergyPoints = SCAV_ENERGY;
 	AttackDamage = SCAV_ATKDMG;
 
-	std::cout << "ScavTrap <" << this->name_ << "> has arrived!" << std::endl;
+	std::cout << "ScavTrap <" << this->name_ << "> has arrived! [OVERLOAD]" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
@@ -41,10 +41,8 @@ ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
 	this->EnergyPoints = src.EnergyPoints;
 	this->AttackDamage = src.AttackDamage;
 	
-	std::cout << "ScavTrap <" << this->name_ << "> has arrived!" << std::endl;
+	std::cout << "ScavTrap <" << this->name_ << "> has arrived! [COPY]" << std::endl;
 }
-
-
 
 ScavTrap::~ScavTrap() {
 	
@@ -53,7 +51,6 @@ ScavTrap::~ScavTrap() {
 	else
 		std::cout << "ScavTrap <" << this->name_ << "> have been defeated" << std::endl; 
 }
-
 //* ===============================================================================
 
 
@@ -62,22 +59,19 @@ ScavTrap::~ScavTrap() {
 void ScavTrap::GuardGate() {
 	
 	std::cout << "ScavTrap <" << this->name_
-			  << "> Look out, everybody, things are about to get awesome!"
+			  << "> Look out, everybody, things are about to get awesome!\n"
 			  << " [GATE KEEPER MODE IS ON!]" << std::endl;
 }
 
-void ScavTrap::attack(const std::string& target) 
-{
+void ScavTrap::attack(const std::string& target) {
+	
 	std::cout << "SkavTrap <" << this->name_ << "> attack <" << target
 			  << ">, causing <" << this->AttackDamage << "> points of damage!"
 			  << std::endl;
 }
 
-std::string ScavTrap::getName() {
-	
-	return (this->name_);
-}
-
+//* Operator Overload
+//* ===============================================================================
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
 
 	if (this != &rhs)
@@ -90,3 +84,4 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
 	}
 	return (*this);
 }
+//* ===============================================================================

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:56:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 12:32:05 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 14:01:29 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ ScavTrap::~ScavTrap() {
 	else
 		std::cout << "ScavTrap <" << this->name_ << "> have been defeated" << std::endl;
 }
-
 //* ===============================================================================
 
 

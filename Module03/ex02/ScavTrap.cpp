@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:56:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 09:08:17 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 14:04:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,6 @@ void ScavTrap::attack(const std::string& target)
 	std::cout << "SkavTrap <" << this->name_ << "> attack <" << target
 			  << ">, causing <" << this->AttackDamage << "> points of damage!"
 			  << std::endl;
-}
-
-std::string ScavTrap::getName() {
-	
-	return (this->name_);
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {

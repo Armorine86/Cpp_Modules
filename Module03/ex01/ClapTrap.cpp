@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/16 16:13:55 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/17 13:56:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,20 @@
 
 //* Constructors // Destructor
 //* ===============================================================================
-
-//* Default Constructor
 ClapTrap::ClapTrap() : 
 	name_("BasicClapTrap"),
 	Hitpoints(CLAP_HP),
 	EnergyPoints(CLAP_ENERGY),
 	AttackDamage(CLAP_ATKDMG)
-	{std::cout << "ClapTrap <" << this->name_ << "> have entered the fray!" << std::endl;}
+	{std::cout << "ClapTrap <" << this->name_ << "> have entered the fray! [DEFAULT]" << std::endl;}
 
-//* Constructor +1 Overload
 ClapTrap::ClapTrap(const std::string& name) :
 	name_(name),
 	Hitpoints(CLAP_HP),
 	EnergyPoints(CLAP_ENERGY),
 	AttackDamage(CLAP_ATKDMG)
-	{std::cout << "ClapTrap <" << this->name_ << "> have entered the fray!" << std::endl;}
+	{std::cout << "ClapTrap <" << this->name_ << "> have entered the fray! [OVERLOAD]" << std::endl;}
 
-//* Copy Constructor
 ClapTrap::ClapTrap(const ClapTrap& src) 
 {
 	this->name_ = src.name_;
@@ -42,10 +38,9 @@ ClapTrap::ClapTrap(const ClapTrap& src)
 	this->EnergyPoints = src.EnergyPoints;
 	this->AttackDamage = src.AttackDamage;
 	
-	std::cout << "ClapTrap <" << this->name_ << "> have been constructed!" << std::endl;
+	std::cout << "ClapTrap <" << this->name_ << "> have been constructed! [COPY]" << std::endl;
 }
 
-//* Destructor
 ClapTrap::~ClapTrap() {
 	
 	if (this->Hitpoints > 0)
@@ -88,13 +83,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap <" << this->name_ << "> have <" << this->EnergyPoints
 			  << "> Energy left!" << std::endl;
 	
-	if (this->Hitpoints >= CLAP_HP)
-	{
-		this->Hitpoints = CLAP_HP;
-		std::cout << "ClapTrap <" << this->name_ << "> is back at full hp!" << std::endl;
-	}
-	else
-		std::cout << "ClapTrap <" << this->name_ << "> regains <" << amount
+	std::cout << "ClapTrap <" << this->name_ << "> regains <" << amount
 			  << "> Hitpoints" << std::endl;
 }
 
