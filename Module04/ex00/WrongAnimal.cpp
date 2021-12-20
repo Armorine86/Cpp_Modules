@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:51:04 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/19 19:42:48 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:10:46 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
 		return (*this);
 	}
 	return (*this);
+}
+
+std::string WrongAnimal::getType() const
+{
+	return (this->type);
 }
 
 void WrongAnimal::makeSound() const

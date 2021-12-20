@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:37:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/19 18:36:08 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:21:14 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Dog : public Animal {
 		virtual ~Dog();
 		Dog& operator=(const Dog& rhs);
 
-		virtual std::string getType() const;
 		virtual void makeSound() const;
 
 };

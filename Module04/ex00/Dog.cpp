@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/19 18:39:51 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:22:05 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ Dog& Dog::operator=(const Dog& rhs)
 		return (*this);
 	}
 	return (*this);
-}
-
-std::string Dog::getType() const
-{
-	return (this->type);
 }
 
 void Dog::makeSound() const

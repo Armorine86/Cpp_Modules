@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:34:11 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/19 18:34:12 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:21:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ class Cat : public Animal {
 		virtual ~Cat();
 		Cat& operator=(const Cat& rhs);
 	
-		virtual std::string getType() const;
 		virtual void makeSound() const;
 };
