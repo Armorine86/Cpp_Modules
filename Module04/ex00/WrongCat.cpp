@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:57:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:12:59 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:39:56 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,6 @@ WrongCat& WrongCat::operator=(const WrongCat& rhs)
 	}
 	return (*this);
 }
-
-// std::string WrongCat::getType() const
-// {
-// 	return (this->type);
-// }
 
 void WrongCat::makeSound() const
 {

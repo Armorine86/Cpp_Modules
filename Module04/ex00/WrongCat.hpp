@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:40:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:12:42 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 09:39:41 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ class WrongCat : public WrongAnimal {
 
 		WrongCat& operator=(const WrongCat& rhs);
 		
-		//std::string getType() const;
 		void makeSound() const; //* without virtual keyword
 };
