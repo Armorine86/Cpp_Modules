@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/19 18:30:52 by mmondell          #+#    #+#              #
-#    Updated: 2021/12/19 19:05:06 by mmondell         ###   ########.fr        #
+#    Updated: 2021/12/20 09:25:47 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ $(OBJ):
 			@mkdir -p $(OBJ)
 
 all:		$(NAME)
+
+debug:		CFLAGS += -g
+debug:		$(NAME)
 
 clean:
 			@$(RM) $(OBJS)
