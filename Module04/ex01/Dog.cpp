@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 10:16:13 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 15:07:07 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,9 @@ Dog& Dog::operator=(const Dog& rhs)
 void Dog::makeSound() const
 {
 	std::cout << "Wouf Wouf ! [DOG]" << std::endl;
+}
+
+Brain& Dog::getBrain() const 
+{
+	return (*this->brain);
 }

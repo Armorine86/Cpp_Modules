@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:51:19 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 11:25:06 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 15:12:52 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,19 @@ Brain& Brain::operator=(const Brain& rhs)
 void Brain::setIdea(int32_t index, std::string idea) 
 {
 	if (index < 0 || index > N_IDEAS - 1)
-		std::cout << "Outside Brain Space!"; return;
+	{
+		std::cout << "Outside Brain Space!\n";
+		idea = " ";
+	}
 	this->ideas[index] = idea;
 }
 
 std::string Brain::getIdea(int32_t index) 
 {
 	if (index < 0 || index > N_IDEAS - 1)
-		std::cout << "Outside Brain Space!"; return;
+	{
+		std::cout << "Outside Brain Space!\n";
+		return " ";
+	}
 	return (ideas[index]);
 }

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:37:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 11:20:48 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 15:07:13 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Dog : public Animal {
 		Dog& operator=(const Dog& rhs);
 
 		virtual void makeSound() const;
+		Brain& getBrain() const;
 
 	private:
 		Brain *brain;

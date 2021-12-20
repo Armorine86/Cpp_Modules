@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 16:00:25 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 11:26:04 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 15:18:02 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 {
 	{
 		//* Cats and Dogs get their brains
-		std::cout << "\nBrain Tests\n";
+		std::cout << "\nBRAIN TESTS\n";
 		std::cout << "========================================" << std::endl;
 		Animal *animal = new Animal();
 		std::cout << std::endl;
@@ -40,9 +40,35 @@ int main(void)
 	}
 
 	{
+		//* Idea setting / Getting tests
+		std::cout << "\nIDEAS TESTS\n";
+		std::cout << "========================================" << std::endl;
+		
+		Cat *cat = new Cat();
+		std::cout << std::endl;
+		Dog *dog = new Dog();
+		
+		std::cout << std::endl;
+
+		std::cout << "Inside the Brains! :\n";
+		std::cout << "====================" << std::endl;
+		cat->getBrain().setIdea(10, "Obey me Hooman!\n");
+		dog->getBrain().setIdea(25, "Where's my bone?\n");
+
+		std::cout << "[" <<cat->getType() << "]" << cat->getBrain().getIdea(10);
+		std::cout << "[" <<dog->getType() << "]" << dog->getBrain().getIdea(25);
+
+		std::cout << std::endl;
+
+		delete cat;
+		std::cout << std::endl;
+		delete dog;
+	}
+	
+	{
 		int32_t i = 0;
 		
-		std::cout << "\nArray tests\n";
+		std::cout << "\nARRAY TESTS\n";
 		std::cout << "========================================" << std::endl;
 		Animal *animals[ARR_SIZE];
 
@@ -63,8 +89,6 @@ int main(void)
 		
 		std::cout << std::endl;
 
-		
-		
 		for (i = 0; i < ARR_SIZE; i++)
 		{
 			std::cout << "Index [" << i << "] ";

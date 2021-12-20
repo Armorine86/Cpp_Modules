@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:57:19 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 11:21:52 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 15:06:45 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,9 @@ Cat& Cat::operator=(const Cat& rhs)
 void Cat::makeSound() const
 {
 	std::cout << "Meow Meow ! [CAT]" << std::endl;
+}
+
+Brain& Cat::getBrain() const 
+{
+	return (*this->brain);
 }
