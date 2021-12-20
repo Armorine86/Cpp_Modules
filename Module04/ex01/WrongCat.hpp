@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 15:34:11 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:47:58 by mmondell         ###   ########.fr       */
+/*   Created: 2021/12/19 18:40:45 by mmondell          #+#    #+#             */
+/*   Updated: 2021/12/20 09:39:37 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal {
+class WrongCat : public WrongAnimal {
 	
 	public:
-		Cat();
-		Cat(std::string type);
-		Cat(const Cat& src);
-		virtual ~Cat();
-		Cat& operator=(const Cat& rhs);
-	
-		virtual void makeSound() const;
+		WrongCat();
+		WrongCat(const std::string& type);
+		WrongCat(const WrongCat& src);
+		~WrongCat();
+
+		WrongCat& operator=(const WrongCat& rhs);
+		
+		void makeSound() const; //* without virtual keyword
 };
