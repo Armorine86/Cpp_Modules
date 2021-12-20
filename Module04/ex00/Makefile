@@ -6,7 +6,7 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/19 18:30:52 by mmondell          #+#    #+#              #
-#    Updated: 2021/12/20 09:25:47 by mmondell         ###   ########.fr        #
+#    Updated: 2021/12/20 09:37:23 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ clean:
 			@$(RM) $(OBJS)
 
 fclean:		clean
-			@$(RM) $(NAME)
+			@$(RM) $(OBJ) $(NAME)
 
 re:			fclean all
 
