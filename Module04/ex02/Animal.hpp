@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:53:12 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 19:53:22 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 19:58:35 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ class Animal {
 		Animal& operator=(const Animal& rhs);
 
 		std::string getType() const;
-		virtual void makeSound() const = 0;
+		virtual void makeSound() const = 0; //* Pure Virtual function MUST be overriden in Subclass
 };
