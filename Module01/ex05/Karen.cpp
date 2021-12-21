@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:15:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/12 09:06:22 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:48:26 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void Karen::error(void)
 {
 	std::cout << "Karen's annoyance level is : [OVER 9000!11!!1!!]" << std::endl;
 	std::cout << "=========================================" << std::endl;
-	std::cout << "This is unacceptable, I want to speak to the manager now.\n" << std::endl;
+	std::cout << "\"Screeches in unintelligible Karen language\"\n" << std::endl;
 }
 
 void Karen::complain(std::string level) 

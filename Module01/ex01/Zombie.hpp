@@ -6,13 +6,14 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:04:55 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/10 08:16:48 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:41:43 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <stdint.h>
 
 #define N_ZOMBIES 6
 

@@ -6,14 +6,14 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:55:06 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/10 08:19:49 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:43:16 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 #include "Zombie.hpp"
-
 
 int main(void) {
 
