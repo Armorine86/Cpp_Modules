@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 16:00:25 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 19:57:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/20 19:56:51 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main(void)
 		//* Cats and Dogs get their brains
 		std::cout << "\nBRAIN TESTS\n";
 		std::cout << "========================================" << std::endl;
-		Animal *animal = new Animal();
+		//* Animal *animal = new Animal();
+		//* This cannot be instantiated because of a pure virtual function
 		std::cout << std::endl;
 		Animal *cat1 = new Cat();
 		std::cout << std::endl;
@@ -31,7 +32,7 @@ int main(void)
 		
 		std::cout << std::endl;
 
-		delete animal;
+		//* delete animal;
 		std::cout << std::endl;
 		delete cat1; 
 		std::cout << std::endl;
@@ -95,6 +96,7 @@ int main(void)
 			std::cout << animals[i]->getType() << std::endl;
 			animals[i]->makeSound();
 			std::cout << std::endl;
+
 		}
 		
 		std::cout << std::endl;
