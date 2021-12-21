@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:56 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 10:40:03 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 09:08:06 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ public:
 	static const Fixed& max(const Fixed& f1, const Fixed& f2);
 	
 	//* Assignment Operator Overload
+	//* https://www.learncpp.com/cpp-tutorial/overloading-the-assignment-operator/
 	Fixed &operator=(const Fixed &rhs); //* rhs = Right hand side
 	
 	//*Comparison Operator Overloads
