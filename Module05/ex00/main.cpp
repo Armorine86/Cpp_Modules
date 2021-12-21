@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:17:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 16:49:59 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 16:52:18 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void)
 	} 
 	catch (std::exception &exc)
 	{
-		std::cout << RED << exc.what() << END << std::endl;
+		std::cerr << RED << exc.what() << END << std::endl;
 	}
 
 	std::cout << "\n\nRanking Up/Down Exception Checks\n";
@@ -55,7 +55,7 @@ int main(void)
 	}
 	catch (std::exception &exc)
 	{
-		std::cout << RED << exc.what() << END << std::endl;
+		std::cerr << RED << exc.what() << END << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -75,7 +75,7 @@ int main(void)
 		}
 		catch (std::exception &exc)
 		{
-			std::cout << RED << exc.what() << END << std::endl;
+			std::cerr << RED << exc.what() << END << std::endl;
 		}
 	}
 	catch (std::exception &exc)
