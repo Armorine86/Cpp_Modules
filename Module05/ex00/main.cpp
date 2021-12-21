@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:17:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 16:52:18 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 16:54:49 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int main(void)
 
 	try 
 	{
-		Bureaucrat high("John", 1);
+		Bureaucrat high("John", HIGHEST);
 		std::cout << "[OSTREAM OVERLOAD] " << high;			//* ostream test
 		std::cout << std::endl;
-		Bureaucrat low("Jack", 150);
+		Bureaucrat low("Jack", LOWEST);
 		std::cout << "[OSTREAM OVERLOAD] " << low ;			//* ostream test
 		std::cout << std::endl;
 		
@@ -44,7 +44,7 @@ int main(void)
 
 	try
 	{
-		Bureaucrat lawrence("Lawrence", 1);
+		Bureaucrat lawrence("Lawrence", HIGHEST);
 		std::cout << lawrence;
 		
 		std::cout << std::endl;
@@ -62,7 +62,7 @@ int main(void)
 
 	try
 	{
-		Bureaucrat cassivy("cassivy", 150);
+		Bureaucrat cassivy("cassivy", LOWEST);
 		std::cout << "[OSTREAM OVERLOAD" << cassivy;
 		std::cout << std::endl;
 		try
