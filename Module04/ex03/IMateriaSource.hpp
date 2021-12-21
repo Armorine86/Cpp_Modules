@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 08:53:54 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 09:52:46 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 10:27:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <string>
 
-class AMateria;
+#include "AMateria.hpp"
 
 class IMateriaSource
 {

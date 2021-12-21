@@ -1,7 +1,7 @@
 BasedOnStyle: Google
 AlignAfterOpenBracket: DontAlign
 AlignConsecutiveBitFields: true
-AlignConsecutiveDeclarations: true
+AlignConsecutiveDeclarations: false
 AllowShortBlocksOnASingleLine: Empty
 AllowShortFunctionsOnASingleLine: Inline
 AllowShortIfStatementsOnASingleLine: Never

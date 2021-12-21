@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 08:47:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 09:48:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 10:53:04 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ public:
     virtual ~Character();
     Character &operator=(const Character &rhs);
 
-    virtual std::string const &getNAme() const;
-    virtual void               equip(AMateria *m);
-    virtual void               unequip(AMateria *m);  //* MUST NOT delete materia
-    virtual void               use(int idx,
-                      ICharacter      &target);  //* use the materia at idx slot and pass target to AMateria::use
+    virtual std::string const &getName() const;
+    virtual void equip(AMateria *m);
+    virtual void unequip(int idx);  //* MUST NOT delete materia
+
+    //* use the materia at idx slot and pass target to AMateria::use
+    virtual void use(int idx, ICharacter &target);
 
 private:
     std::string name;
-    AMateria   *inventory[INV_SPACE];
+    AMateria *inventory[INV_SPACE];
 };

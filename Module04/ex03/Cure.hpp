@@ -26,5 +26,5 @@ public:
     Cure &operator=(const Cure &rhs);
 
     virtual AMateria *clone() const;  //* Returns a new instance of the real Materia type
-    virtual void      use(ICharacter &target);
+    virtual void use(ICharacter &target);
 };
