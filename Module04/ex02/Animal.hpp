@@ -14,18 +14,18 @@
 
 #include <string>
 
-class Animal {
-	
-	protected:
-		std::string type;
+class Animal
+{
+protected:
+    std::string type;
 
-	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal& src);
-		virtual ~Animal();
-		Animal& operator=(const Animal& rhs);
+public:
+    Animal();
+    Animal(std::string type);
+    Animal(const Animal& src);
+    virtual ~Animal();
+    Animal& operator=(const Animal& rhs);
 
-		std::string getType() const;
-		virtual void makeSound() const = 0; //* Pure Virtual function MUST be overriden in Subclass
+    std::string  getType() const;
+    virtual void makeSound() const = 0;  //* Pure Virtual function MUST be overriden in Subclass
 };

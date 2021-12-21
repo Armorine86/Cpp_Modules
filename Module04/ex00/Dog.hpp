@@ -14,15 +14,14 @@
 
 #include "Animal.hpp"
 
-class Dog : public Animal {
+class Dog : public Animal
+{
+public:
+    Dog();
+    Dog(std::string type);
+    Dog(const Dog& src);
+    virtual ~Dog();
+    Dog& operator=(const Dog& rhs);
 
-	public:
-		Dog();
-		Dog(std::string type);
-		Dog(const Dog& src);
-		virtual ~Dog();
-		Dog& operator=(const Dog& rhs);
-
-		virtual void makeSound() const;
-
+    virtual void makeSound() const;
 };

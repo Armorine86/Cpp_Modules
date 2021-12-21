@@ -14,14 +14,14 @@
 
 #include "IMateriaSource.hpp"
 
-class MateriaSource : public IMateriaSource {
+class MateriaSource : public IMateriaSource
+{
+public:
+    MateriaSource();
+    MateriaSource(const MateriaSource &src);
+    virtual ~MateriaSource();
+    MateriaSource &operator=(const MateriaSource &rhs);
 
-	public:
-		MateriaSource();
-		MateriaSource(const MateriaSource &src);
-		virtual ~MateriaSource();
-		MateriaSource& operator=(const MateriaSource &rhs);
-
-		virtual void learnMateria(AMateria*);
-		virtual AMateria *createMateria(std::string const &type);
+    virtual void      learnMateria(AMateria *);
+    virtual AMateria *createMateria(std::string const &type);
 };

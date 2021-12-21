@@ -10,43 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Cat.hpp"
+
+#include <iostream>
 
 Cat::Cat() : Animal()
 {
-	type = "Cat";
-	std::cout << "Cat Subclass Constructor Called [DEFAULT]" << std::endl;
+    type = "Cat";
+    std::cout << "Cat Subclass Constructor Called [DEFAULT]" << std::endl;
 }
 
 Cat::Cat(std::string type) : Animal()
 {
-	this->type = type;
-	std::cout << "Cat Subclass Overload Constructor Called [OVERLOARD]" << std::endl;
+    this->type = type;
+    std::cout << "Cat Subclass Overload Constructor Called [OVERLOARD]" << std::endl;
 }
 
-Cat::Cat(const Cat& src) 
+Cat::Cat(const Cat& src)
 {
-	this->type = src.type;
-	std::cout << "Cat Subclass Copy Constructor Called [COPY]" << std::endl;
+    this->type = src.type;
+    std::cout << "Cat Subclass Copy Constructor Called [COPY]" << std::endl;
 }
 
-Cat::~Cat() 
+Cat::~Cat()
 {
-	std::cout << "Cat Destructor Called" << std::endl;
+    std::cout << "Cat Destructor Called" << std::endl;
 }
 
-Cat& Cat::operator=(const Cat& rhs) 
+Cat& Cat::operator=(const Cat& rhs)
 {
-	if (this != &rhs)
-	{
-		this->type = rhs.type;
-		return (*this);
-	}
-	return (*this);
+    if (this != &rhs) {
+        this->type = rhs.type;
+        return (*this);
+    }
+    return (*this);
 }
 
 void Cat::makeSound() const
 {
-	std::cout << "Meow Meow ! [CAT]" << std::endl;
+    std::cout << "Meow Meow ! [CAT]" << std::endl;
 }

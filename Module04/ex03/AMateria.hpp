@@ -13,28 +13,28 @@
 #pragma once
 
 #include <string>
-#include "ICharacter.hpp"
 
+#include "ICharacter.hpp"
 
 //* AMateria is an Abstract Class (aka  ABC)
 //* A class is made abstract by declaring at least one function as pure virutal ( = 0)
 //* A pure virtual function MUST BE overriden in the subclass. Otherwise you get a compilation error
 //* Abstract classes CANNOT be instantiated
 
-class AMateria {
+class AMateria
+{
+protected:
+    std::string type;
 
-	protected:
-		std::string type;
+public:
+    AMateria();                         //* Default
+    AMateria(const AMateria &src);      //* Copy
+    AMateria(const std::string &type);  //* Overload
+    virtual ~AMateria();                //* Destructor
 
-	public:
-		AMateria(); 						//* Default
-		AMateria(const AMateria &src); 		//* Copy
-		AMateria(const std::string &type); 	//* Overload
-		virtual ~AMateria();				//* Destructor
+    AMateria &operator=(const AMateria &rhs);
 
-		AMateria& operator=(const AMateria &rhs);
-		
-		std::string const &getType() const;	//* Returns the Materia type
-		virtual AMateria *clone() const = 0;
-		virtual void use(ICharacter &target);
+    std::string const &getType() const;  //* Returns the Materia type
+    virtual AMateria  *clone() const = 0;
+    virtual void       use(ICharacter &target);
 };

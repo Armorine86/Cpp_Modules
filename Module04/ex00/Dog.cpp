@@ -10,43 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Dog.hpp"
+
+#include <iostream>
 
 Dog::Dog() : Animal()
 {
-	type = "Dog";
-	std::cout << "Dog Subclass Constructor called [DEFAULT]" << std::endl;
+    type = "Dog";
+    std::cout << "Dog Subclass Constructor called [DEFAULT]" << std::endl;
 }
 
 Dog::Dog(std::string type) : Animal()
 {
-	this->type = type;
-	std::cout << "Doc Subclass Overload Constructor called [CONSTRUCTOR]" << std::endl;
+    this->type = type;
+    std::cout << "Doc Subclass Overload Constructor called [CONSTRUCTOR]" << std::endl;
 }
 
-Dog::Dog(const Dog& src) 
+Dog::Dog(const Dog& src)
 {
-	this->type = src.type;
-	std::cout << "Dog Subclass Copy Constructor Called [COPY]" << std::endl;
+    this->type = src.type;
+    std::cout << "Dog Subclass Copy Constructor Called [COPY]" << std::endl;
 }
 
-Dog::~Dog() 
+Dog::~Dog()
 {
-	std::cout << "Dog Destructor Called" << std::endl;
+    std::cout << "Dog Destructor Called" << std::endl;
 }
 
-Dog& Dog::operator=(const Dog& rhs) 
+Dog& Dog::operator=(const Dog& rhs)
 {
-	if (this != &rhs)
-	{
-		this->type = rhs.type;
-		return (*this);
-	}
-	return (*this);
+    if (this != &rhs) {
+        this->type = rhs.type;
+        return (*this);
+    }
+    return (*this);
 }
 
 void Dog::makeSound() const
 {
-	std::cout << "Wouf Wouf ! [DOG]" << std::endl;
+    std::cout << "Wouf Wouf ! [DOG]" << std::endl;
 }

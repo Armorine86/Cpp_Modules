@@ -10,49 +10,49 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "WrongAnimal.hpp"
+
+#include <iostream>
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
-	std::cout << "WrongAnimal Base Class Constructor [DEFAULT]" << std::endl;
+    std::cout << "WrongAnimal Base Class Constructor [DEFAULT]" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const std::string& type) 
+WrongAnimal::WrongAnimal(const std::string& type)
 {
-	this->type = type;
+    this->type = type;
 
-	std::cout << "WrongAnimal Base Class Constructor Called [OVERLOAD]" << std::endl;
+    std::cout << "WrongAnimal Base Class Constructor Called [OVERLOAD]" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& src) 
+WrongAnimal::WrongAnimal(const WrongAnimal& src)
 {
-	*this = src;
+    *this = src;
 
-	std::cout << "WrongAnimal Base Class Constructor called [COPY]" << std::endl;
+    std::cout << "WrongAnimal Base Class Constructor called [COPY]" << std::endl;
 }
 
-WrongAnimal::~WrongAnimal() 
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal has been destroyed" << std::endl;
+    std::cout << "WrongAnimal has been destroyed" << std::endl;
 }
 
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs) 
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
 {
-	if (this != &rhs)
-	{
-		this->type = rhs.type;
-		return (*this);
-	}
-	return (*this);
+    if (this != &rhs) {
+        this->type = rhs.type;
+        return (*this);
+    }
+    return (*this);
 }
 
 std::string WrongAnimal::getType() const
 {
-	return (this->type);
+    return (this->type);
 }
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "WrongAnimal random noises" << std::endl;
+    std::cout << "WrongAnimal random noises" << std::endl;
 }

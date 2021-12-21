@@ -10,47 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Animal.hpp"
+
+#include <iostream>
 
 Animal::Animal() : type("Animal")
 {
-	std::cout << "Base Class Animal Constructor [DEFAULT]" << std::endl;
+    std::cout << "Base Class Animal Constructor [DEFAULT]" << std::endl;
 }
 
 Animal::Animal(std::string type) : type(type)
 {
-	this->type = type;
-	std::cout << "Base Class Animal Constructor [OVERLOAD]" << std::endl;
+    this->type = type;
+    std::cout << "Base Class Animal Constructor [OVERLOAD]" << std::endl;
 }
 
-Animal::Animal(const Animal& src) 
+Animal::Animal(const Animal& src)
 {
-	std::cout << "Base Class Animal Constructor Called [COPY]" << std::endl;
-	this->type = src.type;	
+    std::cout << "Base Class Animal Constructor Called [COPY]" << std::endl;
+    this->type = src.type;
 }
 
-Animal::~Animal() 
+Animal::~Animal()
 {
-	std::cout << "Animal Destructor" << std::endl;
+    std::cout << "Animal Destructor" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& rhs) 
+Animal& Animal::operator=(const Animal& rhs)
 {
-	if (this != &rhs)
-	{
-		this->type = rhs.type;
-		return (*this);
-	}
-	return (*this);
+    if (this != &rhs) {
+        this->type = rhs.type;
+        return (*this);
+    }
+    return (*this);
 }
 
 std::string Animal::getType() const
 {
-	return (this->type);
+    return (this->type);
 }
 
 void Animal::makeSound() const
 {
-	std::cout << "[Random Animal Noises]" << std::endl;
+    std::cout << "[Random Animal Noises]" << std::endl;
 }

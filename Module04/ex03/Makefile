@@ -6,19 +6,27 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/19 18:30:52 by mmondell          #+#    #+#              #
-#    Updated: 2021/12/20 20:25:05 by mmondell         ###   ########.fr        #
+#    Updated: 2021/12/21 09:57:24 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	animals
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98 -fstandalone-debug
+
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion\
+				-Wshadow -std=c++98 -fstandalone-debug
+				
 CC			=	clang++
+
 RM			=	rm -rf
 
 OBJ			=	obj
 
-INCS		=	Materia.hpp MateriaSource.hpp Character.hpp
-SRCS		=	main.cpp Materia.cpp MateriaSource.cpp Character.cpp
+INCS		=	AMateria.hpp IMateriaSource.hpp MateriaSource.hpp\
+				Character.hpp ICharacter.hpp Cure.hpp Ice.hpp 
+
+SRCS		=	main.cpp AMateria.cpp IMateriaSource.cpp MateriaSource.cpp\
+				Character.cpp ICharacter.cpp Cure.cpp Ice.cpp 
+
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 

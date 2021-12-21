@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 15:34:11 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:47:58 by mmondell         ###   ########.fr       */
+/*   Created: 2021/12/21 09:40:55 by mmondell          #+#    #+#             */
+/*   Updated: 2021/12/21 09:46:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "AMateria.hpp"
 
-class Cat : public Animal
+class Cure : public AMateria
 {
-public:
-    Cat();
-    Cat(std::string type);
-    Cat(const Cat& src);
-    virtual ~Cat();
-    Cat& operator=(const Cat& rhs);
+private:
+    std::string type;  //* Name in lowercase "cure"
 
-    virtual void makeSound() const;
+public:
+    Cure();
+    Cure(const Cure &src);
+    virtual ~Cure();
+    Cure &operator=(const Cure &rhs);
+
+    virtual AMateria *clone() const;  //* Returns a new instance of the real Materia type
+    virtual void      use(ICharacter &target);
 };

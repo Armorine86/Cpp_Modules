@@ -10,46 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "WrongCat.hpp"
+
+#include <iostream>
 
 WrongCat::WrongCat()
 {
-	type = "WrongCat";
+    type = "WrongCat";
 
-	std::cout << "WrongCat Subclass Constructor [DEFAULT]" << std::endl;
+    std::cout << "WrongCat Subclass Constructor [DEFAULT]" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat& src) 
+WrongCat::WrongCat(const WrongCat& src)
 {
-	*this = src;
+    *this = src;
 
-	std::cout << "WrongCat Subclass Constructor [COPY]" << std::endl;
+    std::cout << "WrongCat Subclass Constructor [COPY]" << std::endl;
 }
 
 WrongCat::WrongCat(const std::string& type)
 {
-	this->type = type;
+    this->type = type;
 
-	std::cout << "WrongCat Subclass Constructor [OVERLOAD]" << std::endl;
+    std::cout << "WrongCat Subclass Constructor [OVERLOAD]" << std::endl;
 }
 
-WrongCat::~WrongCat() 
+WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat has been destroyed" << std::endl;
+    std::cout << "WrongCat has been destroyed" << std::endl;
 }
 
-WrongCat& WrongCat::operator=(const WrongCat& rhs) 
+WrongCat& WrongCat::operator=(const WrongCat& rhs)
 {
-	if (this != &rhs)
-	{
-		this->type = rhs.type;
-		return (*this);
-	}
-	return (*this);
+    if (this != &rhs) {
+        this->type = rhs.type;
+        return (*this);
+    }
+    return (*this);
 }
 
 void WrongCat::makeSound() const
 {
-	std::cout << "WrongCat Noise: Wouf Wouf !" << std::endl;
+    std::cout << "WrongCat Noise: Wouf Wouf !" << std::endl;
 }

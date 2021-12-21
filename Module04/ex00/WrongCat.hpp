@@ -14,15 +14,15 @@
 
 #include "WrongAnimal.hpp"
 
-class WrongCat : public WrongAnimal {
-	
-	public:
-		WrongCat();
-		WrongCat(const std::string& type);
-		WrongCat(const WrongCat& src);
-		~WrongCat();
+class WrongCat : public WrongAnimal
+{
+public:
+    WrongCat();
+    WrongCat(const std::string& type);
+    WrongCat(const WrongCat& src);
+    ~WrongCat();
 
-		WrongCat& operator=(const WrongCat& rhs);
-		
-		void makeSound() const; //* without virtual keyword
+    WrongCat& operator=(const WrongCat& rhs);
+
+    void makeSound() const;  //* without virtual keyword
 };
