@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:56:01 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/19 18:38:07 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:35:33 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Animal::Animal(std::string type) : type(type)
 Animal::Animal(const Animal& src)
 {
     std::cout << "Base Class Animal Constructor Called [COPY]" << std::endl;
-    this->type = src.type;
+    *this = src;
 }
 
 Animal::~Animal()

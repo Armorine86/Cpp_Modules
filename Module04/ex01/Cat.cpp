@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:57:19 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 15:06:45 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:29:30 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Cat::Cat(std::string type) : Animal()
 
 Cat::Cat(const Cat& src)
 {
+    *this->brain = Brain();
     this->type = src.type;
     std::cout << "Cat Subclass Copy Constructor Called [COPY]" << std::endl;
 }
@@ -45,6 +46,7 @@ Cat::~Cat()
 Cat& Cat::operator=(const Cat& rhs)
 {
     if (this != &rhs) {
+        this->brain = rhs.brain;
         this->type = rhs.type;
         return (*this);
     }

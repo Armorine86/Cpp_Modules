@@ -6,9 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:03:31 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/09 21:36:03 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:23:08 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
@@ -24,6 +26,7 @@ int main(void) {
 		club.setType("some other type of club");
 		bob.attack();
 	}
+	std::cout << std::endl;
 	{
 		Weapon club = Weapon("crude spiked club");
 

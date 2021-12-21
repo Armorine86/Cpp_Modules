@@ -30,6 +30,6 @@ public:
 
     Brain& operator=(const Brain& rhs);
 
-    void        setIdea(int32_t index, std::string idea);
+    void setIdea(int32_t index, std::string idea);
     std::string getIdea(int32_t index);
 };

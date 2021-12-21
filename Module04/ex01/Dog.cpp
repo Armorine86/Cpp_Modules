@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 15:07:07 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:31:53 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Dog::Dog(std::string type) : Animal()
 
 Dog::Dog(const Dog& src)
 {
+    *this->brain = Brain();
     this->type = src.type;
     std::cout << "Dog Subclass Copy Constructor Called [COPY]" << std::endl;
 }
@@ -45,6 +46,7 @@ Dog::~Dog()
 Dog& Dog::operator=(const Dog& rhs)
 {
     if (this != &rhs) {
+        this->brain = rhs.brain;
         this->type = rhs.type;
         return (*this);
     }

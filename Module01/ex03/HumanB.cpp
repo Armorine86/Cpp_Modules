@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:04:21 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/09 21:40:03 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:21:29 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 HumanB::HumanB(const std::string name) {
 	
+	this->weapon = NULL;
 	this->name = name;	
 }
 

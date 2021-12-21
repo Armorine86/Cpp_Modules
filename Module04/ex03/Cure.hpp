@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 09:40:55 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 09:46:21 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:37:50 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 
 class Cure : public AMateria
 {
-private:
-    std::string type;  //* Name in lowercase "cure"
 
 public:
     Cure();

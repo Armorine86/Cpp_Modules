@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:51:19 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 15:12:52 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:28:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void Brain::setIdea(int32_t index, std::string idea)
     if (index < 0 || index > N_IDEAS - 1) {
         std::cout << "Outside Brain Space!\n";
         idea = " ";
+        return;
     }
     this->ideas[index] = idea;
 }

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 11:42:08 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/08 13:54:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:20:19 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit) {
 	
+	_amount = 0;
 	_accountIndex = _nbAccounts++;
 	_amount += initial_deposit;
 	this->_totalAmount += initial_deposit;

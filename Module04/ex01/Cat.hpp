@@ -25,7 +25,7 @@ public:
     Cat& operator=(const Cat& rhs);
 
     virtual void makeSound() const;
-    Brain&       getBrain() const;
+    Brain& getBrain() const;
 
 private:
     Brain* brain;
