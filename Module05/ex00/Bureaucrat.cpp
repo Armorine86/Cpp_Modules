@@ -14,99 +14,99 @@
 
 Bureaucrat::Bureaucrat() : name_("John"), grade(LOWEST)
 {
-	if (grade < HIGHEST)
-		throw GradeTooHighException();
-	else if (grade > LOWEST)
-		throw GradeTooLowException();
+    if (grade < HIGHEST)
+        throw GradeTooHighException();
+    else if (grade > LOWEST)
+        throw GradeTooLowException();
 
-	std::cout << "<" << name_ << "> grade: " << grade << " is now working for EvilCorp."
-			  << std::endl;
+    std::cout << "<" << name_ << "> grade: " << grade << " is now working for EvilCorp."
+              << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name), grade(grade)
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : name_(name), grade(grade)
 {
-	if (grade < HIGHEST)
-		throw GradeTooHighException();
-	else if (grade > LOWEST)
-		throw GradeTooLowException();
-	
-	std::cout << "<" << name_ << "> grade: " << "[" << grade << "]"<< " is now working for EvilCorp."
-			  << std::endl;
+    if (grade < HIGHEST)
+        throw GradeTooHighException();
+    else if (grade > LOWEST)
+        throw GradeTooLowException();
+
+    std::cout << "<" << name_ << "> grade: "
+              << "[" << grade << "]"
+              << " is now working for EvilCorp." << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) 
+Bureaucrat::Bureaucrat(const Bureaucrat& src)
 {
-	*this = src;
-	
-	if (grade < HIGHEST)
-		throw GradeTooHighException();
-	else if (grade > LOWEST)
-		throw GradeTooLowException();
+    *this = src;
+
+    if (grade < HIGHEST)
+        throw GradeTooHighException();
+    else if (grade > LOWEST)
+        throw GradeTooLowException();
 }
 
-Bureaucrat::~Bureaucrat() 
+Bureaucrat::~Bureaucrat()
 {
-	std::cout << name_ << " has been fired!" << std::endl;
+    std::cout << name_ << " has been fired!" << std::endl;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &rhs) 
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
 {
-	if (this != &rhs)
-	{
-		*this = rhs;
-		return *this;
-	}
-	return *this;
+    if (this != &rhs) {
+        *this = rhs;
+        return *this;
+    }
+    return *this;
 }
 
 const std::string& Bureaucrat::getName() const
 {
-	return name_;
+    return name_;
 }
 
 int Bureaucrat::getGrade() const
 {
-	return grade;
+    return grade;
 }
 
-void Bureaucrat::rankUp() 
+void Bureaucrat::rankUp()
 {
-	--grade;
-	
-	std::cout << name_ << " has ranked UP!" << std::endl;
+    --grade;
 
-	if (grade < HIGHEST)
-		throw GradeTooHighException();
-	else if (grade > LOWEST)
-		throw GradeTooLowException();
+    std::cout << name_ << " has ranked UP!" << std::endl;
+
+    if (grade < HIGHEST)
+        throw GradeTooHighException();
+    else if (grade > LOWEST)
+        throw GradeTooLowException();
 }
 
-void Bureaucrat::rankDown() 
+void Bureaucrat::rankDown()
 {
-	++grade;
+    ++grade;
 
-	std::cout << name_ << " has ranked DOWN!" << std::endl;
-	
-	if (grade < HIGHEST)
-		throw GradeTooHighException();
-	else if (grade > LOWEST)
-		throw GradeTooLowException();
+    std::cout << name_ << " has ranked DOWN!" << std::endl;
+
+    if (grade < HIGHEST)
+        throw GradeTooHighException();
+    else if (grade > LOWEST)
+        throw GradeTooLowException();
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "\nGrade is Too High";
+    return "\nGrade is Too High";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "\nGrade is Too Low";
+    return "\nGrade is Too Low";
 }
 
-std::ostream& operator<<(std::ostream &out, const Bureaucrat& bureaucrat) 
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
 {
-	out << "<" << bureaucrat.getName() << "> " << "grade: ["
-		<< bureaucrat.getGrade() << "]" << std::endl;
-	
-	return out;
+    out << "<" << bureaucrat.getName() << "> "
+        << "grade: [" << bureaucrat.getGrade() << "]" << std::endl;
+
+    return out;
 }
