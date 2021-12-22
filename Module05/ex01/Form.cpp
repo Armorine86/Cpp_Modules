@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 09:55:13 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 15:40:23 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,11 @@ int Form::getReqGrade()
     return reqGrade;
 }
 
-void Form::setSigned()
-{
-    if (isSigned == true) {
-        std::cout << "Form has already been signed!" << std::endl;
-        return;
-    }
-    isSigned = true;
-}
-
 void Form::beSigned(Bureaucrat& b)
 {
     if (b.getGrade() > reqGrade)
-        GradeTooLowException();
+        throw Form::GradeTooLowException();
+    isSigned = true;
 }
 
 void Form::checkGrade()

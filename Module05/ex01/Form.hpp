@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 07:57:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 09:22:28 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 15:28:30 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ public:
     bool isFormSigned();
     int getReqGrade();
 
-    void setSigned();
     void beSigned(Bureaucrat& b);
     void checkGrade();
 

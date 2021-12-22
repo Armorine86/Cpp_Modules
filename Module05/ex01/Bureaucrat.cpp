@@ -6,11 +6,12 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 14:14:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 09:54:52 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 15:42:40 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "colors.hpp"
 
 Bureaucrat::Bureaucrat() : name_("John"), grade(LOWEST)
 {
@@ -77,20 +78,15 @@ void Bureaucrat::rankDown()
 
 void Bureaucrat::signForm(Form& f)
 {
-    std::cout << "<" << getName() << "> is signing form: <" << f.getFormName() << ">\n";
-
-    if (f.isFormSigned()) {
-        f.setSigned();
-        return;
-    }
-
-    if (grade < f.getReqGrade()) {
-        std::cout << "<" << getName() << "> successfully signs form: " << f.getFormName()
-                  << std::endl;
-        f.setSigned();
-    } else
+    try {
+        f.beSigned(*this);
+        std::cout << "<" << getName() << "> is signing form: <" << f.getFormName() << ">\n";
+        if (f.isFormSigned() == true)
+            std::cout << "Form <" << f.getFormName() << "> has already been signed!" << std::endl;
+    } catch (std::exception &e){
         std::cout << "<" << getName() << "> cannot sign form: <" << f.getFormName() << "> because <"
                   << getName() << ">'s grade: <" << getGrade() << "> is too low..." << std::endl;
+    }
 }
 
 void Bureaucrat::checkGrade()
