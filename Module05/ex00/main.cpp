@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:17:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 07:51:00 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 10:28:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,59 +17,73 @@
 
 int main(void)
 {
-    std::cout << "\n\nConstructor Exception Checks\n";
-    std::cout << "=============================" << std::endl;
-
+    std::cout << GREEN <<"\n===============================================\n";
+	std::cout << "||    Basic Bureaucrat Constructor Tests     ||";
+	std::cout << "\n===============================================" << END <<  std::endl;
     try {
-        Bureaucrat high("John", HIGHEST);
-        std::cout << high;                  //* ostream test
-        std::cout << std::endl;
-        Bureaucrat low("Jack", LOWEST);
-        std::cout << low;                   //* ostream test
-        std::cout << std::endl;
+        Bureaucrat rogers("Rogers", HIGHEST);
+		std::cout << rogers;
+		std::cout << std::endl;
 
-        Bureaucrat tooHigh("Clarence", 0);  //* Should throw an exception
+    } catch (std::exception &e) {
+        std::cerr << RED << e.what() << END << std::endl;
+    }
+	
+	std::cout << std::endl;
+    
+    std::cout << GREEN <<"\n===================================================\n";
+	std::cout << "||    Bureaucrat Constructor Exception Tests     ||";
+	std::cout << "\n===================================================" << END <<  std::endl;
+    try {
+        Bureaucrat rogers("Rogers", HIGHEST - 1);
+		std::cout << rogers;
+		std::cout << std::endl;
 
-        //* Should Not be Executed
-        std::cout << tooHigh;
+    } catch (std::exception &e) {
+        std::cerr << RED << e.what() << END << std::endl;
+    }
+	
+	std::cout << std::endl;
+
+	try {
+        Bureaucrat rogers("Rogers", LOWEST + 1);
+		std::cout << rogers;
+		std::cout << std::endl;
+
+    } catch (std::exception &e) {
+        std::cerr << RED << e.what() << END << std::endl;
+    }
+	
+	std::cout << std::endl;
+
+	std::cout << GREEN <<"\n==========================\n";
+	std::cout << "|| Rank UP / DOWN Tests ||";
+	std::cout << "\n==========================" << END <<  std::endl;
+	try {
+        Bureaucrat lawrence("Lawrence", HIGHEST);
+        std::cout << lawrence;
+
+        std::cout << std::endl;
+        lawrence.rankUp();
+
+        std::cout << lawrence; //* Should Not Print
         std::cout << std::endl;
     } catch (std::exception &exc) {
         std::cerr << RED << exc.what() << END << std::endl;
     }
 
-    std::cout << "\n\nRanking Up/Down Exception Checks\n";
-    std::cout << "=================================" << std::endl;
-
-    try {
-        Bureaucrat lawrence("Lawrence", HIGHEST);
+    std::cout << std::endl;
+	
+	try {
+        Bureaucrat lawrence("Lawrence", LOWEST);
         std::cout << lawrence;
 
         std::cout << std::endl;
         lawrence.rankDown();
 
-        std::cout << lawrence;
+        std::cout << lawrence; //* Should Not Print
         std::cout << std::endl;
     } catch (std::exception &exc) {
         std::cerr << RED << exc.what() << END << std::endl;
     }
-
-    std::cout << std::endl;
-
-    try {
-        Bureaucrat peter("Peter", LOWEST);
-        std::cout << peter;
-        std::cout << std::endl;
-        try {
-            peter.rankDown();
-            std::cout << std::endl;
-
-            //* should not be executed
-            std::cout << peter;
-        } catch (std::exception &exc) {
-            std::cerr << RED << exc.what() << END << std::endl;
-        }
-    } catch (std::exception &exc) {
-        std::cout << RED << exc.what() << END << std::endl;
-    }
-    std::cout << std::endl;
 }

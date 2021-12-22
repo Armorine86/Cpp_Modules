@@ -1,5 +1,5 @@
 
-NAME		=	
+NAME		=	bureaucrat
 
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion\
 				-Wshadow -std=c++98 -fstandalone-debug
@@ -10,9 +10,9 @@ RM			=	rm -rf
 
 OBJ			=	obj
 
-INCS		=	
+INCS		=	Bureaucrat.hpp Form.hpp
 
-SRCS		=	
+SRCS		=	main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
