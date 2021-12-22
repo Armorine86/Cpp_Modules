@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:54:15 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 09:22:43 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 10:43:38 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ class Form;
 
 class Bureaucrat
 {
+private:
+    const std::string name_;
+    int grade;
+
 public:
     Bureaucrat();
     Bureaucrat(const std::string& name, int grade);
@@ -55,10 +59,6 @@ public:
 
     void signForm(Form& f);
     void checkGrade();
-
-private:
-    const std::string name_;
-    int grade;
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);

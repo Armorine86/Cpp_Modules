@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat() : name_("John"), grade(LOWEST)
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : name_(name), grade(grade)
 {
     checkGrade();
-    
+
     std::cout << "<" << name_ << "> now works for EvilCorp." << std::endl;
 }
 
@@ -78,23 +78,19 @@ void Bureaucrat::rankDown()
 void Bureaucrat::signForm(Form& f)
 {
     std::cout << "<" << getName() << "> is signing form: <" << f.getFormName() << ">\n";
-    
-    if (f.isFormSigned())
-    {
+
+    if (f.isFormSigned()) {
         f.setSigned();
         return;
     }
-    
-    if (grade < f.getReqGrade())
-    {
+
+    if (grade < f.getReqGrade()) {
         std::cout << "<" << getName() << "> successfully signs form: " << f.getFormName()
                   << std::endl;
         f.setSigned();
-    }
-    else
-        std::cout << "<" << getName() << "> cannot sign form: <" << f.getFormName()
-                  << "> because <" << getName() << ">'s grade: <" << getGrade() << "> is too low..."
-                  << std::endl;
+    } else
+        std::cout << "<" << getName() << "> cannot sign form: <" << f.getFormName() << "> because <"
+                  << getName() << ">'s grade: <" << getGrade() << "> is too low..." << std::endl;
 }
 
 void Bureaucrat::checkGrade()

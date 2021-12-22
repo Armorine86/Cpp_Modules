@@ -53,10 +53,9 @@ int Form::getReqGrade()
     return reqGrade;
 }
 
-void Form::setSigned() 
+void Form::setSigned()
 {
-    if (isSigned == true)
-    {
+    if (isSigned == true) {
         std::cout << "Form has already been signed!" << std::endl;
         return;
     }
