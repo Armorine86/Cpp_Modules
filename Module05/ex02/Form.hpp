@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 07:57:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 11:10:02 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:55:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ private:
 
 public:
     Form();
-    Form(std::string name, int signgrade, int execgrade);
+    Form(const std::string &name, int signgrade, int execgrade);
     Form(const Form& src);
     virtual ~Form();
     Form& operator=(const Form& rhs);
 
-    std::string getFormName();
-    bool isFormSigned();
-    int getReqSignGrade();
-    int getReqExecGrade();
+    std::string getFormName() const;
+    bool isFormSigned() const;
+    int getReqSignGrade() const;
+    int getReqExecGrade() const;
 
     void setSigned();
     void beSigned(Bureaucrat& b);

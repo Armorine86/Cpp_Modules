@@ -6,11 +6,12 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 14:14:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 11:10:49 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:32:13 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "colors.hpp"
 
 Bureaucrat::Bureaucrat() : name_("John"), SignGrade(LOWEST), ExecGrade(LOWEST)
 {
@@ -19,7 +20,10 @@ Bureaucrat::Bureaucrat() : name_("John"), SignGrade(LOWEST), ExecGrade(LOWEST)
     std::cout << "<" << name_ << "> now works for EvilCorp." << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string& name, int signgrade, int execgrade) : name_(name), SignGrade(signgrade), ExecGrade(execgrade)
+Bureaucrat::Bureaucrat(const std::string& name, int signgrade, int execgrade) :
+    name_(name),
+    SignGrade(signgrade),
+    ExecGrade(execgrade)
 {
     checkGrade();
 
@@ -103,6 +107,20 @@ void Bureaucrat::checkGrade()
     if (SignGrade < HIGHEST)
         throw GradeTooHighException();
     else if (SignGrade > LOWEST)
+        throw GradeTooLowException();
+    
+    if (ExecGrade < HIGHEST)
+        throw GradeTooHighException();
+    else if (ExecGrade > LOWEST)
+        throw GradeTooLowException();
+}
+
+void Bureaucrat::executeForm(const Form &form) 
+{
+    if (ExecGrade < form.getReqExecGrade())
+        std::cout << "<" << getName() << "> executes <" << form.getFormName() << ">"
+                  << std::endl;
+    else
         throw GradeTooLowException();
 }
 

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 11:11:25 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:55:25 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form() :
     checkGrade();
 }
 
-Form::Form(std::string name, int signgrade, int execgrade) :
+Form::Form(const std::string &name, int signgrade, int execgrade) :
     name(name),
     isSigned(false),
     reqSignGrade(signgrade),
@@ -50,22 +50,22 @@ Form& Form::operator=(const Form& rhs)
     return *this;
 }
 
-std::string Form::getFormName()
+std::string Form::getFormName() const
 {
     return name;
 }
 
-bool Form::isFormSigned()
+bool Form::isFormSigned() const
 {
     return isSigned;
 }
 
-int Form::getReqSignGrade()
+int Form::getReqSignGrade() const
 {
     return reqSignGrade;
 }
 
-int Form::getReqExecGrade() 
+int Form::getReqExecGrade()  const
 {
     return reqExecGrade;
 }

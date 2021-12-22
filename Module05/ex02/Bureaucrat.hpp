@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:54:15 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 11:06:47 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:31:32 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ public:
     void rankUp();
     void rankDown();
 
+    void signForm(Form& f);
+    void checkGrade();
+    
+    void executeForm(const Form &form);
+
     //* Exception class
     //* https://en.cppreference.com/w/cpp/error/exception/what
     class GradeTooHighException : public std::exception
@@ -58,9 +63,6 @@ public:
     public:
         virtual const char* what() const throw();
     };
-
-    void signForm(Form& f);
-    void checkGrade();
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
