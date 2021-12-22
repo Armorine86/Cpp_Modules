@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 14:14:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 16:33:11 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 07:47:46 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat() : name_("John"), grade(LOWEST)
     else if (grade > LOWEST)
         throw GradeTooLowException();
 
-    std::cout << "<" << name_ << "> grade: " << grade << " is now working for EvilCorp."
+    std::cout << "<" << name_ << "> now works for EvilCorp."
               << std::endl;
 }
 
@@ -30,9 +30,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name_(name), grade(
     else if (grade > LOWEST)
         throw GradeTooLowException();
 
-    std::cout << "<" << name_ << "> grade: "
-              << "[" << grade << "]"
-              << " is now working for EvilCorp." << std::endl;
+    std::cout << "<" << name_ << "> now works for EvilCorp." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src)
@@ -47,7 +45,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& src)
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << name_ << " has been fired!" << std::endl;
+    std::cout << "<" << name_ << "> has been fired!" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
@@ -85,7 +83,7 @@ void Bureaucrat::rankDown()
 {
     ++grade;
 
-    std::cout << name_ << " has ranked DOWN!" << std::endl;
+    std::cout << "<" << name_ << "> has ranked DOWN!" << std::endl;
 
     if (grade < HIGHEST)
         throw GradeTooHighException();

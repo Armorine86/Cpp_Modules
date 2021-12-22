@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:17:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 16:54:49 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 07:51:00 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int main(void)
 
     try {
         Bureaucrat high("John", HIGHEST);
-        std::cout << "[OSTREAM OVERLOAD] " << high;  //* ostream test
+        std::cout << high;                  //* ostream test
         std::cout << std::endl;
         Bureaucrat low("Jack", LOWEST);
-        std::cout << "[OSTREAM OVERLOAD] " << low;  //* ostream test
+        std::cout << low;                   //* ostream test
         std::cout << std::endl;
 
         Bureaucrat tooHigh("Clarence", 0);  //* Should throw an exception
@@ -56,15 +56,15 @@ int main(void)
     std::cout << std::endl;
 
     try {
-        Bureaucrat cassivy("cassivy", LOWEST);
-        std::cout << "[OSTREAM OVERLOAD" << cassivy;
+        Bureaucrat peter("Peter", LOWEST);
+        std::cout << peter;
         std::cout << std::endl;
         try {
-            cassivy.rankDown();
+            peter.rankDown();
             std::cout << std::endl;
 
             //* should not be executed
-            std::cout << "[OSTREAM OVERLOAD" << cassivy;
+            std::cout << peter;
         } catch (std::exception &exc) {
             std::cerr << RED << exc.what() << END << std::endl;
         }
