@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 14:14:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 15:42:40 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 15:53:30 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,13 @@ void Bureaucrat::rankDown()
 void Bureaucrat::signForm(Form& f)
 {
     try {
+        if (f.isFormSigned() == true)
+        {
+            std::cout << "Form <" << f.getFormName() << "> has already been signed!" << std::endl;
+            return;
+        }
         f.beSigned(*this);
         std::cout << "<" << getName() << "> is signing form: <" << f.getFormName() << ">\n";
-        if (f.isFormSigned() == true)
-            std::cout << "Form <" << f.getFormName() << "> has already been signed!" << std::endl;
     } catch (std::exception &e){
         std::cout << "<" << getName() << "> cannot sign form: <" << f.getFormName() << "> because <"
                   << getName() << ">'s grade: <" << getGrade() << "> is too low..." << std::endl;

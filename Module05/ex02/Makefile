@@ -11,10 +11,10 @@ RM			=	rm -rf
 OBJ			=	obj
 
 INCS		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp\
-				RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+				#RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 SRCS		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp\
-				RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+				#RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 07:57:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 11:55:22 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 16:36:44 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ private:
 
 public:
     Form();
-    Form(const std::string &name, int signgrade, int execgrade);
+    Form(const std::string& name, int signgrade, int execgrade);
     Form(const Form& src);
     virtual ~Form();
     Form& operator=(const Form& rhs);
@@ -45,12 +45,11 @@ public:
     int getReqSignGrade() const;
     int getReqExecGrade() const;
 
-    void setSigned();
-    void beSigned(Bureaucrat& b);
+    void beSigned(const Bureaucrat& b); 
     void checkGrade();
 
-    virtual void execute(Bureaucrat const & executor) const = 0;
-    
+    virtual void execute(Bureaucrat const& executor) const = 0;
+
     class GradeTooHighException : public std::exception
     {
     public:
@@ -58,6 +57,11 @@ public:
     };
 
     class GradeTooLowException : public std::exception
+    {
+    public:
+        virtual const char* what() const throw();
+    };
+    class FormAlreadySignedException : public std::exception
     {
     public:
         virtual const char* what() const throw();

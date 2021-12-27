@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:54:15 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 11:31:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/22 16:38:43 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ public:
 
     void signForm(Form& f);
     void checkGrade();
-    
-    void executeForm(const Form &form);
+
+    void executeForm(Form const &form);
 
     //* Exception class
     //* https://en.cppreference.com/w/cpp/error/exception/what
