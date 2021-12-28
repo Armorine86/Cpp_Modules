@@ -47,7 +47,9 @@ Form* Intern::makeForm(const std::string &formName, const std::string &target)
 			form = new PresidentialPardonForm(target);
 			break;
 		case Intern::noname:
-			throw NoNameException();
+			delete form;
+			throw Intern::NoNameException();
+			break;
 	}
 
 	std::cout << "Intern creates <" << formName << "> form." << std::endl;
@@ -55,7 +57,7 @@ Form* Intern::makeForm(const std::string &formName, const std::string &target)
 	return form;
 }
 
-const char *Intern::NoNameException::what() const throw()
+const char* Intern::NoNameException::what() const throw()
 {
 	return "Error: Form requires a name";
 }

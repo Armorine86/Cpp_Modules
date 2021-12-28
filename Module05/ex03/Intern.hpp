@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:26:42 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/28 13:55:06 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/28 14:39:53 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 		noname
 	};
 	
-	class NoNameException : std::exception
+	class NoNameException : public std::exception
 	{
 	public:
 		virtual const char* what() const throw();	

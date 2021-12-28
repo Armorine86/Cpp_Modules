@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:08:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/28 14:30:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/28 14:32:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,21 @@ int main(void)
             
             rogers.executeForm(*shrub);
             delete shrub;
+            
+        } catch (std::exception &e) {
+            std::cout << RED << e.what() << END << std::endl;
+        }
+        
+        std::cout << std::endl;
+        
+        try {
+            Form *test = intern.makeForm("", "Test");
+            std::cout << *test << std::endl;
+
+            rogers.signForm(*test);
+            
+            rogers.executeForm(*test);
+            delete test;
             
         } catch (std::exception &e) {
             std::cout << RED << e.what() << END << std::endl;
