@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:13:42 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 16:53:46 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/27 19:37:03 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getExecGrade() > getReqExecGrade())
 		throw Bureaucrat::GradeTooLowException();
+	else if (!isFormSigned())
+		throw Form::FormIsNotSignedException();
 	
 	std::ofstream file((getTarget() + "_shrubbery").c_str());
 

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:08:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 16:31:21 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/27 19:49:46 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@ int main(void)
     ShrubberyCreationForm shrub("home");
     std::cout << shrub << std::endl;
 
-    Bureaucrat rogers("Rogers", 145, 145);
+    Bureaucrat rogers("Rogers", 10, 10);
     std::cout << rogers << std::endl;
-
+    try {
+        shrub.beSigned(rogers);
+    } catch (std::exception &e) {
+         std::cout << RED << e.what() << END << std::endl;
+    }
     try {
         rogers.executeForm(shrub);
     } catch (std::exception &e) {
         std::cout << RED << e.what() << END << std::endl;
     }
-    shrub.beSigned(rogers);
 }

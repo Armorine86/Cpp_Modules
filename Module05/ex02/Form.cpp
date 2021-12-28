@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 16:45:29 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/27 19:41:49 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,9 @@ const char* Form::GradeTooLowException::what() const throw()
 const char* Form::FormAlreadySignedException::what() const throw()
 {
     return "the form has already been signed";
+}
+
+const char* Form::FormIsNotSignedException::what() const throw()
+{
+    return "Form is not signed";
 }

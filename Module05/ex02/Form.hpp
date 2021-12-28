@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 07:57:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 16:36:44 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/27 19:35:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ public:
     {
     public:
         virtual const char* what() const throw();
+    };
+    class FormIsNotSignedException : public std::exception
+    {
+      public:
+        virtual const char *what() const throw();  
     };
 };
 

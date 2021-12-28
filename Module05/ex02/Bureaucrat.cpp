@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 14:14:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 16:54:39 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/27 19:43:08 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void Bureaucrat::executeForm(Form const &form)
 {
     try {
         std::cout << "<" << getName() << "> tries to execute form: <" << form.getFormName() << ">" << std::endl;
-        form.execute(*this);  //& TODO CHECK FOR FORM SIGNATURE
+        form.execute(*this);
     } catch (std::exception& e) {
         std::cout << RED << "<" << getName() << "> cannot execute form: <" << form.getFormName()
                   << "> because " << e.what() << END << std::endl;
