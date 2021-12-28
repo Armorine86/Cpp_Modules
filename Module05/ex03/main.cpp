@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:08:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/28 14:20:29 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/28 14:30:23 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,45 +31,30 @@ int main(void)
 
         std::cout << std::endl;
     
-        Form *shrub = intern.makeForm("shrubbery request", "home");
-        std::cout << *shrub << std::endl;
-
-        Form *robo = intern.makeForm("robotomy request", jones.getName());
-        std::cout << *robo << std::endl;
-        
-        Form *pardon = intern.makeForm("pardon request", jones.getName());
-        std::cout << *pardon << std::endl;
-
         try {
-            rogers.signForm(*shrub);
-        } catch (std::exception &e) {
-            std::cout << RED << e.what() << END << std::endl;
-        }
-        
-        try {
+            Form *robo = intern.makeForm("robotomy request", jones.getName());
+            std::cout << *robo << std::endl;
+            
             rogers.signForm(*robo);
-        } catch (std::exception &e) {
-            std::cout << RED << e.what() << END << std::endl;
-        }
-        
-        try {
-            rogers.signForm(*pardon);
-        } catch (std::exception &e) {
-            std::cout << RED << e.what() << END << std::endl;
-        }
-
-        std::cout << std::endl;
-
-        try {
-            rogers.executeForm(*shrub);
-        } catch (std::exception &e) {
-            std::cout << RED << e.what() << END << std::endl;
-        }
-
-        std::cout << std::endl;
-
-        try {
+            
             rogers.executeForm(*robo);
+            delete robo;
+            
+        } catch (std::exception &e) {
+            std::cout << RED << e.what() << END << std::endl;
+        }
+        
+        std::cout << std::endl;
+        
+        try {
+            Form *pardon = intern.makeForm("pardon request", jones.getName());
+            std::cout << *pardon << std::endl;
+           
+            rogers.signForm(*pardon);
+           
+            president.executeForm(*pardon);
+            delete pardon;
+            
         } catch (std::exception &e) {
             std::cout << RED << e.what() << END << std::endl;
         }
@@ -77,15 +62,18 @@ int main(void)
         std::cout << std::endl;
 
         try {
-            president.executeForm(*pardon);
+            Form *shrub = intern.makeForm("shrubbery request", "home");
+            std::cout << *shrub << std::endl;
+
+            rogers.signForm(*shrub);
+            
+            rogers.executeForm(*shrub);
+            delete shrub;
+            
         } catch (std::exception &e) {
             std::cout << RED << e.what() << END << std::endl;
         }
-
-        std::cout << std::endl;
         
-        delete shrub;
-        delete robo;
-        delete pardon;
+        std::cout << std::endl;
     }
 }
