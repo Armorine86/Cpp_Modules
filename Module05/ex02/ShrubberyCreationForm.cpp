@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:13:42 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/27 19:37:03 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/28 09:10:27 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: Form(SHRUB_NAME, SHRUB_SIGN, SHRUB_EXEC)
+	: Form(SHRUB_NAME, false, SHRUB_SIGN, SHRUB_EXEC)
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
-	: Form(src.getFormName(), src.getReqSignGrade(), src.getReqExecGrade())
+	: Form(src.getFormName(), src.isFormSigned(), src.getReqSignGrade(), src.getReqExecGrade())
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) 
-	: Form(SHRUB_NAME, SHRUB_SIGN, SHRUB_EXEC), target(target)
+	: Form(SHRUB_NAME, false, SHRUB_SIGN, SHRUB_EXEC), target(target)
 {
 }
 

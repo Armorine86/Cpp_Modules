@@ -1,7 +1,7 @@
 
 NAME		=	bureaucrat
 
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion\
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic\
 				-Wshadow -std=c++98 -fstandalone-debug
 				
 CC			=	clang++
@@ -11,10 +11,10 @@ RM			=	rm -rf
 OBJ			=	obj
 
 INCS		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp\
-				#RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+				RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 SRCS		=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp\
-				#RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+				RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
@@ -37,7 +37,7 @@ clean:
 			@$(RM) $(OBJS)
 
 fclean:		clean
-			@$(RM) $(OBJ) $(NAME)
+			@$(RM) $(OBJ) $(NAME) *_shrubbery
 
 re:			fclean all
 

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 07:57:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/27 19:35:55 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/28 08:27:07 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ private:
 
 public:
     Form();
-    Form(const std::string& name, int signgrade, int execgrade);
+    Form(const std::string& name, bool isSigned, int signgrade, int execgrade);
     Form(const Form& src);
     virtual ~Form();
     Form& operator=(const Form& rhs);

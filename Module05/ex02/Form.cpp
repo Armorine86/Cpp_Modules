@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/27 19:41:49 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/28 08:30:23 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ Form::Form()
     checkGrade();
 }
 
-Form::Form(const std::string& name, int signgrade, int execgrade)
-    : name(name), isSigned(false), reqSignGrade(signgrade), reqExecGrade(execgrade)
+Form::Form(const std::string& name, bool isSigned, int signgrade, int execgrade)
+    : name(name), isSigned(isSigned), reqSignGrade(signgrade), reqExecGrade(execgrade)
 {
     checkGrade();
 }
