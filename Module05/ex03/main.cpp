@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "colors.hpp"
 
 int main(void)
@@ -24,37 +24,37 @@ int main(void)
     std::cout << "\n============================" << END << std::endl;
     {
         Intern intern;
-        
+
         Bureaucrat rogers("Rogers", 10, 10);
         Bureaucrat jones("Jones", 149, 149);
         Bureaucrat president("Jafod Beeblebrox", 1, 1);
 
         std::cout << std::endl;
-    
+
         try {
             Form *robo = intern.makeForm("robotomy request", jones.getName());
             std::cout << *robo << std::endl;
-            
+
             rogers.signForm(*robo);
-            
+
             rogers.executeForm(*robo);
             delete robo;
-            
+
         } catch (std::exception &e) {
             std::cout << RED << e.what() << END << std::endl;
         }
-        
+
         std::cout << std::endl;
-        
+
         try {
             Form *pardon = intern.makeForm("pardon request", jones.getName());
             std::cout << *pardon << std::endl;
-           
+
             rogers.signForm(*pardon);
-           
+
             president.executeForm(*pardon);
             delete pardon;
-            
+
         } catch (std::exception &e) {
             std::cout << RED << e.what() << END << std::endl;
         }
@@ -66,29 +66,29 @@ int main(void)
             std::cout << *shrub << std::endl;
 
             rogers.signForm(*shrub);
-            
+
             rogers.executeForm(*shrub);
             delete shrub;
-            
+
         } catch (std::exception &e) {
             std::cout << RED << e.what() << END << std::endl;
         }
-        
+
         std::cout << std::endl;
-        
+
         try {
             Form *test = intern.makeForm("", "Test");
             std::cout << *test << std::endl;
 
             rogers.signForm(*test);
-            
+
             rogers.executeForm(*test);
             delete test;
-            
+
         } catch (std::exception &e) {
             std::cout << RED << e.what() << END << std::endl;
         }
-        
+
         std::cout << std::endl;
     }
 }

@@ -12,37 +12,38 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() 
-	: Form(PRES_DFLT, false, PRES_SIGN, PRES_EXEC), target(PRES_DFLT)
-{}
-
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
-	: Form(PRES_DFLT, false, PRES_SIGN, PRES_EXEC), target(target)
-{}
-
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src)
-	: target(src.target)
-{}
-
-PresidentialPardonForm::~PresidentialPardonForm() 
-{}
-
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
+PresidentialPardonForm::PresidentialPardonForm()
+    : Form(PRES_DFLT, false, PRES_SIGN, PRES_EXEC), target(PRES_DFLT)
 {
-	if (this != &rhs)
-	{
-		*this = rhs;
-		return *this;
-	}
-	return *this;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+    : Form(PRES_DFLT, false, PRES_SIGN, PRES_EXEC), target(target)
 {
-	if (!isFormSigned())
-		throw Form::FormIsNotSignedException();
-	else if (executor.getExecGrade() > getReqExecGrade())
-		throw Bureaucrat::GradeTooLowException();
-	
-	std::cout << "<" << target << "> has been pardoned by Zafod Beeblebrox." << std::endl;
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src)
+    : target(src.target)
+{
+}
+
+PresidentialPardonForm::~PresidentialPardonForm() {}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
+{
+    if (this != &rhs) {
+        *this = rhs;
+        return *this;
+    }
+    return *this;
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+{
+    if (!isFormSigned())
+        throw Form::FormIsNotSignedException();
+    else if (executor.getExecGrade() > getReqExecGrade())
+        throw Bureaucrat::GradeTooLowException();
+
+    std::cout << "<" << target << "> has been pardoned by Zafod Beeblebrox." << std::endl;
 }

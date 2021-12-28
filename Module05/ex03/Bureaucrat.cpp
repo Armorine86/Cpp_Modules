@@ -88,7 +88,7 @@ void Bureaucrat::signForm(Form& f)
     try {
         if (f.isFormSigned() == true)
             throw Form::FormAlreadySignedException();
-            //std::cout << "Form <" << f.getFormName() << "> has already been signed!" << std::endl;
+        // std::cout << "Form <" << f.getFormName() << "> has already been signed!" << std::endl;
         f.beSigned(*this);
         std::cout << "<" << getName() << "> is signing form: <" << f.getFormName() << ">\n";
     } catch (std::exception& e) {
@@ -111,10 +111,11 @@ void Bureaucrat::checkGrade()
         throw GradeTooLowException();
 }
 
-void Bureaucrat::executeForm(Form const &form)
+void Bureaucrat::executeForm(Form const& form)
 {
     try {
-        std::cout << "<" << getName() << "> tries to execute form: <" << form.getFormName() << ">" << std::endl;
+        std::cout << "<" << getName() << "> tries to execute form: <" << form.getFormName() << ">"
+                  << std::endl;
         form.execute(*this);
     } catch (std::exception& e) {
         std::cout << RED << "<" << getName() << "> cannot execute form: <" << form.getFormName()

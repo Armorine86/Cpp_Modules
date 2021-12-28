@@ -10,47 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib>
 #include "RobotomyRequestForm.hpp"
+
+#include <cstdlib>
+
 #include "Bureaucrat.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() 
-	: Form(ROBO_DFLT, false, ROBO_SIGN, ROBO_EXEC), target(ROBO_DFLT)
-{}
-
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) 
-	: Form(ROBO_DFLT, false, ROBO_SIGN, ROBO_EXEC), target(target)
-{}
-
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) 
-	: target(src.target)
-{}
-
-RobotomyRequestForm::~RobotomyRequestForm() 
-{}
-
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs) 
+RobotomyRequestForm::RobotomyRequestForm()
+    : Form(ROBO_DFLT, false, ROBO_SIGN, ROBO_EXEC), target(ROBO_DFLT)
 {
-	if (this != &rhs)
-	{
-		*this = rhs;
-		return *this;
-	}
-	return *this;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor) const
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+    : Form(ROBO_DFLT, false, ROBO_SIGN, ROBO_EXEC), target(target)
 {
-	if (!isFormSigned())
-		throw Form::FormIsNotSignedException();
-	else if (executor.getExecGrade() > getReqExecGrade())
-		throw Bureaucrat::GradeTooLowException();
-	
-	std::srand(time(NULL)); //* seed
-	std::cout << "**DddrRriiizzzZTtt...**  ";
-	
-	if (std::rand() % 2)
-		std::cout << "<" << target << "> has been ROBOTOMIZED!" << std::endl;
-	else
-		std::cout << "<" << target << ">'s ROBOMATIZATION failed!" << std::endl;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : target(src.target) {}
+
+RobotomyRequestForm::~RobotomyRequestForm() {}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+{
+    if (this != &rhs) {
+        *this = rhs;
+        return *this;
+    }
+    return *this;
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
+    if (!isFormSigned())
+        throw Form::FormIsNotSignedException();
+    else if (executor.getExecGrade() > getReqExecGrade())
+        throw Bureaucrat::GradeTooLowException();
+
+    std::srand(time(NULL));  //* seed
+    std::cout << "**DddrRriiizzzZTtt...**  ";
+
+    if (std::rand() % 2)
+        std::cout << "<" << target << "> has been ROBOTOMIZED!" << std::endl;
+    else
+        std::cout << "<" << target << ">'s ROBOMATIZATION failed!" << std::endl;
 }

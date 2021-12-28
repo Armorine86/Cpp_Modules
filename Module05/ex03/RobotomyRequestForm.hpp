@@ -20,14 +20,14 @@
 class RobotomyRequestForm : public Form
 {
 public:
-	RobotomyRequestForm();
-	RobotomyRequestForm(const std::string &target);
-	RobotomyRequestForm(const RobotomyRequestForm &src);
-	virtual ~RobotomyRequestForm();
-	RobotomyRequestForm& operator=(const RobotomyRequestForm &rhs);
-	
-	virtual void execute(Bureaucrat const & executor) const;
+    RobotomyRequestForm();
+    RobotomyRequestForm(const std::string &target);
+    RobotomyRequestForm(const RobotomyRequestForm &src);
+    virtual ~RobotomyRequestForm();
+    RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
+
+    virtual void execute(Bureaucrat const &executor) const;
 
 private:
-	std::string target;
+    std::string target;
 };

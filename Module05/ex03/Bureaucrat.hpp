@@ -48,7 +48,7 @@ public:
     void signForm(Form& f);
     void checkGrade();
 
-    void executeForm(Form const &form);
+    void executeForm(Form const& form);
 
     //* Exception class
     //* https://en.cppreference.com/w/cpp/error/exception/what

@@ -18,29 +18,24 @@
 
 #define N_TYPES 4
 
-class Intern {
-
+class Intern
+{
 public:
-	Intern();
-	Intern(const Intern &src);
-	virtual ~Intern();
-	Intern& operator=(const Intern &rhs);
+    Intern();
+    Intern(const Intern &src);
+    virtual ~Intern();
+    Intern &operator=(const Intern &rhs);
 
-	Form* makeForm(const std::string &formName, const std::string &target);
-	
-	enum {
-		shrubbery,
-		robo,
-		pardon,
-		noname
-	};
-	
-	class NoNameException : public std::exception
-	{
-	public:
-		virtual const char* what() const throw();	
-	};
+    Form *makeForm(const std::string &formName, const std::string &target);
+
+    enum { shrubbery, robo, pardon, noname };
+
+    class NoNameException : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
+    };
 
 private:
-	int type;
+    int type;
 };

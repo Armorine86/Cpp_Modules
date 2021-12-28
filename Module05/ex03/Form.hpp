@@ -45,7 +45,7 @@ public:
     int getReqSignGrade() const;
     int getReqExecGrade() const;
 
-    void beSigned(const Bureaucrat& b); 
+    void beSigned(const Bureaucrat& b);
     void checkGrade();
 
     virtual void execute(Bureaucrat const& executor) const = 0;
@@ -68,8 +68,8 @@ public:
     };
     class FormIsNotSignedException : public std::exception
     {
-      public:
-        virtual const char *what() const throw();  
+    public:
+        virtual const char* what() const throw();
     };
 };
 
