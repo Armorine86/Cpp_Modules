@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 13:38:15 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/31 15:54:53 by mmondell         ###   ########.fr       */
+/*   Updated: 2021/12/31 16:50:32 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ bool is_pseudo_litteral(std::string& input)
     return false;
 }
 
+bool Convert::isImpossible()
+{
+	if (type == error || isnanf(Float) || isinff(Float))
+		return true;
+	return false;
+}
+
 void Convert::toChar()
 {
     std::cout << "char: ";
@@ -65,7 +72,7 @@ void Convert::toChar()
 void Convert::toInt()
 {
     std::cout << "int: ";
-	if (type == error)
+    if (isImpossible())
         std::cout << "impossible";
     else
         std::cout << Int;
@@ -75,7 +82,7 @@ void Convert::toInt()
 void Convert::toFloat()
 {
     std::cout << "float: ";
-	if (type == error)
+    if (type == error)
         std::cout << "impossible";
     else
         std::cout << std::fixed << std::setprecision(1) << Float << "f";
@@ -84,19 +91,22 @@ void Convert::toFloat()
 
 void Convert::toDouble()
 {
-	std::cout << "double: ";
-	if (type == error)
-        std::cout << "impossible";
-	if (input == "+inf")
-		std::cout << "+";
-	std::cout << std::fixed << std::setprecision(1) << Double;
-	std::cout << std::endl;
+    std::cout << "double: ";
+    if (type == error)
+	{
+        std::cout << "impossible" << std::endl;
+		return;
+	}
+    if (input == "+inf")
+        std::cout << "+";
+    std::cout << std::fixed << std::setprecision(1) << Double;
+    std::cout << std::endl;
 }
 
 Convert::ScalarTypes Convert::find_type()
 {
-    char* endptr;
-
+	char *endptr;
+	
     for (size_t i = 0; input[i]; i++) {
         if (!isdigit(input[i]))
             break;
@@ -108,21 +118,25 @@ Convert::ScalarTypes Convert::find_type()
     if (input.length() == 1 && std::isalpha(input[0])) {
         c = input[0];
         return isChar;
-    }
-	else if (input[input.length() - 1] == 'f' && input.find('.') != std::string::npos) {
+    } else if (input[input.length() - 1] == 'f' && input.find('.') != std::string::npos) {
         input.erase(input.end() - 1);
         Float = strtof(input.c_str(), &endptr);
+		if (*endptr != '\0')
+			return error;
         return isFloat;
+
     } else if (input[input.length() - 1] != 'f' && input.find('.') != std::string::npos) {
         Double = strtod(input.c_str(), &endptr);
+		if (*endptr != '\0')
+			return error;
         return isDouble;
+
     } else if (is_pseudo_litteral(input)) {
-		if (input == "inff" || input == "-inff" || input == "+inff" || input == "nanf")
-			input.erase(input.end() - 1);
-		Double = strtod(input.c_str(), &endptr);
-		return isPseudo;
-	}
-    else
+        if (input == "inff" || input == "-inff" || input == "+inff" || input == "nanf")
+            input.erase(input.end() - 1);
+        Double = strtod(input.c_str(), NULL);
+        return isPseudo;
+    } else
         return error;
 }
 
@@ -153,7 +167,7 @@ void Convert::cast_type()
             c = static_cast<char>(Double);
             break;
         }
-		case isPseudo: {
+        case isPseudo: {
             Int = static_cast<int>(Double);
             Float = static_cast<float>(Double);
             c = static_cast<char>(Double);
