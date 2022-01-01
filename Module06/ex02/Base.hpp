@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/01 09:43:44 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/01 09:46:09 by mmondell         ###   ########.fr       */
+/*   Created: 2022/01/01 12:15:20 by mmondell          #+#    #+#             */
+/*   Updated: 2022/01/01 13:09:27 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#pragma once
 
-Data::Data() : Integer(42), c('z'), Double(42.42) {}
+class Base {
 
-Data::Data(Data& src)
-{
-    Integer = src.Integer;
-    c = src.c;
-    Double = src.Double;
-}
-
-Data& Data::operator=(Data& rhs)
-{
-    if (this != &rhs) {
-        Integer = rhs.Integer;
-        c = rhs.c;
-        Double = rhs.Double;
-        return *this;
-    }
-    return *this;
-}
+public:
+	virtual ~Base() {}
+};

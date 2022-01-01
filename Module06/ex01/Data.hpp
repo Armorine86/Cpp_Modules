@@ -12,15 +12,15 @@
 
 #pragma once
 
-class Data {
-
+class Data
+{
 public:
-	Data();
-	Data(Data& src);
-	~Data() {}
-	Data& operator=(Data& rhs);
+    Data();
+    Data(Data& src);
+    ~Data() {}
+    Data& operator=(Data& rhs);
 
-	int Integer;
-	char c;
-	double Double;
+    int Integer;
+    char c;
+    double Double;
 };
