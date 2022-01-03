@@ -6,9 +6,11 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 20:03:32 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/02 20:04:21 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/02 20:05:48 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <iostream>
 #include <string>
