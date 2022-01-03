@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 20:03:32 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/02 20:05:48 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/02 20:53:29 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ void swap(Swap &x, Swap &y)
     y = temp;
 }
 
-template <typename Min>
-Min min(Min x, Min y)
+template <typename T>
+T min(T &x, T &y)
 {
     if (x == y)
         return y;
     return (x < y) ? x : y;
 }
 
-template <typename Max>
-Max max(Max x, Max y)
+template <typename T>
+T max(T &x, T &y)
 {
     if (x == y)
         return y;
