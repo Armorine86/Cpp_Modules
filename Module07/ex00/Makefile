@@ -9,7 +9,7 @@ RM			=	rm -rf
 
 OBJ			=	obj
 
-INCS		=	
+INCS		=	whatever.hpp
 
 SRCS		=	main.cpp
 

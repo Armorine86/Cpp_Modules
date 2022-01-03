@@ -15,27 +15,27 @@
 #include <iostream>
 #include <string>
 
-template<typename Swap>
+template <typename Swap>
 void swap(Swap &x, Swap &y)
 {
-	Swap temp;
-	temp = x;
-	x = y;
-	y = temp;
+    Swap temp;
+    temp = x;
+    x = y;
+    y = temp;
 }
 
-template<typename Min>
+template <typename Min>
 Min min(Min x, Min y)
 {
-	if (x == y)
-		return y;
-	return (x < y) ? x : y;
+    if (x == y)
+        return y;
+    return (x < y) ? x : y;
 }
 
-template<typename Max>
+template <typename Max>
 Max max(Max x, Max y)
 {
-	if (x == y)
-		return y;
-	return (x > y) ? x : y;
+    if (x == y)
+        return y;
+    return (x > y) ? x : y;
 }
