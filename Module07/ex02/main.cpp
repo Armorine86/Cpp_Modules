@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 08:14:09 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/03 10:30:21 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/03 10:30:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,11 @@ int main(void)
             std::cout << alphabet[i] << " ";
         std::cout << std::endl;
 
-        std::cout << std::endl;
-
         Array<char> arr_cpy(alphabet);
 
         size = arr_cpy.getSize();
 
-        std::cout << YELLOW << "Copy array:\n" << END;
+        std::cout << YELLOW << "\nCopy array:\n" << END;
         std::cout << "Array of size: [" << size << "]" << std::endl;
         for (unsigned int i = 0; i < arr_cpy.getSize(); i++)
             std::cout << arr_cpy[i] << " ";
