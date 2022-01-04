@@ -1,4 +1,3 @@
-
 NAME		=	
 
 CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion\
