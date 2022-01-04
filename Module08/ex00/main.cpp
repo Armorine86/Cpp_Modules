@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:05:34 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/04 14:16:39 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/04 14:22:06 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ int main(void)
 		value = easyfind(vec0, 10);
 		std::cout << "Value found: " << *value << std::endl;
 	} catch (std::exception &e) {
-		std::cout << RED << "Value not found" << END << std::endl;
+		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
 	}
 
 	try {
 		value = easyfind(vec0, 0);
 		std::cout << "Value found: " << *value << std::endl;
 	} catch (std::exception &e) {
-		std::cout << RED << "Value not found" << END << std::endl;
+		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -74,14 +74,14 @@ int main(void)
 		value = easyfind(vec0, 15);
 		std::cout << "Value found: " << *value << std::endl;
 	} catch (std::exception &e) {
-		std::cout << RED << "Value not found" << END << std::endl;
+		std::cout << RED << "Value " << *value<< " not found" << END << std::endl;
 	}
 
 	try {
 		value = easyfind(vec0, 0);
 		std::cout << "Value found: " << *value << std::endl;
 	} catch (std::exception &e) {
-		std::cout << RED << "Value not found" << END << std::endl;
+		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
 	}
 	
 	std::cout << std::endl;
@@ -104,7 +104,7 @@ int main(void)
 		value = easyfind(vec0, 0);
 		std::cout << "Value found: " << *value << std::endl;
 	} catch (std::exception &e) {
-		std::cout << RED << "Value not found" << END << std::endl;
+		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
 	}
 
 	std::cout << std::endl;
