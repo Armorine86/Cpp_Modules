@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 11:42:08 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:20:19 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/24 11:47:01 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,23 @@ int Account::checkAmount(void) const
 void Account::makeDeposit(int deposit) {
 	
 	_displayTimestamp();
-	std::cout << "index" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit << std::endl;
+	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit;
 
 	_amount += deposit;
 	_totalAmount += deposit;
 	_nbDeposits++;
 	_totalNbDeposits++;
+
+	std::cout << ";amout:" << _amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
 	
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal; 
+	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount; 
 	if (_amount < withdrawal)
 	{
-		std::cout << ":refused\n";
+		std::cout << ";withdrawal:refused" << std::endl;
 		return (false);
 	}
 	_amount -= withdrawal;
@@ -79,7 +81,7 @@ bool Account::makeWithdrawal(int withdrawal) {
 	_nbWithdrawals++;
 	_totalNbWithdrawals++;
 
-	std::cout << ";amount:" << _amount << ";nb_withdrawal:" << _nbWithdrawals << std::endl;
+	std::cout << ";withdrawal:" << withdrawal << ";amount:" << _amount << ";nb_withdrawal:" << _nbWithdrawals << std::endl;
 	return (true);
 }
 
