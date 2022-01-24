@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 10:57:39 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/09 15:39:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/24 13:05:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 //* The data needed to be displayed on the screen,
 //* is inserted in the standard output stream (cout) using the insertion operator(<<)
 //
-//* "endl" s a predefined object of ostream class.
-//* It is used to insert a new line characters and flushes the stream.
+//* "endl" is a predefined object of ostream class.
+//* It is used to insert a new line characters and flushes the stream (forces output to console).
 //
 //* "int32_t" is the equivalent to the standard int type.
 //* It will tell the compiler to give exactly 32 bits (4 bytes) regardless
