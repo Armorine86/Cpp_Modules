@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:56 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 09:08:06 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 14:27:27 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ public:
 
 	//* Incrementor / Decrementor Operators Overload
 	Fixed &operator++();			//* Prefix increment operator
-	Fixed &operator--();			//* Prefix decrement oprator
+	Fixed &operator--();			//* Prefix decrement operator
 	Fixed operator++(int32_t); 	//* Postfix increment operator
 	Fixed operator--(int32_t); 	//* Postfic decrement operator
 	

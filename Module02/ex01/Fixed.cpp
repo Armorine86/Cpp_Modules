@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/14 12:52:51 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 14:31:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,19 @@
 
 #include "Fixed.hpp"
 
-
 const int32_t Fixed::bits = 8;
 
-
-Fixed::Fixed() {
-	
+Fixed::Fixed() : value(0) {
 	std::cout << "Default Constructor Called" << std::endl;
-	value = 0;
 }
 
 
 //* Copy Constructor
-Fixed::Fixed(const Fixed &def_c) {
+Fixed::Fixed(const Fixed &src) {
 
 	std::cout << "Copy Constructor Called" << std::endl;
 	
-	*this = def_c;
+	*this = src;
 }
 
 
@@ -43,6 +39,13 @@ Fixed::~Fixed() {
 
 Fixed::Fixed(const int32_t value) {
 	
+	// we want the fixed point number to have 8 bits for the fractional part
+	// so we shit the bits to the left by 8;
+	// 00000000 00000000 00000000 00000000
+	// BECOMES
+	// 00000000 00000000 00000000 . 00000000
+	//							    |   ^  |
+	//				Fractional part-----|
 	std::cout << "Int Constructor Called" << std::endl;
 	this->value = (value << bits);
 }
@@ -71,12 +74,19 @@ void Fixed::setRawBits(const int32_t raw) {
 
 float Fixed::toFloat(void) const
 {
-	return ((float)value / (float)(1 << bits));
+	//* the first bit of the mantissa (to the left of the binary point)
+	//* is always "1" and therefore need not be stored. 
+	//* It is called the implicit leading one.
+	//* Because of that you cannot ever represent 0 ever.
+	return ((float)value / (1 << bits));
 }
 
 
 int32_t Fixed::toInt(void) const
 {
+	// Since we only have 8 bits for the fractional part we shift 8 bits to the left
+	// leaving us with a full 32-bits integer.
+	// shifting one to the right is like dividing by two on integers
 	return (value >> bits);
 }
 
@@ -85,11 +95,13 @@ Fixed& Fixed::operator=(const Fixed& rhs) {
 
 	std::cout << "Assignation operator called" << std::endl;
 	
-	if (this != &rhs) //* Very important to make sure we're not dealing with the same object in memory
+	//* Very important to make sure we're not dealing with the same object in memory
+	if (this != &rhs) {
 		value = rhs.getRawBits();
+		return (*this);
+	}
 	return (*this);
 }
-
 
 std::ostream& operator<<(std::ostream& out, const Fixed& value) {
 	
@@ -98,7 +110,7 @@ std::ostream& operator<<(std::ostream& out, const Fixed& value) {
 }
 
 /* Ressources
-* https://stackoverflow.com/questions/3402702/converting-floating-point-to-32-bit-fixed-point-in-java/
+* https://stackoverflow.com/questions/34027converting-floating-point-to-32-bit-fixed-point-in-java/
 * https://www.youtube.com/watch?v=gc1Nl3mmCuY
 * https://www.geeksforgeeks.org/introduction-of-floating-point-representation/
 */

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:46:05 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/14 08:38:40 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 09:20:36 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 int main(void)
 {
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+	Fixed a; // Calls the default Constructor
+	Fixed b(a); // Calls the copy Constructor with associated operations
+	Fixed c; // Calls the default Constructor
 
-	c = b;
+	c = b; // Calls the assignation operator overload function
 	
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;

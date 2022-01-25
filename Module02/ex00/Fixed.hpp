@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:56 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/15 10:30:22 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 09:23:10 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class Fixed {
 	
 	public:
 		Fixed();
+		Fixed(const Fixed& src);
 		~Fixed();
-		Fixed(const Fixed& def_c);
-		int32_t getRawBits(void) const;
-		void setRawBits(const int32_t raw);
 		Fixed& operator=(const Fixed& rhs); //* rhs = Right hand side
+		
+		int32_t getRawBits(void) const;
 }; 

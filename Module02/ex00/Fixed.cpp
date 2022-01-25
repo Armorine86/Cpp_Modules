@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/14 10:20:38 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 09:23:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ Fixed::Fixed() : value(0) {
 }
 
 //* Copy Constructor
-Fixed::Fixed(const Fixed &def_c) {
+Fixed::Fixed(const Fixed &src) {
 
 	std::cout << "Copy Constructor Called" << std::endl;
 	
-	*this = def_c;
+	*this = src;
 }
 
 Fixed::~Fixed() {
@@ -34,24 +34,21 @@ Fixed::~Fixed() {
 	std::cout << "Destructor Called" << std::endl;
 }
 
-int32_t Fixed::getRawBits(void) const {
-
-	std::cout << "getRawBits member function called" << std::endl;
-	return (value);
-}
-
-void Fixed::setRawBits(const int32_t raw) {
-	
-	std::cout << "setRawBits member function called" << std::endl;
-	value = raw;
-}
-
 //* Operator Overloading
 Fixed& Fixed::operator=(const Fixed& rhs) {
 
 	std::cout << "Assignation operator called" << std::endl;
 	
-	if (this != &rhs) //* Very important to make sure we're not dealing with the same object in memory
+	//* Very important to make sure we're not dealing with the same object in memory
+	if (this != &rhs) {
 		value = rhs.getRawBits();
+		return (*this);
+	}
 	return (*this);
+}
+
+int32_t Fixed::getRawBits(void) const {
+
+	std::cout << "getRawBits member function called" << std::endl;
+	return (value);
 }
