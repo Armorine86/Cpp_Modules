@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:40:07 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/13 09:45:53 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 08:28:32 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void usage(void) {
 	std::cout << "[file] [s1] [s2]\n" << std::endl;
 }
 
+//* Open the file, reads it's content, and return it as string. Because you don't want to alter the original file.
 std::string FileToString(const std::string& filename) {
 
 	//* ifstream = read from a file
@@ -48,20 +49,13 @@ std::string FileToString(const std::string& filename) {
 	return (file_content.str());  //* returns the object as a string;
 }
 
+//* replace all occurence of s1 with s2
 void replace_content(std::string& file, std::string& s1, std::string& s2)
 {
-	//* find occurence of s1 in "file" start at index 0. Returns a int.
-	size_t index = file.find(s1, 0);
-	size_t s1len = s1.length();
-	size_t s2len = s2.length();
-	size_t file_len = file.length();
-
-	while (index < file_len)
-	{
-		file.erase(index, s1len); //* erase characters starting at index up to s1len
-		file.insert(index, s2); //* inster s2 string starting at index
-		index += s2len;
-		index = file.find(s1, index);
+	for (int index = file.find(s1); file.find(s1) != std::string::npos; ) {
+		file.erase(index, s1.length());
+		file.insert(index, s2);
+		index = file.find(s1);
 	}
 }
 
@@ -85,10 +79,8 @@ int main(int argc, char **argv) {
 		exit (EXIT_FAILURE);
 	}
 	
-	//* Open the file, reads it's content, and return it as string. Because you don't want to alter the original file.
 	std::string file_content = FileToString(filename);
 	
-	//* replace all occurence of s1 with s2
 	replace_content(file_content, s1, s2);
 	
 	//* appends filename with .replace

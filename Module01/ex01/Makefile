@@ -10,7 +10,7 @@ SRCS		=	Zombie.cpp ZombieHorde.cpp main.cpp
 OBJS		=	$(addprefix $(OBJ)/, $(SRCS:.cpp=.o))
 
 $(OBJ)/%.o:	%.cpp
-			$(CC) $(CFLAGS) -I. -c $< -o $@
+			$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJ) $(OBJS)
 			$(CC) $(OBJS) -o $(NAME)

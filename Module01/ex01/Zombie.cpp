@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:06:52 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/10 08:25:12 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/24 13:22:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Zombie::~Zombie() { //* Default Destructor
 
 void Zombie::randName() {
 	
-	//* list of Male and Female names
+	//* list of names
 	std::string male[10] = {"Earl", "Eddie", "Edward", "Edwin", "Elmer", "Ernest", "Eugene", "Everett", "Francis", "Frank"};
 	std::string female[10] = {"Charlotte", "Claire", "Clara", "Constance", "Daisy", "Dolores", "Dora", "Doris", "Dorothy", "Edith"};
 	std::string new_name;

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 16:42:56 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:24:00 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:59:01 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,13 @@ int main(void) {
 	std::cout << "stringPTR Value at address:            " << *stringPTR << std::endl;
 	std::cout << "value of str referenced by stringREF:  " << stringREF << std::endl;
 	
-	std::cout << "\nMajor differences between Pointers and References\n";
-	std::cout << "|===========================================================================|\n";
-	std::cout << "|             POINTERS             ||              REFERENCES               |\n";
-	std::cout << "|===========================================================================|\n";
-	std::cout << "|a) Ptr store a variable address   || References IS the variable            |\n";
-	std::cout << "|                                  ||                                       |\n";
-	std::cout << "|b) Ptr can be NULL                || References cannot be NULL             |\n";
-	std::cout << "|                                  ||                                       |\n";
-	std::cout << "|c) Ptr can point to diff addresses|| Ref can only ref a single var ever    |\n";
-	std::cout << "|===========================================================================|" << std::endl;
-
+	// |===========================================================================|
+	// |             POINTERS             ||              REFERENCES               |
+	// |===========================================================================|
+	// |a) Ptr store a variable address   || References IS the variable            |
+	// |                                  ||                                       |
+	// |b) Ptr can be NULL                || References cannot be NULL             |
+	// |                                  ||                                       |
+	// |c) Ptr can point to diff addresses|| Ref can only ref a single var ever    |
+	// |===========================================================================|cd
 }

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 14:55:17 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/10 08:18:55 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/24 13:42:42 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Zombie* zombieHorde(int32_t N, std::string name) {
 		return (NULL);
 	}
 		
-	horde = new Zombie[N]; //* Allocates memory for N number of Zombies
+	//* Allocates an array in memory for N objects of class Zombie
+	horde = new Zombie[N];
 	return (horde);
 }

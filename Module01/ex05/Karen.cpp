@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:15:49 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:48:26 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 08:38:48 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void Karen::error(void)
 
 void Karen::complain(std::string level) 
 {	
-	//* a function has an address in memory. We can make a pointer to pointer
-	//* to point at it's location.
+	//* Functions also have an address in memory. We can make function pointers
+	//* to point to different functions in an array.
 	
 	//* associates each bracket/pointers to the wanted function
 	fncPtr[0] = &Karen::debug;

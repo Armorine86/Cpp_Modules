@@ -1,5 +1,5 @@
 NAME		=	weapon
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98 -fstandalone-debug
 CC			=	clang++
 RM			=	rm -rf
 
