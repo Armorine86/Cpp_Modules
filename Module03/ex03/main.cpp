@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:04 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 13:37:16 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:49:27 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void) {
 	ClapTrap claptrap("CL4P-TP");
 	ScavTrap scavtrap("SC4V-TP");
 	FragTrap fragtrap("FR4G-TP");
-	DiamondTrap diamondtrap("DI4M0ND");
+	DiamondTrap diamondtrap("DI4M0ND-TP");
 	
 	std::cout << std::endl;
 	
@@ -89,7 +89,10 @@ int main(void) {
 	std::cout << "=============================" << std::endl;
 	diamondtrap.GuardGate();
 	diamondtrap.highFivesGuys();
-	//diamondtrap.whoAmI();
+
+	std::cout << "\nDIAMONDTRAP: Who am I ?:\n";
+	std::cout << "=============================" << std::endl;
+	diamondtrap.whoAmI(); //TODO Need fix
 	
 	std::cout << "\nDestructors\n";
 	std::cout << "===========" << std::endl;

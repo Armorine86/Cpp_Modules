@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 09:35:53 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 14:00:26 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:48:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 	std::cout << "DiamondTrap <" << this->name_ << "> have entered the fray! [DEFAULT]" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name)
+DiamondTrap::DiamondTrap(const std::string& name) :
+	ScavTrap(name),
+	FragTrap(name),
+	name_(name)
 {
-	this->name_ = name + "_clap_name";
+	ClapTrap::name_ = this->name_ = "_clap_name";
 	Hitpoints = FragTrap::Hitpoints;
 	EnergyPoints = ScavTrap::EnergyPoints;
 	AttackDamage = FragTrap::AttackDamage;
@@ -79,6 +82,7 @@ void DiamondTrap::attack(const std::string& target)
 
 void DiamondTrap::whoAmI() 
 {
-	
+	std::cout << "I am a bit of: " << this->name_ << " and a bit of : " << ClapTrap::name_
+			  << std::endl;
 }
 //* ===============================================================================

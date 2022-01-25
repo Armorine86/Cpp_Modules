@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 09:50:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 13:50:54 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:21:37 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ class ScavTrap : public ClapTrap {
 		virtual ~ScavTrap();
 		ScavTrap& operator=(const ScavTrap& rhs);
 		
+		// virtual keyword override the same function in the parent Class
+		// so this one is called instead of ClapTrap one
 		virtual void attack(const std::string& target);
 		
+		// since this function doesn't exist in parent Class we don't need to prefix
+		// virtual in front of the function.
 		void GuardGate();
 		
 };

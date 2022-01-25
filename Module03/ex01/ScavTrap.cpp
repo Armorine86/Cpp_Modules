@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:56:38 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 13:53:12 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:22:01 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void ScavTrap::GuardGate() {
 	
 	std::cout << "ScavTrap <" << this->name_
 			  << "> Look out, everybody, things are about to get awesome!\n"
-			  << " [GATE KEEPER MODE IS ON!]" << std::endl;
+			  << "[GATE KEEPER MODE IS ON!]" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target) {

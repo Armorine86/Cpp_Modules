@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:37:22 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 09:27:57 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:24:13 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs) {
 //* ===============================================================================
 void FragTrap::attack(const std::string& target) {
 	
-	std::cout << "SkavTrap <" << this->name_ << "> attack <" << target
+	std::cout << "FragTrap <" << this->name_ << "> attack <" << target
 			  << ">, causing <" << this->AttackDamage << "> points of damage!"
 			  << std::endl;
 }
