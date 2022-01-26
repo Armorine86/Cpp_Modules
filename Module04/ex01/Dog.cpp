@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:31:53 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 13:03:20 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Dog::Dog(std::string type) : Animal()
 {
     this->type = type;
     brain = new Brain();
-    std::cout << "Doc Subclass Overload Constructor called [CONSTRUCTOR]" << std::endl;
+    std::cout << "Dog Subclass Overload Constructor called [CONSTRUCTOR]" << std::endl;
 }
 
 Dog::Dog(const Dog& src)
@@ -40,7 +40,7 @@ Dog::Dog(const Dog& src)
 Dog::~Dog()
 {
     std::cout << "Dog Destructor Called" << std::endl;
-    delete (brain);
+    delete brain;
 }
 
 Dog& Dog::operator=(const Dog& rhs)
@@ -55,7 +55,7 @@ Dog& Dog::operator=(const Dog& rhs)
 
 void Dog::makeSound() const
 {
-    std::cout << "Wouf Wouf ! [DOG]" << std::endl;
+    std::cout << "[DOG] Wouf Wouf ! " << std::endl;
 }
 
 Brain& Dog::getBrain() const

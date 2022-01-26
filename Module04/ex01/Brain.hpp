@@ -6,14 +6,13 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:41:54 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 15:10:06 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:39:57 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <stdint.h>
-
 #include <string>
 
 #define N_IDEAS 100

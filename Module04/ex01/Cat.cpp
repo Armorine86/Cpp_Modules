@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:57:19 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:29:30 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:43:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Cat::Cat(const Cat& src)
 Cat::~Cat()
 {
     std::cout << "Cat Destructor Called" << std::endl;
-    delete (brain);
+    delete brain;
 }
 
 Cat& Cat::operator=(const Cat& rhs)
@@ -55,7 +55,7 @@ Cat& Cat::operator=(const Cat& rhs)
 
 void Cat::makeSound() const
 {
-    std::cout << "Meow Meow ! [CAT]" << std::endl;
+    std::cout << "[CAT] Meow Meow !" << std::endl;
 }
 
 Brain& Cat::getBrain() const

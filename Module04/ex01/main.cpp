@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 16:00:25 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 19:57:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:48:18 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ int main(void)
 
         delete animal;
         std::cout << std::endl;
+        
         delete cat1;
         std::cout << std::endl;
+        
         delete dog1;
         std::cout << "========================================" << std::endl;
     }
