@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 16:42:56 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/24 14:59:01 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 08:23:11 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ int main(void) {
 	// |b) Ptr can be NULL                || References cannot be NULL             |
 	// |                                  ||                                       |
 	// |c) Ptr can point to diff addresses|| Ref can only ref a single var ever    |
-	// |===========================================================================|cd
+	// |===========================================================================|
 }
