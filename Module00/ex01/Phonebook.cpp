@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 14:22:51 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/26 10:44:42 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:07:31 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ void Phonebook::list_contact()
 		std::cout << "> ";
 		std::getline(std::cin >> std::ws, input);
 		
-		// stoi to convert the string into an integer
-		index = stoi(input);
+		// convert input to a const string using c_str() method
+		index = atoi(input.c_str());
 
 		if (input == "RETURN")
 			return;

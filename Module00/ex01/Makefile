@@ -20,6 +20,9 @@ $(OBJ):
 
 all:		$(NAME)
 
+debug:		CFLAGS += -g
+debug:		all
+
 clean:
 			@$(RM) $(OBJS)
 
