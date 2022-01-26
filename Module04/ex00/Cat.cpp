@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:57:19 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:34:59 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:37:10 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ Cat& Cat::operator=(const Cat& rhs)
 
 void Cat::makeSound() const
 {
-    std::cout << "Meow Meow ! [CAT]" << std::endl;
+    // since this function is virtual, this will be called instead of the one
+    // in the Parent Class
+    std::cout << "[" << getType() << "] " << "Meow Meow !"  << std::endl;
 }

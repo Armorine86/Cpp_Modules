@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:35:10 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:36:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ Dog& Dog::operator=(const Dog& rhs)
 
 void Dog::makeSound() const
 {
-    std::cout << "Wouf Wouf ! [DOG]" << std::endl;
+    std::cout << "[" << getType() << "] " << "Wouf Wouf !"  << std::endl;
 }

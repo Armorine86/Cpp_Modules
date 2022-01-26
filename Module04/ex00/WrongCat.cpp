@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:57:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:39:56 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:36:15 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 #include <iostream>
 
-WrongCat::WrongCat()
+WrongCat::WrongCat() : WrongAnimal()
 {
     type = "WrongCat";
-
+    
     std::cout << "WrongCat Subclass Constructor [DEFAULT]" << std::endl;
 }
 
@@ -51,5 +51,6 @@ WrongCat& WrongCat::operator=(const WrongCat& rhs)
 
 void WrongCat::makeSound() const
 {
+    // Since this function is not virtual, it will be called from WrongAnimal Parent Class
     std::cout << "WrongCat Noise: Wouf Wouf !" << std::endl;
 }

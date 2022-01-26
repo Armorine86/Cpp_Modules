@@ -6,13 +6,14 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:37:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:21:14 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 10:29:23 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Animal.hpp"
+#include "colors.hpp"
 
 class Dog : public Animal
 {

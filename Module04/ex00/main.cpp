@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 16:00:25 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:22:40 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:34:53 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,26 @@ int main(void)
     {
         std::cout << "=========================================" << std::endl;
         const Animal* meta = new Animal();
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
+        const Animal* dog = new Dog();
+        const Animal* cat = new Cat();
 
         std::cout << std::endl;
 
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
+        std::cout << dog->getType() << std::endl;
+        std::cout << cat->getType() << std::endl;
 
         std::cout << std::endl;
 
         //* Virtual
-        i->makeSound();  //* will output the cat sound!
-        j->makeSound();  //* will output the dog sound!
+        cat->makeSound();  //* will output the cat sound!
+        dog->makeSound();  //* will output the dog sound!
         meta->makeSound();
 
         std::cout << std::endl;
 
-        delete (meta);
-        delete (j);
-        delete (i);
+        delete meta;
+        delete dog;
+        delete cat;
     }
 
     std::cout << "=========================================" << std::endl;
@@ -65,8 +65,8 @@ int main(void)
 
         std::cout << std::endl;
 
-        delete (wrongcat);
-        delete (wronganimal);
+        delete wronganimal;
+        delete wrongcat;
     }
     std::cout << "=========================================" << std::endl;
 }

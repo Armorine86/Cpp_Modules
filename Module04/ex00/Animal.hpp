@@ -6,13 +6,15 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:53:12 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:21:36 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 10:29:40 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include "colors.hpp"
+
 
 class Animal
 {

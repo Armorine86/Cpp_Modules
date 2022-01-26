@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 18:51:04 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 09:10:46 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:32:51 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ std::string WrongAnimal::getType() const
 
 void WrongAnimal::makeSound() const
 {
-    std::cout << "WrongAnimal random noises" << std::endl;
+    std::cout << "[PARENT] WrongAnimal noises" << std::endl;
 }

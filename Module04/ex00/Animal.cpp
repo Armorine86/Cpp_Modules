@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 14:56:01 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:34:40 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 10:18:36 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-Animal::Animal() : type("Animal")
+Animal::Animal() : type("Basic Animal")
 {
     std::cout << "Base Class Animal Constructor [DEFAULT]" << std::endl;
 }
