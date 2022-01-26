@@ -1,5 +1,5 @@
 NAME		=	diamondtrap
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98 -fstandalone-debug -Wshadow
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -std=c++98 -fstandalone-debug -Wno-shadow
 CC			=	clang++
 RM			=	rm -rf
 

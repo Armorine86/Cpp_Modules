@@ -6,14 +6,12 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 14:01:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:14:42 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
 #include "ClapTrap.hpp"
-
 
 //* Constructors // Destructor
 //* ===============================================================================

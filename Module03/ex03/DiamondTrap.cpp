@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 09:35:53 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/25 20:05:38 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:09:06 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,20 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 	EnergyPoints = ScavTrap::EnergyPoints;
 	AttackDamage = FragTrap::AttackDamage;
 	
-	std::cout << "DiamondTrap <" << this->name_ << "> have entered the fray! [DEFAULT]" << std::endl;
+	std::cout << "DiamondTrap <" << this->name_ << "> TREMBLE MORTALS! [DEFAULT]" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string& name) :
-	ClapTrap(name + "_clap_name"),
-	name_(name)
+	ScavTrap(name),
+	FragTrap(name)	
 {
+	name_ = name;
+	ClapTrap::name_ = name + "_clap_name";
 	Hitpoints = FragTrap::Hitpoints;
 	EnergyPoints = ScavTrap::EnergyPoints;
 	AttackDamage = FragTrap::AttackDamage;
 	
-	std::cout << "DiamondTrap <" << this->name_ << "> have entered the fray! [OVERLOAD]" << std::endl;
+	std::cout << "DiamondTrap <" << this->name_ << "> TREMBLE MORTALS! [OVERLOAD]" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src)
@@ -49,9 +51,9 @@ DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src)
 DiamondTrap::~DiamondTrap() 
 {
 	if (this->Hitpoints > 0)
-		std::cout << "FragTrap <" << this->name_ << "> Ha ha ha! Fall before your robot overlord! [DIAMOND]" << std::endl;
+		std::cout << "DiamondTrap <" << this->name_ << "> Ha ha ha! Fall before your robot overlord! [DIAMOND]" << std::endl;
 	else
-		std::cout << "FragTrap <" << this->name_ << "> I'M DEAD I'M DEAD OHMYGOD I'M DEAD! [DIAMOND]"
+		std::cout << "DiamondTrap <" << this->name_ << "> I'M DEAD I'M DEAD OHMYGOD I'M DEAD! [DIAMOND]"
 				  << std::endl;
 }
 //* ===============================================================================
