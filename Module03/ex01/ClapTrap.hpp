@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 20:58:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/17 13:55:53 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/26 09:49:02 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 class ClapTrap {
 
+	// Private members are only accessible trough methods of the same class
+	// Protected members will also be available to subclasses.
 	protected:
 		std::string name_;
 		int32_t Hitpoints;
