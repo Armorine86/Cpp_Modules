@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 21:06:04 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/25 15:49:27 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:08:15 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int main(void) {
 
 	std::cout << "\nDIAMONDTRAP: Who am I ?:\n";
 	std::cout << "=============================" << std::endl;
-	diamondtrap.whoAmI(); //TODO Need fix
+	diamondtrap.whoAmI();
 	
 	std::cout << "\nDestructors\n";
 	std::cout << "===========" << std::endl;
