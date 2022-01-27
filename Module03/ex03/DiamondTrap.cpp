@@ -6,14 +6,15 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 09:35:53 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/26 09:09:06 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/27 08:48:24 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "DiamondTrap.hpp"
 
 
-//*Constructors
+//*	Constructors
 //* ===============================================================================
 DiamondTrap::DiamondTrap() : ClapTrap()
 {
@@ -25,12 +26,10 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 	std::cout << "DiamondTrap <" << this->name_ << "> TREMBLE MORTALS! [DEFAULT]" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string& name) :
-	ScavTrap(name),
-	FragTrap(name)	
+DiamondTrap::DiamondTrap(const std::string& name) : ScavTrap(name), FragTrap(name)
 {
 	name_ = name;
-	ClapTrap::name_ = name + "_clap_name";
+	ClapTrap::name_ = name_ + "_clap_name";
 	Hitpoints = FragTrap::Hitpoints;
 	EnergyPoints = ScavTrap::EnergyPoints;
 	AttackDamage = FragTrap::AttackDamage;
@@ -45,7 +44,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src)
 	this->EnergyPoints = src.EnergyPoints;
 	this->AttackDamage = src.AttackDamage;
 	
-	std::cout << "DiamondTrap <" << this->name_ << "> have entered the fray! [COPY]" << std::endl;
+	std::cout << "DiamondTrap <" << this->name_ << "> TREMBLE MORTALS! [COPY]" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap() 

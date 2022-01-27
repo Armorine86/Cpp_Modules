@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 20:58:45 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/26 09:49:26 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/27 08:41:44 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <string>
 #include <stdint.h>
+#include <iostream>
 
 #define CLAP_HP 10
 #define CLAP_ENERGY 10
