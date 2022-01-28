@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:57:19 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/26 12:43:34 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/27 11:14:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ Cat::Cat(std::string type) : Animal()
     std::cout << "Cat Subclass Overload Constructor Called [OVERLOARD]" << std::endl;
 }
 
-Cat::Cat(const Cat& src)
+Cat::Cat(const Cat& src): Animal(), brain(new Brain())
 {
-    *this->brain = Brain();
-    this->type = src.type;
+    *this = src;
     std::cout << "Cat Subclass Copy Constructor Called [COPY]" << std::endl;
 }
 
@@ -46,7 +45,9 @@ Cat::~Cat()
 Cat& Cat::operator=(const Cat& rhs)
 {
     if (this != &rhs) {
-        this->brain = rhs.brain;
+        for (size_t i = 0; i < N_IDEAS; i++) {
+            brain->setIdea(i, rhs.brain->getIdea(i));
+        }
         this->type = rhs.type;
         return (*this);
     }

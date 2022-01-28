@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:51:19 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:28:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/27 11:05:40 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Brain::Brain()
     int32_t i = 0;
 
     for (; i < N_IDEAS; i++)
-        ideas[i] = " ";
+        ideas[i] = "Nothing here... Move along!";
 
     std::cout << "This brain is filled with ideas!" << std::endl;
 }
@@ -38,11 +38,11 @@ Brain::~Brain()
 
 Brain& Brain::operator=(const Brain& rhs)
 {
-    if (this != &rhs) {
-        *this = rhs;
-        return (*this);
+    for (size_t i = 0; i < N_IDEAS; i++) {
+            ideas[i] = rhs.ideas[i];
     }
-    return (*this);
+    return *this;
+  
 }
 
 void Brain::setIdea(int32_t index, std::string idea)
