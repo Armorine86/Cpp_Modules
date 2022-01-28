@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 16:00:25 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/20 19:56:51 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/28 08:59:39 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int main(void)
         //* Cats and Dogs get their brains
         std::cout << "\nBRAIN TESTS\n";
         std::cout << "========================================" << std::endl;
-        //* Animal *animal = new Animal();
+       
+        // Animal *animal = new Animal();
         //* This cannot be instantiated because of a pure virtual function
+       
         std::cout << std::endl;
         Animal *cat1 = new Cat();
         std::cout << std::endl;
@@ -33,14 +35,48 @@ int main(void)
 
         std::cout << std::endl;
 
-        //* delete animal;
+        //delete animal;
         std::cout << std::endl;
+        
         delete cat1;
         std::cout << std::endl;
+        
         delete dog1;
         std::cout << "========================================" << std::endl;
     }
 
+    {
+        std::cout << "\nDEEP COPY TESTS\n";
+        std::cout << "========================================" << std::endl;
+
+        Cat cat1;
+        cat1.getBrain().setIdea(10, "Obey me Hooman!");
+        std::cout << "\n[" << cat1.getType() << "1]" << cat1.getBrain().getIdea(10) << std::endl;
+        
+        std::cout << std::endl;
+
+        Cat cat2;
+        cat2.getBrain().setIdea(10, "Let me out, Karen!");
+        std::cout << "\n[" << cat2.getType() << "2]" << cat2.getBrain().getIdea(10) << std::endl;
+        
+        std::cout << std::endl;
+    
+        Cat cat3;
+
+        std::cout << std::endl;
+        
+        cat3 = cat1;
+        std::cout << "[" << cat3.getType() << "3]" << cat3.getBrain().getIdea(10) << std::endl;
+        
+        std::cout << std::endl;
+
+        cat3 = cat2;
+
+        std::cout << "[" << cat3.getType() << "3]" << cat3.getBrain().getIdea(10) << std::endl; 
+
+        std::cout << std::endl;
+    }
+    
     {
         //* Idea setting / Getting tests
         std::cout << "\nIDEAS TESTS\n";
@@ -54,11 +90,11 @@ int main(void)
 
         std::cout << "Inside the Brains! :\n";
         std::cout << "====================" << std::endl;
-        cat->getBrain().setIdea(10, "Obey me Hooman!\n");
-        dog->getBrain().setIdea(25, "Where's my bone?\n");
+        cat->getBrain().setIdea(10, "Obey me Hooman!");
+        dog->getBrain().setIdea(25, "Where's my bone?");
 
-        std::cout << "[" << cat->getType() << "]" << cat->getBrain().getIdea(10);
-        std::cout << "[" << dog->getType() << "]" << dog->getBrain().getIdea(25);
+        std::cout << "[" << cat->getType() << "]" << cat->getBrain().getIdea(10) << std::endl;
+        std::cout << "[" << dog->getType() << "]" << dog->getBrain().getIdea(25) << std::endl;
 
         std::cout << std::endl;
 
@@ -68,14 +104,12 @@ int main(void)
     }
 
     {
-        int32_t i = 0;
-
         std::cout << "\nARRAY TESTS\n";
         std::cout << "========================================" << std::endl;
         Animal *animals[ARR_SIZE];
 
         //* Fill Array half dogs, half cats
-        for (; i < ARR_SIZE; i++) {
+        for (size_t i = 0; i < ARR_SIZE; i++) {
             if (i < ARR_SIZE / 2) {
                 animals[i] = new Cat();
                 std::cout << std::endl;
@@ -87,7 +121,7 @@ int main(void)
 
         std::cout << std::endl;
 
-        for (i = 0; i < ARR_SIZE; i++) {
+        for (size_t i = 0; i < ARR_SIZE; i++) {
             std::cout << "Index [" << i << "] ";
             std::cout << animals[i]->getType() << std::endl;
             animals[i]->makeSound();
@@ -96,7 +130,7 @@ int main(void)
 
         std::cout << std::endl;
 
-        for (i = 0; i < ARR_SIZE; i++) {
+        for (size_t i = 0; i < ARR_SIZE; i++) {
             delete animals[i];
             std::cout << std::endl;
         }

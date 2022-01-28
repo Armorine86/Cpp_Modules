@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:36:34 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/28 08:57:44 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ Dog::~Dog()
 Dog& Dog::operator=(const Dog& rhs)
 {
     if (this != &rhs) {
-        this->brain = rhs.brain;
+        for (size_t i = 0; i < N_IDEAS; i++) {
+            brain->setIdea(i, rhs.brain->getIdea(i));
+        }
         this->type = rhs.type;
         return (*this);
     }
