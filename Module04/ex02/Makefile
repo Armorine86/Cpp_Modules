@@ -6,12 +6,12 @@
 #    By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/19 18:30:52 by mmondell          #+#    #+#              #
-#    Updated: 2021/12/20 14:55:45 by mmondell         ###   ########.fr        #
+#    Updated: 2022/01/28 09:01:59 by mmondell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	animals
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion -Wshadow -std=c++98 -fstandalone-debug
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wshadow -std=c++98 -fstandalone-debug
 CC			=	clang++
 RM			=	rm -rf
 
