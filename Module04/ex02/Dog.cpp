@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/28 08:57:44 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/31 14:19:38 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@ Dog::Dog() : Animal()
     std::cout << "Dog Subclass Constructor called [DEFAULT]" << std::endl;
 }
 
-Dog::Dog(std::string type) : Animal()
+Dog::Dog(std::string type) : Animal(), brain(new Brain())
 {
     this->type = type;
-    brain = new Brain();
     std::cout << "Doc Subclass Overload Constructor called [CONSTRUCTOR]" << std::endl;
 }
 
-Dog::Dog(const Dog& src)
+Dog::Dog(const Dog& src) : Animal(), brain(new Brain())
 {
-    *this = src;
+     for (size_t i = 0; i < N_IDEAS; i++)
+        brain->setIdea(i, src.brain->getIdea(i));
+    type = src.type;
     std::cout << "Dog Subclass Copy Constructor Called [COPY]" << std::endl;
 }
 
