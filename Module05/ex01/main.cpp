@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:08:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 10:42:18 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/31 12:51:54 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void)
     std::cout << GREEN << "\n===============================================\n";
     std::cout << "||    Basic Bureaucrat Constructor Tests     ||";
     std::cout << "\n===============================================" << END << std::endl;
+    
     try {
         Bureaucrat rogers("Rogers", HIGHEST);
         std::cout << rogers;
@@ -44,6 +45,7 @@ int main(void)
     std::cout << GREEN << "\n===================================================\n";
     std::cout << "||    Bureaucrat Constructor Exception Tests     ||";
     std::cout << "\n===================================================" << END << std::endl;
+    
     try {
         Bureaucrat rogers("Rogers", HIGHEST - 1);
         std::cout << rogers;
@@ -69,6 +71,7 @@ int main(void)
     std::cout << GREEN << "\n==========================\n";
     std::cout << "|| Rank UP / DOWN Tests ||";
     std::cout << "\n==========================" << END << std::endl;
+    
     try {
         Bureaucrat lawrence("Lawrence", HIGHEST);
         std::cout << lawrence;
@@ -102,6 +105,7 @@ int main(void)
     std::cout << GREEN << "\n======================================\n";
     std::cout << "|| Form Constructor Exception Tests ||";
     std::cout << "\n======================================" << END << std::endl;
+    
     try {
         Form SoulContract("Relinquish Soul's Ownership", HIGHEST - 1);
         std::cout << SoulContract;
@@ -127,6 +131,7 @@ int main(void)
     std::cout << GREEN << "\n===============================\n";
     std::cout << "||      Signature Tests      ||";
     std::cout << "\n===============================" << END << std::endl;
+    
     try {
         Bureaucrat rogers("Rogers", 131);
         std::cout << rogers;
@@ -155,6 +160,7 @@ int main(void)
     std::cout << GREEN << "\n===============================\n";
     std::cout << "|| Already Signed Form Tests ||";
     std::cout << "\n===============================" << END << std::endl;
+    
     try {
         Bureaucrat rogers("Rogers", 131);
         std::cout << rogers;
