@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 08:05:45 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 08:39:27 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:02:47 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ICharacter.hpp"
 
 //* AMateria is an Abstract Class (aka  ABC)
-//* A class is made abstract by declaring at least one function as pure virutal ( = 0)
+//* A class is made abstract by declaring at least one function as pure virtual ( = 0)
 //* A pure virtual function MUST BE overriden in the subclass. Otherwise you get a compilation error
 //* Abstract classes CANNOT be instantiated
 

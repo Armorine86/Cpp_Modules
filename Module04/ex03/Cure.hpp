@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 09:40:55 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/21 13:37:50 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:06:57 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 class Cure : public AMateria
 {
-
 public:
     Cure();
     Cure(const Cure &src);
