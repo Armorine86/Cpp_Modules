@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/28 08:30:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/31 13:03:49 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,7 @@ void Form::checkGrade()
 
 std::ostream& operator<<(std::ostream& out, Form& f)
 {
-    out << "Form: <" << f.getFormName() << "> -- Signature grade: [" << f.getReqSignGrade() << "]"
-        << " Execution grade: [" << f.getReqExecGrade() << "]" << std::endl;
+    out << "Form: <" << f.getFormName() << "> -- Signature grade: [" << f.getReqSignGrade() << "]" << " Execution grade: [" << f.getReqExecGrade() << "]" << std::endl;
 
     return out;
 }

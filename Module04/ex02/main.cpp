@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 16:00:25 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/28 08:59:39 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/31 14:39:27 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,31 +49,31 @@ int main(void)
         std::cout << "\nDEEP COPY TESTS\n";
         std::cout << "========================================" << std::endl;
 
-        Cat cat1;
-        cat1.getBrain().setIdea(10, "Obey me Hooman!");
-        std::cout << "\n[" << cat1.getType() << "1]" << cat1.getBrain().getIdea(10) << std::endl;
-        
+        Cat *cat1 = new Cat();
+    
         std::cout << std::endl;
-
-        Cat cat2;
-        cat2.getBrain().setIdea(10, "Let me out, Karen!");
-        std::cout << "\n[" << cat2.getType() << "2]" << cat2.getBrain().getIdea(10) << std::endl;
-        
+        cat1->getBrain().setIdea(10, "LET ME OUT KAREN !");
+        std::cout << "[CAT 1] " << cat1->getBrain().getIdea(10) << std::endl;
         std::cout << std::endl;
     
-        Cat cat3;
+        Cat cat2(*cat1);
+    
+        std::cout << std::endl;
+        std::cout << "[CAT 2] " << cat2.getBrain().getIdea(10) << std::endl;
+        std::cout << std::endl;
+
+        delete cat1;
 
         std::cout << std::endl;
-        
-        cat3 = cat1;
-        std::cout << "[" << cat3.getType() << "3]" << cat3.getBrain().getIdea(10) << std::endl;
-        
+        std::cout << "[CAT 2] " << cat2.getBrain().getIdea(10) << std::endl;
         std::cout << std::endl;
+
+        Cat cat3;
 
         cat3 = cat2;
 
-        std::cout << "[" << cat3.getType() << "3]" << cat3.getBrain().getIdea(10) << std::endl; 
-
+        std::cout << std::endl;
+        std::cout << "[CAT 3] " << cat3.getBrain().getIdea(10) << std::endl;
         std::cout << std::endl;
     }
     
