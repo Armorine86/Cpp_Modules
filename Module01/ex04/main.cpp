@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 20:40:07 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/25 08:28:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/31 09:45:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void replace_content(std::string& file, std::string& s1, std::string& s2)
 		file.erase(index, s1.length());
 		file.insert(index, s2);
 		index = file.find(s1);
+		
 	}
 }
 
@@ -76,6 +77,11 @@ int main(int argc, char **argv) {
 	{
 		std::cerr << "\nError: s1 and s2 cannot be empty\n" << std::endl;
 		usage();
+		exit (EXIT_FAILURE);
+	}
+
+	if (s1 == s2) {
+		std::cout << "Strings needs to be different" << std::endl;
 		exit (EXIT_FAILURE);
 	}
 	
