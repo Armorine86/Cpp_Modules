@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 13:38:15 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/31 16:50:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/01/31 10:31:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool is_pseudo_litteral(std::string& input)
 
 bool Convert::isImpossible()
 {
-	if (type == error || isnanf(Float) || isinff(Float))
+	if (type == error || isnan(Float) || isinf(Float))
 		return true;
 	return false;
 }
