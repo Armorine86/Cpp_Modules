@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 16:00:25 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/31 14:38:06 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/01 08:46:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,14 @@ int main(void)
         std::cout << std::endl;
         cat1->getBrain().setIdea(10, "LET ME OUT KAREN !");
         std::cout << "[CAT 1] " << cat1->getBrain().getIdea(10) << std::endl;
+        std::cout << &cat1->getBrain() << std::endl;
         std::cout << std::endl;
     
         Cat cat2(*cat1);
     
         std::cout << std::endl;
         std::cout << "[CAT 2] " << cat2.getBrain().getIdea(10) << std::endl;
+        std::cout << &cat2.getBrain() << std::endl;
         std::cout << std::endl;
 
         delete cat1;
@@ -72,7 +74,6 @@ int main(void)
         std::cout << std::endl;
         std::cout << "[CAT 3] " << cat3.getBrain().getIdea(10) << std::endl;
         std::cout << std::endl;
-
     }
     
     {
