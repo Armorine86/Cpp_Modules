@@ -6,15 +6,15 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:57:19 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/01 09:30:18 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/02 08:44:26 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-
 #include <iostream>
 
+#include "Cat.hpp"
 #include "Brain.hpp"
+
 
 Cat::Cat() : Animal(), brain(new Brain())
 {

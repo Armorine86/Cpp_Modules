@@ -6,15 +6,15 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:39:17 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/01 09:30:25 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/02 08:44:22 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-
 #include <iostream>
 
+#include "Dog.hpp"
 #include "Brain.hpp"
+
 
 Dog::Dog() : Animal(), brain(new Brain())
 {
