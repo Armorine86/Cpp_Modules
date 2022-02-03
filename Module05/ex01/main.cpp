@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 09:08:36 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/31 12:51:54 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 09:59:15 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(void)
     std::cout << std::endl;
 
     try {
-        Form testForm("testForm", 100);
+        Form testForm("testForm", 100, 120);
         std::cout << testForm;
         std::cout << std::endl;
 
@@ -107,7 +107,7 @@ int main(void)
     std::cout << "\n======================================" << END << std::endl;
     
     try {
-        Form SoulContract("Relinquish Soul's Ownership", HIGHEST - 1);
+        Form SoulContract("Relinquish Soul's Ownership", HIGHEST - 1, 100);
         std::cout << SoulContract;
         std::cout << std::endl;
 
@@ -118,7 +118,7 @@ int main(void)
     std::cout << std::endl;
 
     try {
-        Form SoulContract("Relinquish Soul's Ownership", LOWEST + 1);
+        Form SoulContract("Relinquish Soul's Ownership", LOWEST + 1, 100);
         std::cout << SoulContract;
         std::cout << std::endl;
 
@@ -137,14 +137,14 @@ int main(void)
         std::cout << rogers;
         std::cout << std::endl;
 
-        Form CoffeeForTheBoss("CoffeeForTheBoss", 135);
+        Form CoffeeForTheBoss("CoffeeForTheBoss", 135, 100);
         std::cout << CoffeeForTheBoss;
         std::cout << std::endl;
 
         rogers.signForm(CoffeeForTheBoss);
         std::cout << std::endl;
 
-        Form SoulContract("Relinquish Soul's Ownership", 120);
+        Form SoulContract("Relinquish Soul's Ownership", 120, 100);
         std::cout << SoulContract;
         std::cout << std::endl;
 
@@ -170,7 +170,7 @@ int main(void)
         std::cout << seymour;
         std::cout << std::endl;
 
-        Form CoffeeForTheBoss("CoffeeForTheBoss", 135);
+        Form CoffeeForTheBoss("CoffeeForTheBoss", 135, 100);
         std::cout << CoffeeForTheBoss;
         std::cout << std::endl;
 

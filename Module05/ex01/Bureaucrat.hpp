@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:54:15 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 10:43:38 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 10:00:58 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ public:
 
     void rankUp();
     void rankDown();
+    void signForm(Form& f);
+    void checkGrade();
 
     //* Exception class
     //* https://en.cppreference.com/w/cpp/error/exception/what
@@ -57,8 +59,6 @@ public:
         virtual const char* what() const throw();
     };
 
-    void signForm(Form& f);
-    void checkGrade();
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);

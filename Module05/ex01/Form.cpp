@@ -6,23 +6,35 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 15:40:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 09:59:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("BasicForm"), isSigned(false), reqGrade(DFLT_GRADE)
+Form::Form() :
+    name("BasicForm"),
+    isSigned(false),
+    SignGrade(SIGN_GRADE),
+    ExecGrade(EXEC_GRADE)
 {
     checkGrade();
 }
 
-Form::Form(std::string name, int grade) : name(name), isSigned(false), reqGrade(grade)
+Form::Form(std::string name, const int sign_grade, const int exec_grade) :
+    name(name),
+    isSigned(false),
+    SignGrade(sign_grade),
+    ExecGrade(exec_grade)
 {
     checkGrade();
 }
 
-Form::Form(const Form& src) : name(src.name), isSigned(src.isSigned), reqGrade(src.reqGrade)
+Form::Form(const Form& src) :
+    name(src.name),
+    isSigned(src.isSigned),
+    SignGrade(src.SignGrade),
+    ExecGrade(src.ExecGrade)
 {
     checkGrade();
 }
@@ -48,30 +60,36 @@ bool Form::isFormSigned()
     return isSigned;
 }
 
-int Form::getReqGrade()
+int Form::getSignGrade()
 {
-    return reqGrade;
+    return SignGrade;
+}
+
+int Form::getExecGrade() 
+{
+    return ExecGrade;
 }
 
 void Form::beSigned(Bureaucrat& b)
 {
-    if (b.getGrade() > reqGrade)
+    if (b.getGrade() > SignGrade || b.getGrade() > ExecGrade)
         throw Form::GradeTooLowException();
     isSigned = true;
 }
 
 void Form::checkGrade()
 {
-    if (reqGrade > FORM_LOWEST)
+    if (SignGrade > FORM_LOWEST)
         throw GradeTooLowException();
-    else if (reqGrade < FORM_HIGHEST)
+    else if (SignGrade < FORM_HIGHEST)
         throw GradeTooHighException();
 }
 
 std::ostream& operator<<(std::ostream& out, Form& f)
 {
-    out << "Form: <" << f.getFormName() << "> -- signature grade: [" << f.getReqGrade() << "]"
-        << std::endl;
+    out << "Form: <" << f.getFormName()
+        << "> -- signature grade: [" << f.getSignGrade() << "]"
+        << " execution grade: [" << f.getExecGrade() << "]" << std::endl;
 
     return out;
 }

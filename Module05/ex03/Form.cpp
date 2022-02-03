@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/28 08:30:23 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 09:44:25 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 #include "colors.hpp"
 
 Form::Form()
-    : name("BasicForm"), isSigned(false), reqSignGrade(DFLT_GRADE), reqExecGrade(DFLT_GRADE)
+    : name("BasicForm"), isSigned(false), SignGrade(DFLT_GRADE), ExecGrade(DFLT_GRADE)
 {
     checkGrade();
 }
 
 Form::Form(const std::string& name, bool isSigned, int signgrade, int execgrade)
-    : name(name), isSigned(isSigned), reqSignGrade(signgrade), reqExecGrade(execgrade)
+    : name(name), isSigned(isSigned), SignGrade(signgrade), ExecGrade(execgrade)
 {
     checkGrade();
 }
@@ -29,8 +29,8 @@ Form::Form(const std::string& name, bool isSigned, int signgrade, int execgrade)
 Form::Form(const Form& src)
     : name(src.name),
       isSigned(src.isSigned),
-      reqSignGrade(src.reqSignGrade),
-      reqExecGrade(src.reqExecGrade)
+      SignGrade(src.SignGrade),
+      ExecGrade(src.ExecGrade)
 {
     checkGrade();
 }
@@ -58,19 +58,19 @@ bool Form::isFormSigned() const
 
 int Form::getReqSignGrade() const
 {
-    return reqSignGrade;
+    return SignGrade;
 }
 
 int Form::getReqExecGrade() const
 {
-    return reqExecGrade;
+    return ExecGrade;
 }
 
 void Form::beSigned(const Bureaucrat& b)
 {
     if (isFormSigned())
         throw FormAlreadySignedException();
-    if (b.getSignGrade() > reqSignGrade)
+    if (b.getSignGrade() > SignGrade)
         throw GradeTooLowException();
 
     isSigned = true;
@@ -78,9 +78,9 @@ void Form::beSigned(const Bureaucrat& b)
 
 void Form::checkGrade()
 {
-    if (reqSignGrade > FORM_LOWEST)
+    if (SignGrade > FORM_LOWEST)
         throw GradeTooLowException();
-    else if (reqSignGrade < FORM_HIGHEST)
+    else if (SignGrade < FORM_HIGHEST)
         throw GradeTooHighException();
 }
 

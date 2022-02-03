@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 13:17:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 10:28:34 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 09:33:18 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
 		std::cout << std::endl;
 
     } catch (std::exception &e) {
-        std::cerr << RED << e.what() << END << std::endl;
+        std::cerr << RED << "Cannot instanciate object: " << e.what() << END << std::endl;
     }
 	
 	std::cout << std::endl;
@@ -40,7 +40,7 @@ int main(void)
 		std::cout << std::endl;
 
     } catch (std::exception &e) {
-        std::cerr << RED << e.what() << END << std::endl;
+        std::cerr << RED << "Cannot instanciate object: " << e.what() << END << std::endl;
     }
 	
 	std::cout << std::endl;
@@ -51,7 +51,7 @@ int main(void)
 		std::cout << std::endl;
 
     } catch (std::exception &e) {
-        std::cerr << RED << e.what() << END << std::endl;
+        std::cerr << RED << "Cannot instanciate object: " << e.what() << END << std::endl;
     }
 	
 	std::cout << std::endl;
@@ -69,7 +69,7 @@ int main(void)
         std::cout << lawrence; //* Should Not Print
         std::cout << std::endl;
     } catch (std::exception &exc) {
-        std::cerr << RED << exc.what() << END << std::endl;
+        std::cerr << RED << "Cannot adjust rank: " << exc.what() << END << std::endl;
     }
 
     std::cout << std::endl;
@@ -84,6 +84,6 @@ int main(void)
         std::cout << lawrence; //* Should Not Print
         std::cout << std::endl;
     } catch (std::exception &exc) {
-        std::cerr << RED << exc.what() << END << std::endl;
+        std::cerr << RED << "Cannot adjust rank: " << exc.what() << END << std::endl;
     }
 }

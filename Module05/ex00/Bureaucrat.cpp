@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 14:14:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/22 07:47:46 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 09:33:33 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,12 @@ void Bureaucrat::rankDown()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return "\nGrade is Too High";
+    return "Grade is Too High";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return "\nGrade is Too Low";
+    return "Grade is Too Low";
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)

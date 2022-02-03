@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 07:57:48 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/28 08:27:07 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 09:44:25 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Form
 private:
     const std::string name;
     bool isSigned;
-    const int reqSignGrade;
-    const int reqExecGrade;
+    const int SignGrade;
+    const int ExecGrade;
 
 public:
     Form();
