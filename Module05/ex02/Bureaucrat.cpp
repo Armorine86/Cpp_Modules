@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 14:14:14 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/28 14:04:53 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/03 10:07:54 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
 {
     out << "<" << bureaucrat.getName() << "> "
-        << "sign grade: [" << bureaucrat.getSignGrade() << "]"
+        << "sign grade: [" << bureaucrat.getSignGrade() << "] "
         << "exec grade: [" << bureaucrat.getExecGrade() << "]" << std::endl;
 
     return out;
