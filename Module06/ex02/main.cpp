@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 12:19:20 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/04 12:33:20 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 13:24:45 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,21 @@ void identify(Base& p)
 	std::cout << "Reference ";
 	try {
 		A a = dynamic_cast<A&>(p);
-		std::cout << "type: A" << std::endl;
+		std::cout << "Class: A" << std::endl;
 		(void)a;
 	} catch (const std::bad_cast){
 	}
 	
 	try {
 		B b = dynamic_cast<B&>(p);
-		std::cout << "type: B" << std::endl;
+		std::cout << "Class: B" << std::endl;
 		(void)b;
 	} catch (const std::bad_cast){
 	}
 
 	try {
 		C c = dynamic_cast<C&>(p);
-		std::cout << "type: C" << std::endl;
+		std::cout << "Class: C" << std::endl;
 		(void)c;
 	} catch (const std::bad_cast) {
 	}
@@ -58,11 +58,11 @@ void identify(Base* p)
 {
 	std::cout << "Pointer ";
 	if (dynamic_cast<A*>(p) != NULL)
-		std::cout << "type: A" << std::endl;
+		std::cout << "Class: A" << std::endl;
 	else if (dynamic_cast<B*>(p) != NULL)
-		std::cout << "type: B" << std::endl;
+		std::cout << "Class: B" << std::endl;
 	else if (dynamic_cast<C*>(p) != NULL)
-		std::cout << "type: C" << std::endl;
+		std::cout << "Class: C" << std::endl;
 }
 
 Base* generate(void)
@@ -87,8 +87,9 @@ Base* generate(void)
 int main(void)
 {
 	Base *ptr = generate();
-	std::cout << "Base ptr address: " << ptr << std::endl;
 
 	identify(ptr);
 	identify(*ptr);
+
+	delete ptr;
 }
