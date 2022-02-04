@@ -6,13 +6,14 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 13:28:36 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/31 16:38:28 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 08:23:31 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <cmath>
+//#include <cmath>
+#include <math.h>
 #include <exception>
 #include <iostream>
 #include <string>
@@ -42,8 +43,8 @@ public:
 private:
     std::string input;
     char c;
-    int Int;
-    float Float;
-    double Double;
+    int _Int;
+    float _Float;
+    double _Double;
     ScalarTypes type;
 };

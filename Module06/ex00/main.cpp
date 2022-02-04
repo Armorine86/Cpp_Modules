@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 13:33:43 by mmondell          #+#    #+#             */
-/*   Updated: 2021/12/30 16:17:05 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:19:50 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 #include "Convert.hpp"
 #include "colors.hpp"
+
+// Why use c++ cast types instead of C-Style cast?
+// 
+// The main reason is that classic C casts make no distinction between what we call
+// static_cast<>(), reinterpret_cast<>(), const_cast<>(), and dynamic_cast<>().
+// These four things are completely different.
+
+// https://stackoverflow.com/questions/103512/why-use-static-castintx-instead-of-intx
 
 void p_error(const char* msg)
 {

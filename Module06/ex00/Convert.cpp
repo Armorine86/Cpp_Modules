@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 13:38:15 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/31 10:31:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 09:30:55 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 #include <iomanip>
 
-Convert::Convert() : input(""), c(0), Int(0), Float(0.0f), Double(0.0), type(isInt) {}
+Convert::Convert() : input(""), c(0), _Int(0), _Float(0.0f), _Double(0.0), type(isInt) {}
 
 Convert::Convert(const std::string& input)
-    : input(input), c(0), Int(0), Float(0.0f), Double(0.0), type(isInt)
+    : input(input), c(0), _Int(0), _Float(0.0f), _Double(0.0), type(isInt)
 {
     type = find_type();
     cast_type();
@@ -27,9 +27,9 @@ Convert::Convert(Convert& src)
 {
     input = src.input;
     c = src.c;
-    Int = src.Int;
-    Float = src.Float;
-    Double = src.Double;
+    _Int = src._Int;
+    _Float = src._Float;
+    _Double = src._Double;
     type = src.type;
 }
 
@@ -52,7 +52,7 @@ bool is_pseudo_litteral(std::string& input)
 
 bool Convert::isImpossible()
 {
-	if (type == error || isnan(Float) || isinf(Float))
+	if (type == error || isnan(_Float) || isinf(_Float))
 		return true;
 	return false;
 }
@@ -75,7 +75,7 @@ void Convert::toInt()
     if (isImpossible())
         std::cout << "impossible";
     else
-        std::cout << Int;
+        std::cout << _Int;
     std::cout << std::endl;
 }
 
@@ -85,7 +85,7 @@ void Convert::toFloat()
     if (type == error)
         std::cout << "impossible";
     else
-        std::cout << std::fixed << std::setprecision(1) << Float << "f";
+        std::cout << std::fixed << std::setprecision(1) << _Float << "f";
     std::cout << std::endl;
 }
 
@@ -99,7 +99,7 @@ void Convert::toDouble()
 	}
     if (input == "+inf")
         std::cout << "+";
-    std::cout << std::fixed << std::setprecision(1) << Double;
+    std::cout << std::fixed << std::setprecision(1) << _Double;
     std::cout << std::endl;
 }
 
@@ -111,22 +111,22 @@ Convert::ScalarTypes Convert::find_type()
         if (!isdigit(input[i]))
             break;
         if (i == input.length() - 1) {
-            Int = atoi(input.c_str());
+            _Int = atoi(input.c_str());
             return isInt;
         }
     }
-    if (input.length() == 1 && std::isalpha(input[0])) {
+    if (input.length() == 1 && std::isprint(input[0])) {
         c = input[0];
         return isChar;
     } else if (input[input.length() - 1] == 'f' && input.find('.') != std::string::npos) {
         input.erase(input.end() - 1);
-        Float = strtof(input.c_str(), &endptr);
+        _Float = strtof(input.c_str(), &endptr);
 		if (*endptr != '\0')
 			return error;
         return isFloat;
 
     } else if (input[input.length() - 1] != 'f' && input.find('.') != std::string::npos) {
-        Double = strtod(input.c_str(), &endptr);
+        _Double = strtod(input.c_str(), &endptr);
 		if (*endptr != '\0')
 			return error;
         return isDouble;
@@ -134,7 +134,7 @@ Convert::ScalarTypes Convert::find_type()
     } else if (is_pseudo_litteral(input)) {
         if (input == "inff" || input == "-inff" || input == "+inff" || input == "nanf")
             input.erase(input.end() - 1);
-        Double = strtod(input.c_str(), NULL);
+        _Double = strtod(input.c_str(), NULL);
         return isPseudo;
     } else
         return error;
@@ -144,33 +144,33 @@ void Convert::cast_type()
 {
     switch (type) {
         case isChar: {
-            Int = static_cast<int>(c);
-            Float = static_cast<float>(c);
-            Double = static_cast<double>(c);
+            _Int = static_cast<int>(c);
+            _Float = static_cast<float>(c);
+            _Double = static_cast<double>(c);
             break;
         }
         case isInt: {
-            c = static_cast<char>(Int);
-            Float = static_cast<float>(Int);
-            Double = static_cast<double>(Int);
+            c = static_cast<char>(_Int);
+            _Float = static_cast<float>(_Int);
+            _Double = static_cast<double>(_Int);
             break;
         }
         case isFloat: {
-            Int = static_cast<int>(Float);
-            c = static_cast<char>(Float);
-            Double = static_cast<double>(Float);
+            _Int = static_cast<int>(_Float);
+            c = static_cast<char>(_Float);
+            _Double = static_cast<double>(_Float);
             break;
         }
         case isDouble: {
-            Int = static_cast<int>(Double);
-            Float = static_cast<float>(Double);
-            c = static_cast<char>(Double);
+            _Int = static_cast<int>(_Double);
+            _Float = static_cast<float>(_Double);
+            c = static_cast<char>(_Double);
             break;
         }
         case isPseudo: {
-            Int = static_cast<int>(Double);
-            Float = static_cast<float>(Double);
-            c = static_cast<char>(Double);
+            _Int = static_cast<int>(_Double);
+            _Float = static_cast<float>(_Double);
+            c = static_cast<char>(_Double);
             break;
         }
         case error: {
