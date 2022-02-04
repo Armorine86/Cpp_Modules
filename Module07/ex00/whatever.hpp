@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 20:03:32 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/02 20:53:29 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 13:44:34 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 #include <iostream>
 #include <string>
 
-template <typename Swap>
-void swap(Swap &x, Swap &y)
+template <typename T>
+void swap(T &x, T &y)
 {
-    Swap temp;
+    T temp;
     temp = x;
     x = y;
     y = temp;
