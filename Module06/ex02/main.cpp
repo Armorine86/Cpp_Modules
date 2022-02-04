@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 12:19:20 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/01 13:28:24 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 12:33:20 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,44 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <typeinfo>
 #include <exception>
 
+// **Signature: dynamic_cast < new_type > ( expression )
+//
+// **If the cast fails and new_type is a reference type, it throws an exception that matches a handler of type std::bad_cast.
+//
+// An exception of this type is thrown when a dynamic_cast to a reference type fails the run-time check
+// (e.g. because the types are not related by inheritance)
 void identify(Base& p)
 {
 	std::cout << "Reference ";
 	try {
-		A& a = dynamic_cast<A&>(p);
+		A a = dynamic_cast<A&>(p);
 		std::cout << "type: A" << std::endl;
 		(void)a;
-	} catch (std::exception &e){
+	} catch (const std::bad_cast){
 	}
 	
 	try {
-		B& b = dynamic_cast<B&>(p);
+		B b = dynamic_cast<B&>(p);
 		std::cout << "type: B" << std::endl;
 		(void)b;
-	} catch (std::exception &e){
+	} catch (const std::bad_cast){
 	}
 
 	try {
-		C& c = dynamic_cast<C&>(p);
+		C c = dynamic_cast<C&>(p);
 		std::cout << "type: C" << std::endl;
 		(void)c;
-	} catch (std::exception &e) {
+	} catch (const std::bad_cast) {
 	}
 }
 
+// dynamic_cast < new_type > ( expression )
+//
+// **If the cast is successful, dynamic_cast returns a value of type new_type.
+// **If the cast fails and new_type is a pointer type, it returns a null pointer of that type.
 void identify(Base* p)
 {
 	std::cout << "Pointer ";
@@ -54,25 +65,20 @@ void identify(Base* p)
 		std::cout << "type: C" << std::endl;
 }
 
-Base * generate(void)
+Base* generate(void)
 {
 	enum {ClassA, ClassB, ClassC};
 	srand((unsigned int)time(NULL));
 
-	long index = rand() % 3;
-
-	switch (index) {
+	switch (rand() % 3) {
 		case ClassA: {
-			A *a = new A();
-			return a;
+			return new A();
 		}
 		case ClassB: {
-			B *b = new B();
-			return b;
+			return new B();
 		}
 		case ClassC: {
-			C *c = new C();
-			return c;
+			return new C();
 		}
 	}
 	return NULL;

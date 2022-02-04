@@ -1,7 +1,7 @@
 
 NAME		=	real
 
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion\
+CFLAGS		=	-Wall -Wextra -Wpedantic -Wconversion\
 				-Wshadow -std=c++98 -fstandalone-debug
 				
 CC			=	clang++

@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 09:39:34 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/04 09:17:13 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 10:21:40 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,11 @@ int main(void)
 
     std::cout << GREEN << "\nObject address [obj]: " << END << obj << std::endl;
 
+    // Depending on the address in memory of uptr, result will change
     uintptr_t uptr = serialize(obj);
     std::cout << GREEN << "\nSerialized Object [obj]: " << END << uptr << std::endl;
 
+    // Converts the raw data from serialize back to original address
     obj = deserialize(uptr);
     size = sizeof(uptr);
 
@@ -55,4 +57,6 @@ int main(void)
               << "(" << size * 8 << " bits)" << std::endl;
 
     std::cout << GREEN << "\nDeserialized uintptr_t [uptr]: " << END << obj << std::endl;
+
+    delete obj;
 }
