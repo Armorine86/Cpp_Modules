@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 08:14:09 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/03 10:30:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:20:13 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main(void)
         std::cout << "======================\n" << END << std::endl;
 
         try {
-            Array<int> empty;
-            std::cout << "Empty index: " << empty[0] << std::endl;
+            Array<int> arr;
+            std::cout << arr[0] << std::endl;
         } catch (std::exception &e) {
             std::cout << e.what() << RED << " Array is empty." << END << std::endl;
         }
@@ -33,9 +33,9 @@ int main(void)
     std::cout << std::endl;
 
     {
-        std::cout << GREEN << "======================\n";
+        std::cout << GREEN << "=====================\n";
         std::cout << "|| ARRAY INIT TEST ||\n";
-        std::cout << "======================\n" << END << std::endl;
+        std::cout << "=====================\n" << END << std::endl;
 
         Array<unsigned int> arr(5);
         for (unsigned int i = 0; i < arr.getSize(); i++)
@@ -70,10 +70,19 @@ int main(void)
 
         size = arr_cpy.getSize();
 
-        std::cout << YELLOW << "\nCopy array:\n" << END;
+        std::cout << YELLOW << "\nCopy Constructor array:\n" << END;
         std::cout << "Array of size: [" << size << "]" << std::endl;
         for (unsigned int i = 0; i < arr_cpy.getSize(); i++)
             std::cout << arr_cpy[i] << " ";
+        std::cout << std::endl;
+
+        Array<char> copy;
+        copy = alphabet;
+
+        std::cout << YELLOW << "\nAssignation Copy array:\n" << END;
+        std::cout << "Array of size: [" << size << "]" << std::endl;
+        for (unsigned int i = 0; i < copy.getSize(); i++)
+            std::cout << copy[i] << " ";
         std::cout << std::endl;
     }
 
@@ -88,7 +97,6 @@ int main(void)
             arr[i] = i;
 
         try {
-            std::cout << "Accessing invalid index: ";
             std::cout << arr[6] << std::endl;
         } catch (std::exception &e) {
             std::cout << e.what() << RED << " Invalid Index" << END << std::endl;

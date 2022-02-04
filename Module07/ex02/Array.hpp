@@ -6,80 +6,80 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 08:14:22 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/03 10:12:03 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:23:30 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <cstddef>
+#include <cstring>
 #include <exception>
 
-template <class T>
+template <typename T>
 class Array
 {
 public:
     Array();
     Array(unsigned int n);
     Array(const Array& src);
-    Array& operator=(const T& rhs);
-    ~Array() { delete[] array; }
-    T& operator[](unsigned int i);
+    ~Array();
+
+    Array& operator=(const Array& rhs)
+    {
+        delete[] array;
+
+        size = rhs.size;
+        array = new T[size]();
+
+        std::memcpy(array, rhs.array, rhs.size * sizeof(T));
+        
+        return *this;
+    }
+
+    T& operator[](size_t i)
+    {
+        if (i >= size || i < 0)
+            throw std::exception();
+        return array[i];
+    }
 
     unsigned int getSize();
 
 private:
-    T* array;
     unsigned int size;
+    T* array;
 };
 
-template <class T>
-Array<T>::Array() : array(NULL), size(0)
+// Default constructor
+//-------------------
+// array(NULL)
+// size(0)
+template <typename T>
+Array<T>::Array() : size(0), array(NULL)
 {
 }
 
-template <class T>
-Array<T>::Array(unsigned int n)
+template <typename T>
+Array<T>::Array(unsigned int n) : size(n), array(new T[n]())
 {
-    size = n;
-    array = new T[n]();
 }
 
-template <class T>
-Array<T>::Array(const Array& src)
+template <typename T>
+Array<T>::Array(const Array& src) : size(src.size), array(new T[size]())
 {
-    size = src.size;
-
-    array = new T[size]();
     for (unsigned int i = 0; i < size; i++)
         array[i] = src.array[i];
 }
 
 template <typename T>
-Array<T>& Array<T>::operator=(const T& rhs)
+Array<T>::~Array()
 {
-    if (this == &rhs)
-        return *this;
-
-    size = rhs.size;
-
-    if (array != NULL)
-        delete[] array;
-
-    for (int i = 0; i < size; i++)
-        array[i] = rhs.array[i];
+    delete[] array;
 }
 
-template <class T>
+template <typename T>
 unsigned int Array<T>::getSize()
 {
     return size;
-}
-
-template <class T>
-T& Array<T>::operator[](unsigned int i)
-{
-    if (i >= size || i < 0)
-        throw std::exception();
-    return array[i];
 }
