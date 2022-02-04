@@ -1,6 +1,6 @@
 NAME		=	template
 
-CFLAGS		=	-Wall -Werror -Wextra -Wpedantic -Wconversion\
+CFLAGS		=	-Wall -Werror -Wextra -Wpedantic \
 				-Wshadow -std=c++98 -fstandalone-debug
 				
 CC			=	clang++
