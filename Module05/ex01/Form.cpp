@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 08:26:30 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/03 09:59:55 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 08:11:36 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int Form::getExecGrade()
 
 void Form::beSigned(Bureaucrat& b)
 {
-    if (b.getGrade() > SignGrade || b.getGrade() > ExecGrade)
+    if (b.getGrade() > SignGrade)
         throw Form::GradeTooLowException();
     isSigned = true;
 }
