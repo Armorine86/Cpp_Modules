@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 12:19:20 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/04 13:24:45 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/04 13:27:35 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-#include <typeinfo>
 #include <exception>
 
 // **Signature: dynamic_cast < new_type > ( expression )
@@ -32,21 +31,21 @@ void identify(Base& p)
 		A a = dynamic_cast<A&>(p);
 		std::cout << "Class: A" << std::endl;
 		(void)a;
-	} catch (const std::bad_cast){
+	} catch (const std::exception){
 	}
 	
 	try {
 		B b = dynamic_cast<B&>(p);
 		std::cout << "Class: B" << std::endl;
 		(void)b;
-	} catch (const std::bad_cast){
+	} catch (const std::exception){
 	}
 
 	try {
 		C c = dynamic_cast<C&>(p);
 		std::cout << "Class: C" << std::endl;
 		(void)c;
-	} catch (const std::bad_cast) {
+	} catch (const std::exception) {
 	}
 }
 
