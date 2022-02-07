@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 08:14:09 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/07 08:30:54 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/07 08:37:33 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
             Array<int> arr;
             std::cout << arr[0] << std::endl;
         } catch (std::exception &e) {
-            std::cout << e.what() << RED << " Array is empty." << END << std::endl;
+            std::cout << e.what() << BRED << " Array is empty." << END << std::endl;
         }
     }
 
@@ -99,7 +99,7 @@ int main(void)
         try {
             std::cout << arr[6] << std::endl;
         } catch (std::exception &e) {
-            std::cout << e.what() << RED << " Invalid Index" << END << std::endl;
+            std::cout << e.what() << BRED << " Invalid Index" << END << std::endl;
         }
     }
 
