@@ -6,14 +6,14 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:46:53 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/07 08:37:10 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/07 08:38:19 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #define RED    		"\033[38;5;1m"
-#define BRED    		"\033[38;5;196m"
+#define BRED    	"\033[38;5;196m"
 #define GREEN  		"\033[38;5;34m"
 #define BGREEN  	"\033[38;5;46m"
 #define DGREEN  	"\033[38;5;28m"
