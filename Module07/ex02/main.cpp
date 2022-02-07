@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 08:14:09 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/04 16:20:13 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/07 08:30:54 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int main(void)
 {
     {
-        std::cout << GREEN << "======================\n";
+        std::cout << BGREEN << "======================\n";
         std::cout << "|| EMPTY ARRAY TEST ||\n";
         std::cout << "======================\n" << END << std::endl;
 
@@ -33,7 +33,7 @@ int main(void)
     std::cout << std::endl;
 
     {
-        std::cout << GREEN << "=====================\n";
+        std::cout << BGREEN << "=====================\n";
         std::cout << "|| ARRAY INIT TEST ||\n";
         std::cout << "=====================\n" << END << std::endl;
 
@@ -48,7 +48,7 @@ int main(void)
     }
 
     {
-        std::cout << GREEN << "\n=====================\n";
+        std::cout << BGREEN << "\n=====================\n";
         std::cout << "|| COPY ARRAY TEST ||\n";
         std::cout << "=====================\n" << END << std::endl;
 
@@ -87,7 +87,7 @@ int main(void)
     }
 
     {
-        std::cout << GREEN << "\n========================\n";
+        std::cout << BGREEN << "\n========================\n";
         std::cout << "|| INVALID INDEX TEST ||\n";
         std::cout << "========================\n" << END << std::endl;
 
