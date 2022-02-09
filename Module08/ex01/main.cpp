@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:40:32 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/04 15:58:05 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/09 08:53:21 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int main(void)
 		try {
 			std::cout << "Short span: " << sp0.shortestSpan() << std::endl;
 		} catch (std::exception &e) {
-			std::cout << RED << e.what() << END << std::endl;
+			std::cout << BRED << e.what() << END << std::endl;
 		}
 
 		try {
 			std::cout << "Long span: " << sp0.longestSpan() << std::endl;
 		} catch (std::exception &e) {
-			std::cout << RED << e.what() << END << std::endl;
+			std::cout << BRED << e.what() << END << std::endl;
 		}
 
 		std::cout << std::endl;
@@ -44,13 +44,13 @@ int main(void)
 		try {
 			std::cout << "Short span: " << sp1.shortestSpan() << std::endl;
 		} catch (std::exception &e) {
-			std::cout << RED << e.what() << END << std::endl;
+			std::cout << BRED << e.what() << END << std::endl;
 		}
 
 		try {
 			std::cout << "Long span: " << sp1.longestSpan() << std::endl;
 		} catch (std::exception &e) {
-			std::cout << RED << e.what() << END << std::endl;
+			std::cout << BRED << e.what() << END << std::endl;
 		}
 	}
 	
@@ -89,7 +89,7 @@ int main(void)
 			sp.random_populate();
 			sp.addNumber(5); // should throw an exception
 		} catch (std::exception &e) {
-			std::cout << RED << e.what() << std::endl;
+			std::cout << BRED << e.what() << std::endl;
 		}
 	}
 	
@@ -109,7 +109,7 @@ int main(void)
 			std::cout << "Long span: " << sp.longestSpan() << std::endl;
 					
 		} catch (std::exception &e) {
-			std::cout << RED << e.what() << std::endl;
+			std::cout << BRED << e.what() << std::endl;
 		}
 	}
 }

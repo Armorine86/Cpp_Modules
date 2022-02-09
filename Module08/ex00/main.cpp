@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:05:34 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/04 14:22:06 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/09 09:51:17 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@ void populate_container(T &cont)
 template <typename T>
 void print_vector(T &cont)
 {
-	std::vector<int>::iterator index;
-
+	typename T::iterator iter; //An iterator that works on any type of containers
 	std::cout << "Array: ";
 
 	// Using iterator, we don't need to keep track of the number of elements in the array
-	for(index = cont.begin(); index != cont.end(); index++)
-		std::cout << *index << " ";							  			
+	for(iter = cont.begin(); iter != cont.end(); iter++)
+		std::cout << *iter << " ";							  			
 	std::cout << std::endl;
 }
 
@@ -70,6 +69,8 @@ int main(void)
 	std::cout << GREEN << "LINKED LIST" << END << std::endl;
 	populate_container(list1);
 
+	print_vector(list1);
+
 	try {
 		value = easyfind(vec0, 15);
 		std::cout << "Value found: " << *value << std::endl;
@@ -92,6 +93,8 @@ int main(void)
 
 	std::cout << GREEN << "DOUBLE-ENDED QUEUE" << END << std::endl;
 	populate_container(deq1);
+	
+	print_vector(deq1);
 	
 	try {
 		value = easyfind(vec0, 23);
