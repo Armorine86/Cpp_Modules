@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:40:32 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/09 13:21:42 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/09 14:12:54 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,4 +124,6 @@ int main(void)
 		std::cout << "\nLong Span: " << vec.longestSpan() << std::endl;
 		
 	}
+
+	std::cout << std::endl;
 }
