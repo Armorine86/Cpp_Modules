@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:36:01 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/04 16:02:34 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/09 13:23:32 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 #include <vector>
 
-#define MAX 125000
+#define MAX 25000
 
 class Span {
-
-private:
-	std::vector<int> vec;
-	unsigned int vec_size;
 
 public:
 	Span() : vec(0), vec_size(0) {}
@@ -33,19 +29,10 @@ public:
 	void random_populate();
 	int shortestSpan();
 	int longestSpan();
-	
-	class MaxSizeReached : public std::exception {
-		public:
-			virtual const char* what() const throw();
-	};
-	
-	class NoShortSpan : public std::exception {
-		public:
-			virtual const char* what() const throw();
-	};
 
-	class NoLongSpan : public std::exception {
-		public:
-			virtual const char* what() const throw();
-	};
+	void print_vector();
+	
+private:
+	std::vector<int> vec;
+	size_t vec_size;
 };
