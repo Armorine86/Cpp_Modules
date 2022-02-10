@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:53:46 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/09 16:38:34 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/10 08:31:46 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int main(void) {
 		MutantStack<int> stack;
 
 		stack.push(42);
+
+		std::cout << "Top Element: " << stack.top() << std::endl;
+
+		stack.push(199);
 
 		std::cout << "Top Element: " << stack.top() << std::endl;
 	}
@@ -111,6 +115,27 @@ int main(void) {
 		for (it = stack.begin(); it != it_end; it++){
 			std::cout << *it << " ";
 		}
+		std::cout << std::endl;
+
 	}
+
+	std::cout << std::endl;
+
+	{
+		std::cout << GREEN << "==========================\n";
+		std::cout << "|| STD::STACK INIT TEST ||\n";
+		std::cout << "==========================\n" << END << std::endl;
+		
+		MutantStack<int> stack;
+		
+		for (int i = 0; i < 42; i++) {
+			stack.push(rand() % 255);
+		}
+		
+		std::stack<int> s(stack);
+
+		std::cout << "Std::stack size: " <<  s.size() << std::endl;
+	}
+
 	return 0;
 }
