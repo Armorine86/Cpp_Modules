@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:23 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/09 13:23:30 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:07:25 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void Span::random_populate()
 	srand(static_cast<unsigned int>(time(NULL)));
 
 	for (size_t i = 0; i < MAX; i++) {
-		vec.push_back(rand() % (INT32_MAX / 2));
+		vec.push_back(rand() % MAX);
 		if (i == vec_size - 1)
 			break;
 	}
@@ -95,7 +95,7 @@ int Span::longestSpan()
 		if (next == vec.end())
 			break;
 		if (std::abs(*first - *next) > largest)
-			largest = std::abs(*first) - std::abs(*next);
+			largest = std::abs(*first - *next);
 	}
 	return largest;
 }

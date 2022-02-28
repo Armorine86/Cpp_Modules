@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:40:32 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/09 14:12:54 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:18:09 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,14 +110,15 @@ int main(void)
 	std::cout << std::endl;
 
 	{
-		std::cout << GREEN << "=======================\n";
-		std::cout << "|| ADDING ARRAY TEST ||\n";
-		std::cout << "=======================\n" << END << std::endl;
+		std::cout << GREEN << "===========================\n";
+		std::cout << "|| BIG RANDOM ARRAY TEST ||\n";
+		std::cout << "===========================\n" << END << std::endl;
 
 		Span vec(MAX);
 
 		vec.random_populate();
-
+		
+		std::cout << "Vector Size: " << vec.getSize() << "\n" << std::endl;
 		std::cout << "Short Span: " << vec.shortestSpan() << std::endl;
 		
 

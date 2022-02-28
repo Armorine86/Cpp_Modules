@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:36:01 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/09 13:23:32 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/02/28 09:59:23 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 	int longestSpan();
 
 	void print_vector();
+	size_t getSize() { return vec_size; };
 	
 private:
 	std::vector<int> vec;
