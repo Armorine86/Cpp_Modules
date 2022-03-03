@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:05:34 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/09 09:51:17 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/03/03 09:03:31 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void populate_container(T &cont)
 }
 
 template <typename T>
-void print_vector(T &cont)
+void print_content(T &cont)
 {
 	typename T::iterator iter; //An iterator that works on any type of containers
 	std::cout << "Array: ";
@@ -33,56 +33,66 @@ void print_vector(T &cont)
 	// Using iterator, we don't need to keep track of the number of elements in the array
 	for(iter = cont.begin(); iter != cont.end(); iter++)
 		std::cout << *iter << " ";							  			
-	std::cout << std::endl;
+	std::cout << "\n" << std::endl;
 }
 
 int main(void)
 {
+
 	std::vector<int> vec0; // https://en.cppreference.com/w/cpp/container/vector
-	std::vector<int>::iterator value; // Like a pointer, dereference to access value at its address.
 
 	populate_container(vec0);
 	
 	std::cout << GREEN << "\nVECTORS" << END << std::endl;
-	print_vector(vec0);
+	print_content(vec0);
 	
 	try {
-		value = easyfind(vec0, 10);
-		std::cout << "Value found: " << *value << std::endl;
+		const int target = 10;
+		std::cout << YELLOW << "Target: " << target << END << std::endl;
+		if (easyfind(vec0, target)) {
+			std::cout << "Value found: " << target << "\n" << std::endl;
+		}
 	} catch (std::exception &e) {
-		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
+		std::cout << RED << "Target not found" << END << std::endl;
 	}
 
 	try {
-		value = easyfind(vec0, 0);
-		std::cout << "Value found: " << *value << std::endl;
+		const int target = 0;
+		std::cout << YELLOW << "Target: " << target << END << std::endl;
+		if (easyfind(vec0, target)){
+			std::cout << "Value found: " << target << "\n" <<  std::endl;
+		}
 	} catch (std::exception &e) {
-		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
+		std::cout << RED << "Target not found" << END << std::endl;
 	}
 
 	std::cout << std::endl;
-
-
 
 	std::list<int> list1; // https://en.cppreference.com/w/cpp/container/list
 
 	std::cout << GREEN << "LINKED LIST" << END << std::endl;
 	populate_container(list1);
 
-	print_vector(list1);
+	print_content(list1);
 
 	try {
-		value = easyfind(vec0, 15);
-		std::cout << "Value found: " << *value << std::endl;
+		const int target = 15;
+		std::cout << YELLOW << "Target: " << target << END << std::endl;
+		if (easyfind(list1, target)) {
+			std::cout << "Value found: " << target << "\n" << std::endl;
+		}
 	} catch (std::exception &e) {
-		std::cout << RED << "Value " << *value<< " not found" << END << std::endl;
+		std::cout << RED << "Target not found" << END << std::endl;
 	}
 
 	try {
-		value = easyfind(vec0, 0);
-		std::cout << "Value found: " << *value << std::endl;
+		const int target = 0;
+		std::cout << YELLOW << "Target: " << target << END << std::endl;
+		if (easyfind(list1, target)) {
+			std::cout << "Value found: " << target << "\n" << std::endl;
+		}
 	} catch (std::exception &e) {
-		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
+		std::cout << RED << "Target not found" << END << std::endl;
 	}
 	
 	std::cout << std::endl;
@@ -94,20 +104,26 @@ int main(void)
 	std::cout << GREEN << "DOUBLE-ENDED QUEUE" << END << std::endl;
 	populate_container(deq1);
 	
-	print_vector(deq1);
+	print_content(deq1);
 	
 	try {
-		value = easyfind(vec0, 23);
-		std::cout << "Value found: " << *value << std::endl;
+		const int target = 23;
+		std::cout << YELLOW << "Target: " << target << END << std::endl;
+		if (easyfind(deq1, target)) {
+			std::cout << "Value found: " << target << "\n" << std::endl;
+		}
 	} catch (std::exception &e) {
 		std::cout << RED << "Value not found" << END << std::endl;
 	}
 
 	try {
-		value = easyfind(vec0, 0);
-		std::cout << "Value found: " << *value << std::endl;
+		const int target = 0;
+		std::cout << YELLOW << "Target: " << target << END << std::endl;
+		if (easyfind(deq1, target)) {
+			std::cout << "Value found: " << target << "\n" << std::endl;
+		}
 	} catch (std::exception &e) {
-		std::cout << RED << "Value [" << *value<< "] not found" << END << std::endl;
+		std::cout << RED << "Target not found" << END << std::endl;
 	}
 
 	std::cout << std::endl;
