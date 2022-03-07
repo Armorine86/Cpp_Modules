@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:40:32 by mmondell          #+#    #+#             */
-/*   Updated: 2022/02/28 10:18:09 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/03/07 08:46:26 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,34 @@ int main(void)
 		}
 	}
 
+	std::cout << std::endl;
+
+	{
+		std::cout << GREEN << "======================\n";
+		std::cout << "|| SMALL ARRAY TEST ||\n";
+		std::cout << "======================\n" << END << std::endl;
+
+		Span vec(10);
+
+		vec.addNumber(0);
+		vec.addNumber(4);
+		vec.addNumber(8);
+		vec.addNumber(12);
+		vec.addNumber(20);
+		vec.addNumber(24);
+		vec.addNumber(28);
+		vec.addNumber(32);
+		vec.addNumber(36);
+		vec.addNumber(400);
+		
+		std::cout << "Vector Size: " << vec.getSize() << "\n" << std::endl;
+		std::cout << "Short Span: " << vec.shortestSpan() << std::endl;
+		
+
+		std::cout << "\nLong Span: " << vec.longestSpan() << std::endl;
+		
+	}
+	
 	std::cout << std::endl;
 
 	{
