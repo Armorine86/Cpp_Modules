@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:45:47 by mmondell          #+#    #+#             */
-/*   Updated: 2022/01/25 14:31:58 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/04/13 18:26:30 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ float Fixed::toFloat(void) const
 
 int32_t Fixed::toInt(void) const
 {
-	// Since we only have 8 bits for the fractional part we shift 8 bits to the left
+	// Since we only have 8 bits for the fractional part we shift 8 bits to the right
 	// leaving us with a full 32-bits integer.
 	// shifting one to the right is like dividing by two on integers
 	return (value >> bits);
