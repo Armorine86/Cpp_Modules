@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:54:17 by mmondell          #+#    #+#             */
-/*   Updated: 2022/03/07 09:00:24 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:24:59 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	MutantStack() : std::stack<T>() {}
 	MutantStack(const MutantStack<T>& src) : std::stack<T>(src) {}
 	~MutantStack() {}
-	MutantStack<T>& operator=(const MutantStack<T>& rhs) { *this = rhs; }
+	MutantStack<T>& operator=(const MutantStack<T>& rhs) { std::stack<T>::operator=(rhs); return *this; }
 	
 	typedef typename MutantStack<T>::container_type::iterator iterator;
 

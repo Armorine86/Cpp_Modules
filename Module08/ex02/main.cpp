@@ -6,7 +6,7 @@
 /*   By: mmondell <mmondell@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 13:53:46 by mmondell          #+#    #+#             */
-/*   Updated: 2022/03/07 09:07:30 by mmondell         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:26:31 by mmondell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,26 @@ int main(void) {
 		std::stack<int> s(stack);
 
 		std::cout << "Std::stack size: " <<  s.size() << std::endl;
+	}
+
+	{
+		std::cout << GREEN << "=====================================\n";
+		std::cout << "|| STD::STACK ASSIGNEMENT OPERATOR ||\n";
+		std::cout << "=====================================\n" << END << std::endl;
+
+		
+		MutantStack<int> stk;
+		MutantStack<int> stk2;
+		
+		for (int i = 0; i < 42; i++) {
+			stk.push(rand() % 255);
+		}
+
+		stk2 = stk;
+
+		std::cout << "Stack1: " << stk.top() << std::endl;
+
+		std::cout << "Stack2: " << stk2.top() << std::endl;
 	}
 
 	return 0;
